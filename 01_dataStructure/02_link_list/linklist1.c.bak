@@ -1,0 +1,552 @@
+/*
+ * 程序名：linklist1.c，此程序演示单链表的实现，数据元素是整数。
+ * 作者：C语言技术网(www.freecplus.net) 日期：20201230
+*/
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+typedef int ElemType;     // 自定义链表的数据元素为整数。
+
+typedef struct LNode
+{
+  ElemType data;       // 存放结点的数据元素。
+  struct LNode *next;  // 指向下一下结点的指针。
+}LNode,*LinkList;
+
+// 初始化链表LL，返回值：失败返回NULL，成功返回头结点的地址。
+LinkList InitList1();
+// 传入指针的地址的方法。
+// 初始化链表，返回值：0-失败；1-成功。
+int InitList2(LinkList *LL);
+// C++引用的方法，在Linux下，需要用g++编译。
+// 初始化链表，返回值：0-失败；1-成功。
+// int InitList3(LinkList &LL);
+
+// 销毁链表LL。
+void DestroyList1(LinkList LL);
+// 销毁链表LL。
+// 传入指针的地址的方法。
+void DestroyList2(LinkList *LL);
+// C++引用的方法，在Linux下，需要用g++编译。
+// 传入指针的地址的方法。
+// void DestroyList3(LinkList &LL);
+
+// 清空链表。
+void ClearList(LinkList LL);                    
+
+// 在链表LL的第ii个位置插入元素ee，返回值：-1-表LL或元素ee不存在；0-失败；1-成功。
+int  InsertList(LinkList LL, unsigned int ii, ElemType *ee);   
+
+// 打印链表中全部的元素。
+void PrintList(LinkList LL);                    
+
+// 在链表LL的头部插入元素ee，返回值：-1-表LL或元素ee不存在；0-失败；1-成功。
+int  PushFront(LinkList LL, ElemType *ee);
+
+// 在链表LL的尾部插入元素ee，返回值：-1-表LL或元素ee不存在；0-失败；1-成功。
+int  PushBack(LinkList LL, ElemType *ee);
+
+// 删除链表LL中的第ii个结点，返回值：-1-表LL不存在；0-位置ii不合法；1-成功。
+int  DeleteNode(LinkList LL, unsigned int ii);  
+
+// 删除链表LL中第一个结点，返回值：-1-表LL不存在；0-位置不合法；1-成功。
+int PopFront(LinkList LL);
+
+// 删除链表LL中最后一个结点，返回值：-1-表LL不存在；0-位置不合法；1-成功。
+int PopBack(LinkList LL);
+
+// 求链表的长度，返回值为LL的长度，返回值：-1-表LL不存在，>=0-表LL元素的个数。
+int  LengthList(LinkList LL);                   
+
+// 获取链表中第ii个结点，成功返回结点的地址，失败返回空。
+LNode *LocateNode(LinkList LL, unsigned int ii);
+
+// 查找元素ee在链表LL中的结点地址，如果没找到，返回NULL，否则返回结点的地址。
+LNode *LocateElem(LinkList LL, ElemType *ee);
+
+// 在指定节点pp之后插入元素ee，返回值：-1-结点pp不存在；0-失败；1-成功。
+int InsertNextNode(LNode *pp, ElemType *ee)
+{
+  if (pp == NULL) { printf("节点pp不存在。\n"); return -1; }
+
+  LNode *ss = (LNode *)malloc(sizeof(LNode));
+  if (ss == NULL) return 0;
+
+  memcpy(&ss->data,ee,sizeof(ElemType));
+  ss->next=pp->next;
+  pp->next=ss;
+
+  return 1;
+}
+
+
+// 采用归并的方法，将两个升序的链表La和Lb，合并成一个升序的链表Lc。
+int MergeList(LinkList La,LinkList Lb,LinkList Lc);
+
+int main()
+{
+  LinkList LL=NULL; // 创建链表。
+
+  ElemType ee;      // 创建一个数据元素。
+
+  LL=InitList1();     // 初始化链表。
+
+  // InitList2(&LL);     // 初始化链表，传入指针的地址。
+  // InitList3(LL);      // 初始化链表，C++的引用。
+
+  printf("在表中插入元素（1、2、3、4、5、6、7、8、9、10）。\n");
+  ee=1;  InsertList(LL, 1, &ee);
+  ee=2;  InsertList(LL, 1, &ee);
+  ee=3;  InsertList(LL, 1, &ee);
+  ee=4;  InsertList(LL, 1, &ee);
+  ee=5;  InsertList(LL, 1, &ee);
+  ee=6;  InsertList(LL, 1, &ee);
+  ee=7;  InsertList(LL, 1, &ee);
+  ee=8;  InsertList(LL, 1, &ee);
+  ee=9;  InsertList(LL, 1, &ee);
+  ee=10; InsertList(LL, 1, &ee);
+
+  PrintList(LL);
+
+  printf("在表头插入元素（11），表尾插入元素（12）。\n");
+  ee=11; PushFront(LL, &ee);
+  ee=12; PushBack(LL, &ee);
+
+  PrintList(LL);
+
+  printf("在第5个位置插入元素（13）。\n");
+  ee=13; InsertList(LL, 5, &ee);  
+
+  PrintList(LL);
+
+  printf("删除表中第7个结点。\n");
+  DeleteNode(LL,7); PrintList(LL);
+
+  printf("删除表中第一个结点。\n");
+  PopFront(LL); PrintList(LL);
+
+  printf("删除表中最后一个结点。\n");
+  PopBack(LL); PrintList(LL);
+
+  LNode *tmp;
+
+  tmp=LocateNode(LL,3);
+  printf("第3个结点的地址是=%p，ee=%d\n",tmp,tmp->data);
+
+  ee=8;
+  if ( (tmp=LocateElem(LL,&ee)) != NULL)
+    printf("元素值为8的结点的地址是=%p，ee=%d\n",tmp,tmp->data);
+  else
+    printf("元素值为8的结点的地址是NULL，没找着。\n");
+
+  DestroyList1(LL); LL=NULL;  // 销毁链表，LL置为空。
+  // DestroyList2(&LL);       // 销毁链表，传入指针的地址，LL在函数中会置为空。
+  // DestroyList3(&LL);       // 销毁链表，C++的引用，LL在函数中会置为空。
+
+  // 以下代码显示两个链表的合并，把两个有序的La和Lb合并成有序的Lc。
+  LinkList La,Lb,Lc;
+
+  La=InitList1();
+  Lb=InitList1();
+  Lc=InitList1();
+
+  ee=1;  PushBack(Lb, &ee);
+  ee=2;  PushBack(La, &ee);
+  ee=3;  PushBack(Lb, &ee);
+  ee=4;  PushBack(Lb, &ee);
+  ee=5;  PushBack(La, &ee);
+  ee=6;  PushBack(Lb, &ee);
+  ee=7;  PushBack(Lb, &ee);
+  ee=8;  PushBack(Lb, &ee);
+  ee=9;  PushBack(La, &ee);
+  ee=10; PushBack(La, &ee);
+
+  PrintList(La);
+  PrintList(Lb);
+
+  MergeList(La,Lb,Lc);
+
+  PrintList(Lc);
+
+  return 0;
+}
+
+// 初始化链表LL，返回值：失败返回NULL，成功返回头结点的地址。
+LinkList InitList1()
+{
+  LinkList head = (LNode *)malloc(sizeof(LNode));  // 分配头结点。
+
+  if (head == NULL) return NULL;  // 内存不足，返回失败。
+
+  head->next=NULL;  // 头结点的下一结点暂时不存在，置空。
+
+  return head;
+}
+
+// 传入指针的地址的方法。
+// 初始化链表，返回值：0-失败；1-成功。
+int InitList2(LinkList *LL)
+{
+  if ( (*LL) != NULL ) { printf("链表LL已存在，在初始化之前请先释放它。\n"); return 0; }
+
+  (*LL) = (LNode *)malloc(sizeof(LNode));  // 分配头结点。
+
+  if ((*LL) == NULL) return 0;  // 内存不足，返回失败。
+
+  (*LL)->next=NULL;  // 头结点的下一结点暂时不存在，置空。
+
+  return 1;
+}
+
+/*
+// C++引用的方法。
+// 初始化链表，返回值：0-失败；1-成功。
+int InitList3(LinkList &LL)
+{
+  if ( LL != NULL ) { printf("链表L已存在，在初始化之前请先释放它。\n"); return 0; }
+
+  LL = (LNode *)malloc(sizeof(LNode));  // 分配头结点。
+
+  if (LL == NULL) return 0;  // 内存不足，返回失败。
+
+  LL->next=NULL;  // 头结点的下一结点暂时不存在，置空。
+
+  return 1;
+}
+*/
+
+// 销毁链表LL。
+void DestroyList1(LinkList LL)
+{
+  // 销毁链表LL是指释放链表全部的结点，包括头结点。
+  LNode *tmp;
+
+  while(LL!=NULL)
+  {
+    tmp=LL->next;  // tmp保存下一结点的地址。
+    free(LL);      // 释放当前结点。
+    LL=tmp;        // LL指针移动到下一结点。
+  }
+
+  // LL=NULL;   // LL在本函数中相当于局部变量，就算置空了也不会影响调用者传递的LL，所以LL=NULL没有意义。
+
+  return;
+}
+
+// 销毁链表LL。
+void DestroyList2(LinkList *LL)
+{  
+  // 如果函数的参数是指针的指针，可以启用以下代码。
+  LNode *tmp1,*tmp2;
+
+  tmp1=*LL;
+
+  while(tmp1!=NULL)
+  {
+    tmp2=tmp1->next; // tmp保存下一结点的地址。
+    free(tmp1);      // 释放当前结点。
+    tmp1=tmp2;       // LL指针移动到下一结点。
+  }
+
+  *LL=NULL;  // 把链表的指针置为空，表示链表不存在了。
+
+  return;
+}
+
+/*
+// C++引用的方法。
+// 传入指针的地址的方法。
+void DestroyList3(LinkList &LL)
+{
+  // 销毁链表LL是指释放链表全部的结点，包括头结点。
+  LNode *tmp;
+
+  while(LL!=NULL)
+  {
+    tmp=LL->next;   // tmp保存下一结点的地址。
+    free(LL);       // 释放当前结点。
+    LL=tmp;         // LL指针移动到下一结点。
+  }
+
+  LL=NULL;  // 把链表的指针置为空，表示链表不存在了。
+
+  return;
+}
+*/
+
+// 清空链表。
+void ClearList(LinkList LL)
+{
+  // 清空链表LL是指释放链表全部的结点，但不包括头结点。
+  if (LL == NULL) { printf("链表LL不存在。\n"); return; } // 判断链表是否存在。
+
+  LNode *tmp1;
+  LNode *tmp2=LL->next;  // 保留头结点，从头结点的下一个结点开始。
+
+  while(tmp2!=NULL)
+  {
+    tmp1=tmp2->next;
+    free(tmp2);
+    tmp2=tmp1;
+  }
+
+  LL->next=NULL; // 这行代码一定不能少。
+
+  return;
+}
+
+// 在链表LL的第ii个位置插入元素ee，返回值：-1-表LL或元素ee不存在；0-失败；1-成功。
+int InsertList(LinkList LL, unsigned int ii, ElemType *ee)
+{
+  if ( (LL == NULL) || (ee == NULL) ) { printf("链表LL或元素ee不存在。\n"); return -1; } // 判断表和元素是否存在。
+
+  // 判断插入位置是否合法
+  if (ii < 1) { printf("插入位置（%d）不合法，应该在大于0。\n",ii); return 0; }
+
+  // 要在位序ii插入结点，必须找到ii-1结点。
+
+  LNode *pp=LL;  // 指针pp指向头结点，逐步往后移动，如果为空，表示后面没结点了。
+  int kk=0;      // kk指向的是第几个结点，从头结点0开始，pp每向后移动一次，kk就加1。
+
+  while ( (pp != NULL) && (kk < ii-1) )
+  {
+    pp=pp->next; kk++;
+  }
+
+  if ( pp==NULL ) { printf("位置（%d）不合法，超过了表长。\n",ii); return 0; }
+
+  LNode *tmp = (LNode *)malloc(sizeof(LNode));  // 分配一个结点。
+  if (tmp == NULL) return 0;  // 内存不足，返回失败。
+  
+  // 考虑数据元素为结构体的情况，这里采用了memcpy的方法而不是直接赋值。
+  memcpy(&tmp->data,ee,sizeof(ElemType));
+
+  // 处理next指针。
+  tmp->next=pp->next;
+  pp->next=tmp;
+
+  return 1;
+}
+
+// 删除链表LL中的第ii个结点，返回值：-1-表LL不存在；0-位置ii不合法；1-成功。
+int  DeleteNode(LinkList LL, unsigned int ii)  
+{
+  if (LL == NULL) { printf("链表L不存在。\n"); return -1; } // 判断链表是否存在。
+
+  // 判断插入位置是否合法
+  if (ii < 1) { printf("删除位置（%d）不合法，应该在大于0。\n",ii); return 0; }
+
+  // 要删除位序ii结点，必须找到ii-1结点。
+
+  LNode *pp=LL;  // 指针pp指向头结点，逐步往后移动，如果为空，表示后面没结点了。
+  int kk=0;      // kk指向的是第几个结点，从头结点0开始，pp每向后移动一次，kk就加1。
+
+  while ( (pp != NULL) && (kk < ii-1) )
+  {
+    pp=pp->next; kk++;
+  }
+
+  if ( pp==NULL ) { printf("位置（%d）不合法，超过了表长。\n",ii); return 0; }
+
+  LNode *tmp=pp->next;
+  pp->next=pp->next->next;
+
+  free(tmp);
+
+  return 1;
+}
+
+
+// 在链表LL的头部插入元素ee，返回值：-1-表LL或元素ee不存在；0-失败；1-成功。
+int  PushFront(LinkList LL, ElemType *ee)
+{
+  return InsertList(LL,1,ee);
+}
+
+// 在链表LL的尾部插入元素ee，返回值：-1-表LL或元素ee不存在；0-失败；1-成功。
+int PushBack(LinkList LL, ElemType *ee)
+{
+  if ( (LL == NULL) || (ee == NULL) ) { printf("链表LL或元素ee不存在。\n"); return -1; } // 判断表和元素是否存在。
+
+  LNode *pp=LL;  // 从第1个结点开始。
+
+  // 找到最后一个结点。
+  while (pp->next != NULL) pp=pp->next;
+  
+  LNode *tmp = (LNode *)malloc(sizeof(LNode));  // 分配一个结点。
+  if (tmp == NULL) return 0;  // 内存不足，返回失败。
+  
+  // 考虑数据元素为结构体的情况，这里采用了memcpy的方法而不是直接赋值。
+  memcpy(&tmp->data,ee,sizeof(ElemType));
+
+  // 处理next指针。
+  tmp->next=NULL;
+  pp->next=tmp;
+
+  return 1;
+}
+
+// 删除链表LL中第一个结点，返回值：-1-表LL不存在；0-位置不合法；1-成功。
+int PopFront(LinkList LL)
+{
+  return DeleteNode(LL, 1);
+}
+
+// 删除链表LL中最后一个结点，返回值：-1-表LL不存在；0-位置不合法；1-成功。
+int PopBack(LinkList LL)
+{
+  if ( LL == NULL ) { printf("链表LL不存在。\n"); return -1; } // 判断表和元素是否存在。
+
+  // 必须加上这个判断，否则下面的循环pp->next->next不成立。
+  if ( LL->next == NULL) { printf("链表LL为空，没有尾元素。\n"); return 0; } // 判断表是否为空。
+
+  // 要删除最后一个结点，必须找到最后一个结点的前一个结点。
+
+  LNode *pp=LL;  // 从第0个结点开始。
+
+  // 找到倒数第二个结点（包括头结点）。
+  while (pp->next->next != NULL) pp=pp->next;
+ 
+  // 释放最后一个结点。
+  free(pp->next);
+  pp->next=NULL;
+
+  return 1;
+}
+
+// 打印链表中全部的元素。
+void PrintList(LinkList LL)
+{
+  if (LL == NULL) { printf("链表LL不存在。\n"); return; } // 判断链表是否存在。
+
+  LNode *pp=LL->next;  // 从第1个结点开始。
+
+  while (pp != NULL)
+  {
+    printf("%-3d", pp->data);  // 如果元素ee为结构体，这行代码要修改。
+    pp=pp->next;
+  }
+
+  printf("\n");
+
+  /*
+  // 以下代码用于显示全部结点的地址和元素的值。
+  LNode *pp=LL;  // 从第1个结点开始。
+
+  while (pp != NULL)
+  {
+    printf("%p,%p,%-3d\n",pp,pp->next,pp->data);  // 如果元素ee为结构体，这行代码要修改。
+    pp=pp->next;
+  }
+  */
+}
+
+// 求链表的长度，返回值为LL的长度，返回值：-1-表LL不存在，>=0-表LL元素的个数。
+int  LengthList(LinkList LL)
+{
+  if (LL == NULL) { printf("链表LL不存在。\n"); return -1; } // 判断链表是否存在。
+
+  LNode *pp=LL->next;  // 头结点不算，从第1个结点开始。
+
+  int length=0;
+
+  while (pp != NULL) { pp=pp->next; length++; }
+
+  return length;
+
+  // 不使用临时变量，如何计算链表的长度？
+  // if (LL==NULL) return -1;
+  // return LengthList(LL->next)+1;
+}
+
+// 获取链表中第ii个结点，成功返回结点的地址，失败返回空。
+LNode *LocateNode(LinkList LL, unsigned int ii)
+{
+  if ( LL == NULL ) { printf("链表LL不存在。\n"); return NULL; } // 判断表和元素是否存在。
+  
+  // 判断位置是否合法
+  if (ii < 1) { printf("位置（%d）不合法，应该在大于0。\n",ii); return NULL; }
+
+  LNode *pp=LL;  // 指针pp指向头结点，逐步往后移动，如果为空，表示后面没结点了。
+  int kk=0;      // kk指向的是第几个结点，从头结点0开始，pp每向后移动一次，kk就加1。
+
+  while ( (pp != NULL) && (kk < ii) )
+  { 
+    pp=pp->next; kk++; 
+  }
+
+  if ( pp==NULL ) printf("位置（%d）不合法，超过了表长。\n",ii); 
+
+  return pp;
+}
+
+// 查找元素ee在链表LL中的结点地址，如果没找到，返回NULL，否则返回结点的地址。
+LNode *LocateElem(LinkList LL, ElemType *ee)
+{
+  LNode *pp=LL->next;  // 从第1个结点开始。
+
+  while (pp != NULL)
+  {
+    // 如果数据元素是结构体，以下代码要修改。
+    if (pp->data == *ee) return pp;
+
+    pp = pp->next;
+  }
+
+  return NULL;
+}
+
+// 采用归并的方法，将两个升序的链表La和Lb，合并成一个升序的链表Lc。
+int MergeList(LinkList La,LinkList Lb,LinkList Lc)
+{
+  if ( (La == NULL) || (Lb == NULL) || (Lc == NULL) ) { printf("表La、Lb、Lc至少有一个不存在。\n"); return 0; }
+
+  La=La->next;
+  Lb=Lb->next;
+
+  LNode *pp;
+
+  // 把La和Lb合并到Lc中。
+  while ( (La != NULL) && (Lb != NULL) )
+  {
+    // 取La和Lb的较小者。
+    if (La->data <= Lb->data)
+    {
+      pp=La; La=La->next;
+    }
+    else
+    {
+      pp=Lb; Lb=Lb->next;
+    }
+
+    // 把较小者追加到Lc中。
+    Lc->next=(LNode *)malloc(sizeof(LNode));  // 分配一个新结点。
+    Lc=Lc->next;
+    memcpy(&Lc->data,&pp->data,sizeof(ElemType));
+    Lc->next=NULL;
+  }
+
+  // 把链表La其它的元素追加到Lc中。
+  while (La != NULL)
+  {
+    Lc->next=(LNode *)malloc(sizeof(LNode));  // 分配一个新结点。
+    Lc=Lc->next;
+    memcpy(&Lc->data,&La->data,sizeof(ElemType));
+    Lc->next=NULL;
+    La=La->next;
+  }
+    
+  // 把链表Lb其它的元素追加到Lc中。
+  while (Lb != NULL)
+  {
+    Lc->next=(LNode *)malloc(sizeof(LNode));  // 分配一个新结点。
+    Lc=Lc->next;
+    memcpy(&Lc->data,&Lb->data,sizeof(ElemType));
+    Lc->next=NULL;
+    Lb=Lb->next;
+  }
+
+  return 1;
+}
+

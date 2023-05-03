@@ -1,0 +1,163 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+typedef struct Element
+{
+  int key;    
+  int value;
+}Element;
+
+typedef struct Node
+{
+  Element elem;
+  struct Node *next;
+}Node;
+
+typedef struct HashTable
+{
+  int tablesize;
+  int length;
+  struct Node *head;
+}HashTable;
+
+int Hash(HashTable *hh,int key)
+{
+  return abs(key%hh->tablesize);
+}
+
+HashTable *InitHashTable(const unsigned int tablesize)
+{
+  HashTable *hh = (HashTable *)malloc(sizeof(HashTable));
+
+  hh->tablesize = tablesize;
+
+  hh->head = (Node *)malloc((hh->tablesize)*sizeof(Node));
+
+  hh->length = 0;
+
+  int ii=0;
+  for (ii=0;ii<hh->tablesize;ii++)
+  {
+    hh->head[ii].next=NULL;
+  }
+
+  return hh;
+}
+
+Node *LookUp(HashTable *hh,int key)
+{
+  int ii;
+
+  ii=Hash(hh,key);
+
+  Node *pp=hh->head[ii].next;
+
+  while( (pp!=NULL) && (pp->elem.key!=key) )
+  {
+    pp = pp->next;
+  }
+
+  return pp;
+}
+
+int Insert(HashTable *hh,Element ee)
+{
+  Node *pp = LookUp(hh,ee.key);
+
+  if (pp!=NULL) { printf("The keys is exist !\n"); return 1; }
+  
+  Node *qq = (Node *)malloc(sizeof(Node));
+
+  (qq->elem).key = ee.key;
+  (qq->elem).value = ee.value;
+
+  int ii = Hash(hh,ee.key);
+  qq->next = hh->head[ii].next;
+  hh->head[ii].next = qq;
+  
+  hh->length++; 
+
+  return 0;
+}
+
+void FreeHashTable(HashTable *hh)
+{
+  int ii;
+
+  Node *pp,*qq;
+
+  for(ii=0;ii<hh->tablesize;ii++)
+  {
+    pp=hh->head[ii].next;
+    while(pp)
+    {
+      qq=pp->next;
+      free(pp);
+      pp=qq;
+    }
+  }
+
+  free(hh->head);
+
+  free(hh);
+}
+
+void PrintTable(HashTable *hh)
+{
+  int ii; 
+
+  for (ii=0;ii<hh->tablesize;ii++)
+  {
+    Node *pp = hh->head[ii].next;
+    while (pp)
+    {
+      printf("[%d-%d] ",pp->elem.key,pp->elem.value);
+      pp=pp->next;
+    }
+
+    printf("^\n");
+  }
+}
+
+int main()
+{
+  HashTable *hh = InitHashTable(10);
+
+  Element ee;
+
+  ee.key= 0; ee.value=100; Insert(hh,ee);
+  ee.key= 1; ee.value=101; Insert(hh,ee);
+  ee.key= 2; ee.value=102; Insert(hh,ee);
+  ee.key= 3; ee.value=103; Insert(hh,ee);
+  ee.key= 4; ee.value=104; Insert(hh,ee);
+  ee.key= 5; ee.value=105; Insert(hh,ee);
+  ee.key= 6; ee.value=106; Insert(hh,ee);
+  ee.key= 7; ee.value=107; Insert(hh,ee);
+  ee.key= 8; ee.value=108; Insert(hh,ee);
+  ee.key= 9; ee.value=109; Insert(hh,ee);
+
+  ee.key=10; ee.value=110; Insert(hh,ee);
+  ee.key=11; ee.value=111; Insert(hh,ee);
+  ee.key=12; ee.value=112; Insert(hh,ee);
+  ee.key=13; ee.value=113; Insert(hh,ee);
+  ee.key=14; ee.value=114; Insert(hh,ee);
+  ee.key=15; ee.value=115; Insert(hh,ee);
+  ee.key=16; ee.value=116; Insert(hh,ee);
+  ee.key=17; ee.value=117; Insert(hh,ee);
+  ee.key=18; ee.value=118; Insert(hh,ee);
+  ee.key=19; ee.value=119; Insert(hh,ee);
+
+  ee.key=20; ee.value=120; Insert(hh,ee);
+  ee.key=21; ee.value=121; Insert(hh,ee);
+  ee.key=22; ee.value=122; Insert(hh,ee);
+
+  PrintTable(hh);    // 打印哈希表 
+
+  printf("key(12),value=%d.\n",LookUp(hh,12)->elem.value);  
+
+  FreeHashTable(hh);  // 销毁哈希表 
+
+  return 0;
+}
+
+
