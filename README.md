@@ -69,10 +69,15 @@ c 和 go 实现 数据结构与算法
 
 ## [第二章 algorithm算法](02_algorithm/algorithm.md)
 
-- [1 蛮力法Exhausitive Attack](02_algorithm/01_Exhaustive_Attack.md)
-- [2 分治法Divide and Conquer](02_algorithm/02_divide_n_conquer.md)
-- [3 贪心法Greedy Method](02_algorithm/03_greedy_method.md)
-- [4 动态规划dynamic programming](02_algorithm/dynamic_programming.md)
+- [1 蛮力法 Exhausitive Attack](02_algorithm/01_Exhaustive_Attack.md)
+- [2 分治法 Divide and Conquer](02_algorithm/02_divide_n_conquer.md)
+- [3 贪心法 Greedy Method](02_algorithm/03_greedy_method.md)
+- [4 动态规划 dynamic programming](02_algorithm/04_dynamic_programming.md)
+
+
+## 第三章 LeetCode
+- [1 两数之和](03_leetcode/01_two_sum_test.go)
+- 
 
 ## 参考
 - [The Algorithms 组织开源的多种语言算法实现](https://github.com/TheAlgorithms)
