@@ -4,7 +4,7 @@
 
 - [algorithm-in-go-and-c](#algorithm-in-go-and-c)
   - [第一章 数据结构与算法](#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95)
-  - [第二章 algorithm算法](#%E7%AC%AC%E4%BA%8C%E7%AB%A0-algorithm%E7%AE%97%E6%B3%95)
+  - [第二章  ](#%E7%AC%AC%E4%BA%8C%E7%AB%A0)
   - [第三章 LeetCode](#%E7%AC%AC%E4%B8%89%E7%AB%A0-leetcode)
   - [参考](#%E5%8F%82%E8%80%83)
 
@@ -88,8 +88,10 @@ Note: 使用 GBK 编码
 
 
 ## 第三章 LeetCode
-- [1 两数之和](03_leetcode/01_hash/01_two_sum_test.go)
-- 
+- hash
+  - [1 两数之和](03_leetcode/01_hash/01_two_sum_test.go)
+  - [49 字母异位词分组](03_leetcode/01_hash/49_group_anagrams_test.go)
+  - [128 最长连续序列](03_leetcode/01_hash/128_longest_consecutive_sequence_test.go)
 
 ## 参考
 - [The Algorithms 组织开源的多种语言算法实现](https://github.com/TheAlgorithms)
