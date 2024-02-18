@@ -1,9 +1,21 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [algorithm-in-go-and-c](#algorithm-in-go-and-c)
+  - [第一章 数据结构与算法](#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95)
+  - [第二章 algorithm算法](#%E7%AC%AC%E4%BA%8C%E7%AB%A0-algorithm%E7%AE%97%E6%B3%95)
+  - [第三章 LeetCode](#%E7%AC%AC%E4%B8%89%E7%AB%A0-leetcode)
+  - [参考](#%E5%8F%82%E8%80%83)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # algorithm-in-go-and-c
 c 和 go 实现 数据结构与算法
 
 
 ## 第一章 数据结构与算法
-
+Note: 使用 GBK 编码
 - [1 linear list线性表](01_dataStructure/01_linear_list/linear_list.md)
     - [1.1 顺序表 静态实现，数据元素是整数](01_dataStructure/01_linear_list/seqlist1.c)
     - [1.2 顺序表 静态实现，数据元素是结构体](01_dataStructure/01_linear_list/seqlist2.c)
@@ -67,7 +79,7 @@ c 和 go 实现 数据结构与算法
     - [11.1 二分查找](01_dataStructure/11_search/binsearch.c)
 - [12 递归](01_dataStructure/12_recursive/recursive.md)
 
-## [第二章 algorithm算法](02_algorithm/algorithm.md)
+## [第二章  ](02_algorithm/algorithm.md)
 
 - [1 蛮力法 Exhausitive Attack](02_algorithm/01_Exhaustive_Attack.md)
 - [2 分治法 Divide and Conquer](02_algorithm/02_divide_n_conquer.md)
@@ -76,7 +88,7 @@ c 和 go 实现 数据结构与算法
 
 
 ## 第三章 LeetCode
-- [1 两数之和](03_leetcode/01_two_sum_test.go)
+- [1 两数之和](03_leetcode/01_hash/01_two_sum_test.go)
 - 
 
 ## 参考

@@ -15,5 +15,8 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "dependencies": {
+    "doctoc": "^2.2.1"
   }
 }

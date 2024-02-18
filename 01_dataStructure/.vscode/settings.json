@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "algorithm": "c",
-        "memory_resource": "c",
-        "functional": "c",
-        "iterator": "c",
-        "locale": "c"
-    }
-}

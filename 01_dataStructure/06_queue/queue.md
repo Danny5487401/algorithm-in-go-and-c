@@ -1,3 +1,17 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [queue队列](#queue%E9%98%9F%E5%88%97)
+  - [队列的顺序存储](#%E9%98%9F%E5%88%97%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8)
+    - [队空和队满判断](#%E9%98%9F%E7%A9%BA%E5%92%8C%E9%98%9F%E6%BB%A1%E5%88%A4%E6%96%AD)
+    - [队列的顺序存储代码实现](#%E9%98%9F%E5%88%97%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0)
+  - [队列的链式存储](#%E9%98%9F%E5%88%97%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8)
+  - [双端队列--实际没有什么价值](#%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97--%E5%AE%9E%E9%99%85%E6%B2%A1%E6%9C%89%E4%BB%80%E4%B9%88%E4%BB%B7%E5%80%BC)
+  - [队列的应用](#%E9%98%9F%E5%88%97%E7%9A%84%E5%BA%94%E7%94%A8)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # queue队列
 ![](.queue_images/queue.png)
 ![](.queue_images/queue2.png)

@@ -1,3 +1,15 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [贪心法（Greedy Method 贪婪法）](#%E8%B4%AA%E5%BF%83%E6%B3%95greedy-method-%E8%B4%AA%E5%A9%AA%E6%B3%95)
+  - [步骤](#%E6%AD%A5%E9%AA%A4)
+  - [应用](#%E5%BA%94%E7%94%A8)
+    - [1 找零钱问题](#1-%E6%89%BE%E9%9B%B6%E9%92%B1%E9%97%AE%E9%A2%98)
+    - [2 背包问题](#2-%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # 贪心法（Greedy Method 贪婪法）
 
 ![](.03_greedy_method_images/greedy_method.png)

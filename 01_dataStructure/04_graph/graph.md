@@ -1,3 +1,33 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [图](#%E5%9B%BE)
+  - [种类](#%E7%A7%8D%E7%B1%BB)
+  - [边和顶点的两个重要关系](#%E8%BE%B9%E5%92%8C%E9%A1%B6%E7%82%B9%E7%9A%84%E4%B8%A4%E4%B8%AA%E9%87%8D%E8%A6%81%E5%85%B3%E7%B3%BB)
+  - [图的基本术语](#%E5%9B%BE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%9C%AF%E8%AF%AD)
+  - [图的存储](#%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8)
+  - [图的遍历：BFS和DFS算法](#%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86bfs%E5%92%8Cdfs%E7%AE%97%E6%B3%95)
+    - [BFS (Breadth First Search 广度优先遍历）-->树的层次遍历](#bfs-breadth-first-search-%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86--%E6%A0%91%E7%9A%84%E5%B1%82%E6%AC%A1%E9%81%8D%E5%8E%86)
+      - [过程](#%E8%BF%87%E7%A8%8B)
+      - [非连通图处理](#%E9%9D%9E%E8%BF%9E%E9%80%9A%E5%9B%BE%E5%A4%84%E7%90%86)
+      - [效率分析](#%E6%95%88%E7%8E%87%E5%88%86%E6%9E%90)
+      - [bfs生成树](#bfs%E7%94%9F%E6%88%90%E6%A0%91)
+    - [DFS (Depth First Search 深度优先搜索)-->树的先序遍历](#dfs-depth-first-search-%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2--%E6%A0%91%E7%9A%84%E5%85%88%E5%BA%8F%E9%81%8D%E5%8E%86)
+      - [效率分析](#%E6%95%88%E7%8E%87%E5%88%86%E6%9E%90-1)
+      - [dfs生成树](#dfs%E7%94%9F%E6%88%90%E6%A0%91)
+      - [DFS案例](#dfs%E6%A1%88%E4%BE%8B)
+  - [最小生成树(MST)](#%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91mst)
+    - [Prim算法](#prim%E7%AE%97%E6%B3%95)
+    - [Kruskal算法](#kruskal%E7%AE%97%E6%B3%95)
+  - [最短路径](#%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84)
+    - [单源最短路径算法](#%E5%8D%95%E6%BA%90%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E7%AE%97%E6%B3%95)
+    - [顶点间最短路径](#%E9%A1%B6%E7%82%B9%E9%97%B4%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84)
+  - [拓扑排序](#%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F)
+  - [关键路径](#%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # 图
 
 图（Graph）是由顶点的有穷非空集合和顶点之间边的集合组成，通常表示为：G（V，E），其中，G表示一个图，V是图G中顶点的集合，E是图G中边的集合。
