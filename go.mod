@@ -1,6 +1,6 @@
 module github.com/Danny5487401/algorithm-in-go-and-c
 
-go 1.20
+go 1.21
 
 require (
 	github.com/google/go-cmp v0.5.6
