@@ -6,6 +6,9 @@ import (
 	"testing"
 )
 
+// 三数之和 https://leetcode.cn/problems/3sum/?envType=study-plan-v2&envId=top-100-liked
+
+// 可以转成 两数之和 II - 输入有序数组 https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/description/
 func TestThreeSum(t *testing.T) {
 	convey.Convey("two sums ", t, func() {
 		testCase := []struct {
@@ -16,6 +19,14 @@ func TestThreeSum(t *testing.T) {
 				[]int{-1, 0, 1, 2, -1, -4}, [][]int{
 					[]int{-1, -1, 2},
 					[]int{-1, 0, 1},
+				},
+			},
+			{
+				[]int{0, 1, 1}, [][]int{},
+			},
+			{
+				[]int{0, 0, 0}, [][]int{
+					[]int{0, 0, 0},
 				},
 			},
 		}
@@ -37,36 +48,46 @@ func threeSum(nums []int) [][]int {
 	ans := make([][]int, 0)
 
 	// 枚举 a
-	for first := 0; first < n; first++ {
+	for first := 0; first < n-2; first++ {
 		if first > 0 && nums[first] == nums[first-1] {
-			// 需要和上一次枚举的数不相同
+			// 不可以有重复的三元组
 			continue
 		}
+		// 优化处1
+		if nums[first]+nums[first+1]+nums[first+2] > 0 {
+			break
+		}
+		// 优化处2
+		if nums[first]+nums[n-1]+nums[n-2] < 0 {
+			continue
+		}
+
 		// c 对应的指针初始指向数组的最右端
 		third := n - 1
-		target := -1 * nums[first]
+		second := first + 1
+		firstNum := nums[first]
 
-		// 枚举 b
-		for second := first + 1; second < n; second++ {
-			if second > first+1 && nums[second] == nums[second-1] {
-				// 同样需要与上次不同
-				continue
-			}
-
+		for second < third {
 			// 如果太大就移动右指针
+			sum := nums[second] + nums[third] + firstNum
 			// 需要保证 b 的指针在 c 的指针的左侧
-			for second < third && nums[second]+nums[third] > target {
+			if sum > 0 {
 				third--
-			}
-
-			// 如果指针重合，随着 b 后续的增加
-			// 就不会有满足 a+b+c=0 并且 b<c 的 c 了，可以退出循环
-			if second == third {
-				break
-			}
-
-			if nums[second]+nums[third] == target {
+			} else if sum < 0 {
+				second++
+			} else {
 				ans = append(ans, []int{nums[first], nums[second], nums[third]})
+				// second 和 third 重复也需要跳过
+				second++
+				for second < third && nums[second] == nums[second-1] {
+					second++
+				}
+
+				third--
+				for second < third && nums[third] == nums[third+1] {
+					third--
+				}
+
 			}
 
 		}

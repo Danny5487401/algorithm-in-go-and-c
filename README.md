@@ -92,6 +92,13 @@ Note: 使用 GBK 编码
   - [1 两数之和](03_leetcode/01_hash/01_two_sum_test.go)
   - [49 字母异位词分组](03_leetcode/01_hash/49_group_anagrams_test.go)
   - [128 最长连续序列](03_leetcode/01_hash/128_longest_consecutive_sequence_test.go)
+- two_point 双指针
+  - [11 盛最多水的容器](03_leetcode/02_two_pointer/11_container_with_most_water_test.go)
+  - [15 三数之和-->相向指针](03_leetcode/02_two_pointer/15_three_sum_test.go)
+  - [283 移动零](03_leetcode/02_two_pointer/283_move_zeroes_test.go)
+
+- 滑动窗口
+  - [03 无重复字符的最长子串](03_leetcode/03_slides_windows/03_longest_substring_without_repeating_characters_test.go)
 
 ## 参考
 - [The Algorithms 组织开源的多种语言算法实现](https://github.com/TheAlgorithms)

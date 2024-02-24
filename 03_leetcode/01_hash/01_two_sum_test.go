@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-// https://leetcode.cn/problems/two-sum/description/?envType=study-plan-v2&envId=top-100-liked
+// 两数之和 https://leetcode.cn/problems/two-sum/description/?envType=study-plan-v2&envId=top-100-liked
 func TestTwoSum(t *testing.T) {
 	convey.Convey("two sums ", t, func() {
 		testCase := []struct {
