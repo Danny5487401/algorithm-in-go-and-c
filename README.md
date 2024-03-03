@@ -45,14 +45,14 @@ Note: 使用 GBK 编码
     - 4.5 关键路径
 - 5 hash哈希表
 
-- [6 queue队列](01_dataStructure/06_queue/queue.md)
+- [6 queue 队列](01_dataStructure/06_queue/queue.md)
     - [6.1 循环队列的数组实现，队尾指针指向队尾的下一个元素，没有length的辅助变量](01_dataStructure/06_queue/seqqueue1.c)
     - [6.2 循环队列的数组实现，队尾指针指向队尾的下一个元素，增加了length的辅助变量](01_dataStructure/06_queue/seqqueue2.c)
     - [6.3 循环队列的数组实现，队尾指针指向队尾元素，没有length的辅助变量](01_dataStructure/06_queue/seqqueue3.c)
     - [6.4 循环队列的数组实现，队尾指针指向队尾元素，增加了length的辅助变量](01_dataStructure/06_queue/seqqueue4.c)
     - [6.5 队列的链表实现（带头结点）](01_dataStructure/06_queue/linkqueue1.c)
 
-- [7 stack栈](01_dataStructure/07_stack/stack.md)
+- [7 stack 栈](01_dataStructure/07_stack/stack.md)
     - [7.1 顺序栈的实现，数据元素是整数](01_dataStructure/07_stack/seqstack1.c)
     - [7.2 链栈的实现，数据元素是整数](01_dataStructure/07_stack/linkstack1.c)
     - [7.3 顺序栈检查括号是否匹配，支持()[]{}三种括号](01_dataStructure/07_stack/seqstack2.c)
@@ -97,8 +97,18 @@ Note: 使用 GBK 编码
   - [15 三数之和-->相向指针](03_leetcode/02_two_pointer/15_three_sum_test.go)
   - [283 移动零](03_leetcode/02_two_pointer/283_move_zeroes_test.go)
 
-- 滑动窗口
+- sliding windows 滑动窗口
   - [03 无重复字符的最长子串](03_leetcode/03_slides_windows/03_longest_substring_without_repeating_characters_test.go)
+
+- binary tree 二叉树
+  - [94 In-order Traversal 中序遍历](03_leetcode/05_binary_tree/94_binary_tree_inorder_traversal_test.go)
+  - [98 验证二叉搜索树](03_leetcode/05_binary_tree/98_validate_binary_search_tree_test.go)
+  - [100 相同的树](03_leetcode/05_binary_tree/100_same_tree_test.go)
+  - [101 对称二叉树](03_leetcode/05_binary_tree/101_symmetric_tree_test.go)
+  - [101 二叉树的层序遍历](03_leetcode/05_binary_tree/102_binary_tree_level_order_traversal_test.go)
+  - [104 二叉树的最大深度](03_leetcode/05_binary_tree/104_maximum_depth_of_binary_tree_test.go)
+  - [110 平衡二叉树](03_leetcode/05_binary_tree/110_balanced_binary_tree_test.go)
+  - [199 二叉树右视图](03_leetcode/05_binary_tree/199_binary_tree_right_side_view_test.go)
 
 ## 参考
 - [The Algorithms 组织开源的多种语言算法实现](https://github.com/TheAlgorithms)

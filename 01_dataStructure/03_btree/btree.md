@@ -5,7 +5,7 @@
 - [树](#%E6%A0%91)
   - [基本术语](#%E5%9F%BA%E6%9C%AC%E6%9C%AF%E8%AF%AD)
   - [树的性质](#%E6%A0%91%E7%9A%84%E6%80%A7%E8%B4%A8)
-  - [binary_tree二叉树](#binary_tree%E4%BA%8C%E5%8F%89%E6%A0%91)
+  - [binary_tree 二叉树](#binary_tree-%E4%BA%8C%E5%8F%89%E6%A0%91)
     - [性质](#%E6%80%A7%E8%B4%A8)
   - [二叉树和度为2的树的区别](#%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8C%E5%BA%A6%E4%B8%BA2%E7%9A%84%E6%A0%91%E7%9A%84%E5%8C%BA%E5%88%AB)
     - [满二叉树](#%E6%BB%A1%E4%BA%8C%E5%8F%89%E6%A0%91)
@@ -21,6 +21,7 @@
       - [遍历方式代码实现](#%E9%81%8D%E5%8E%86%E6%96%B9%E5%BC%8F%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0)
   - [二叉树的遍历](#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86-1)
   - [线索二叉树](#%E7%BA%BF%E7%B4%A2%E4%BA%8C%E5%8F%89%E6%A0%91)
+    - [为什么需要线索二叉树？](#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E7%BA%BF%E7%B4%A2%E4%BA%8C%E5%8F%89%E6%A0%91)
     - [线索二叉树数据结构](#%E7%BA%BF%E7%B4%A2%E4%BA%8C%E5%8F%89%E6%A0%91%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84)
     - [线索二叉树求前继和后继](#%E7%BA%BF%E7%B4%A2%E4%BA%8C%E5%8F%89%E6%A0%91%E6%B1%82%E5%89%8D%E7%BB%A7%E5%92%8C%E5%90%8E%E7%BB%A7)
       - [先序线索二叉树求后继](#%E5%85%88%E5%BA%8F%E7%BA%BF%E7%B4%A2%E4%BA%8C%E5%8F%89%E6%A0%91%E6%B1%82%E5%90%8E%E7%BB%A7)
@@ -29,10 +30,11 @@
     - [1. 孩子兄弟表示法----主要](#1-%E5%AD%A9%E5%AD%90%E5%85%84%E5%BC%9F%E8%A1%A8%E7%A4%BA%E6%B3%95----%E4%B8%BB%E8%A6%81)
     - [2. 双亲表示法](#2-%E5%8F%8C%E4%BA%B2%E8%A1%A8%E7%A4%BA%E6%B3%95)
     - [3. 孩子表示法](#3-%E5%AD%A9%E5%AD%90%E8%A1%A8%E7%A4%BA%E6%B3%95)
-  - [二叉排序（搜索）树(binary sort tree)](#%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%90%9C%E7%B4%A2%E6%A0%91binary-sort-tree)
+  - [二叉排序（搜索）树(Binary Search Tree)](#%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%90%9C%E7%B4%A2%E6%A0%91binary-search-tree)
     - [查找,插入,创建,删除](#%E6%9F%A5%E6%89%BE%E6%8F%92%E5%85%A5%E5%88%9B%E5%BB%BA%E5%88%A0%E9%99%A4)
     - [二叉排序树的查找效率分析](#%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91%E7%9A%84%E6%9F%A5%E6%89%BE%E6%95%88%E7%8E%87%E5%88%86%E6%9E%90)
-  - [平衡二叉树 ---代码实现过于复杂](#%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91----%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%E8%BF%87%E4%BA%8E%E5%A4%8D%E6%9D%82)
+  - [平衡二叉树（Balanced Binary Tree） ---代码实现过于复杂](#%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91balanced-binary-tree----%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%E8%BF%87%E4%BA%8E%E5%A4%8D%E6%9D%82)
+    - [为什么要有平衡二叉树](#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%9C%89%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91)
     - [插入和删除 数据后不平衡](#%E6%8F%92%E5%85%A5%E5%92%8C%E5%88%A0%E9%99%A4-%E6%95%B0%E6%8D%AE%E5%90%8E%E4%B8%8D%E5%B9%B3%E8%A1%A1)
     - [树高和节点关系](#%E6%A0%91%E9%AB%98%E5%92%8C%E8%8A%82%E7%82%B9%E5%85%B3%E7%B3%BB)
     - [哈夫曼huffman树（最优二叉树）](#%E5%93%88%E5%A4%AB%E6%9B%BChuffman%E6%A0%91%E6%9C%80%E4%BC%98%E4%BA%8C%E5%8F%89%E6%A0%91)
@@ -67,7 +69,7 @@
 ![](.btree_images/tree_attribute2.png)
 ![](.btree_images/tree_attribute3.png)
 
-## binary_tree二叉树
+## binary_tree 二叉树
 
 ![](.btree_images/binary_tree.png)
 
@@ -106,6 +108,8 @@
 
 ## 二叉树的遍历
 
+指对树中所有结点信息的访问，即依次对树中每个结点的访问一次且仅访问一次。
+
 ![](.btree_images/read_binary.png)
 
 ### 层次遍历
@@ -129,16 +133,16 @@
 
 ![](.btree_images/three_ways_of_read_binary_tree.png)
 
-1. 先序遍历
+1. 先序遍历：先访问根节点，然后访问左子树， 最后访问右子树
    ![](.btree_images/left_root_right.png)
    ![](.btree_images/left_root_right1.png)
    ![](.btree_images/tips_of_left_root_right.png)
 
-2. 中序遍历
+2. 中序遍历：先访问左子树，然后访问根节点， 最后访问右子树。
    ![](.btree_images/left_root_right2.png)
    ![](.btree_images/tips_of_left_root_right1.png)
 
-3. 后序遍历
+3. 后序遍历：先访问左子树，然后访问右子树， 最后访问根节点。
    ![](.btree_images/left_root_right3.png)
    ![](.btree_images/tips_of_left_root_right2.png)
 
@@ -171,14 +175,22 @@
 ## 线索二叉树
 
 ![](.btree_images/index_tree.png)
-线索二叉树，可以理解是用了二叉树中的空指针。
+线索二叉树： 对一棵二叉树中所有节点的空指针域按照某种遍历方式加线索的过程叫作线索化，被线索化了的二叉树称为线索二叉树。
 
-二叉树线索化
+
 ![](.btree_images/index_tree2.png)
+
+### 为什么需要线索二叉树？
+知道了“前驱”和“后继”信息，就可以把二叉树看作一个链表结构，从而可以像遍历链表那样来遍历二叉树，进而提高效率
 
 ### 线索二叉树数据结构
 
 ![](.btree_images/threaded_tree_struct.png)
+
+标识域：
+
+- 如果ltag=0，表示指向节点的左孩子。如果ltag=1，则表示lchild为线索，指向节点的直接前驱
+- 如果rtag=0，表示指向节点的右孩子。如果rtag=1，则表示rchild为线索，指向节点的直接后继
 
 ### 线索二叉树求前继和后继
 
@@ -209,12 +221,18 @@
 
 ![](.btree_images/tree_storage4.png)
 
-## 二叉排序（搜索）树(binary sort tree)
+## 二叉排序（搜索）树(Binary Search Tree)
 
 ![](.btree_images/two_trees_info.png)
+
 ![](.btree_images/bst.png)
 
-中序遍历---升序
+二叉查找树（Binary Search Tree），也称二叉搜索树。
+
+- 若任意节点的左子树不空，则左子树上所有节点的值均小于它的根节点的值；
+- 若任意节点的右子树不空，则右子树上所有节点的值均大于它的根节点的值；
+- 任意节点的左、右子树也分别为二叉查找树；
+- 没有键值相等的节点
 
 ### 查找,插入,创建,删除
 
@@ -239,10 +257,14 @@
 
 ![](.btree_images/ast_performance_of_searching_fail_n_suc.png)
 
-## 平衡二叉树 ---代码实现过于复杂
+## 平衡二叉树（Balanced Binary Tree） ---代码实现过于复杂
 
 ![](.btree_images/balance_tree.png)
 ![](.btree_images/avl.png)
+
+
+### 为什么要有平衡二叉树
+二叉搜索树的查找效率取决于树的高度，因此保持树的高度最小，即可保证树的查找效率。
 
 ### 插入和删除 数据后不平衡
 
