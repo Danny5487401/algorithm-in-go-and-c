@@ -109,9 +109,12 @@ Note: 使用 GBK 编码
   - [104 二叉树的最大深度](03_leetcode/05_binary_tree/104_maximum_depth_of_binary_tree_test.go)
   - [110 平衡二叉树](03_leetcode/05_binary_tree/110_balanced_binary_tree_test.go)
   - [199 二叉树右视图](03_leetcode/05_binary_tree/199_binary_tree_right_side_view_test.go)
-- backtracking 回溯
+- [backtracking 回溯](03_leetcode/06_backtracking/back_tracking.md)
   - [17 电话号码的字母组合](03_leetcode/06_backtracking/17_letter_combinations_of_a_phone_number_test.go)
+  - [46 全排列](03_leetcode/06_backtracking/46_permute_test.go)
+  - [77 组合](03_leetcode/06_backtracking/77_combinations_test.go)
   - [78 子集](03_leetcode/06_backtracking/78_subsets_test.go)
+  - [131 分割回文串](03_leetcode/06_backtracking/131_palindrome_partition_test.go)
 
 ## 参考
 - [The Algorithms 组织开源的多种语言算法实现](https://github.com/TheAlgorithms)
