@@ -85,6 +85,7 @@ Note: 使用 GBK 编码
 - [2 分治法 Divide and Conquer](02_algorithm/02_divide_n_conquer.md)
 - [3 贪心法 Greedy Method](02_algorithm/03_greedy_method.md)
 - [4 动态规划 dynamic programming](02_algorithm/04_dynamic_programming.md)
+  - [198 打家劫舍](02_algorithm/04_dynamic_programming/198_house_robber_test.go)
 
 
 ## 第三章 LeetCode

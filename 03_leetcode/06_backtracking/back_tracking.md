@@ -1,3 +1,12 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [回溯法（back tracking）（探索与回溯法](#%E5%9B%9E%E6%BA%AF%E6%B3%95back-tracking%E6%8E%A2%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E6%B3%95)
+  - [分类](#%E5%88%86%E7%B1%BB)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # 回溯法（back tracking）（探索与回溯法
 
 
