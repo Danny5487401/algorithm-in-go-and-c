@@ -10,7 +10,7 @@ import (
 
 // 可以转成 两数之和 II - 输入有序数组 https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/description/
 func TestThreeSum(t *testing.T) {
-	convey.Convey("two sums ", t, func() {
+	convey.Convey("三数之和：不可以包含重复的三元组", t, func() {
 		testCase := []struct {
 			input    []int
 			expected [][]int
@@ -77,7 +77,7 @@ func threeSum(nums []int) [][]int {
 				second++
 			} else {
 				ans = append(ans, []int{nums[first], nums[second], nums[third]})
-				// second 和 third 重复也需要跳过
+				// 去重操作： second 和 third 重复也需要跳过
 				second++
 				for second < third && nums[second] == nums[second-1] {
 					second++

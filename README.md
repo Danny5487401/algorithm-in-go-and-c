@@ -4,7 +4,7 @@
 
 - [algorithm-in-go-and-c](#algorithm-in-go-and-c)
   - [第一章 数据结构与算法](#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95)
-  - [第二章  ](#%E7%AC%AC%E4%BA%8C%E7%AB%A0)
+  - [第二章 算法](#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E7%AE%97%E6%B3%95)
   - [第三章 LeetCode](#%E7%AC%AC%E4%B8%89%E7%AB%A0-leetcode)
   - [参考](#%E5%8F%82%E8%80%83)
 
@@ -79,13 +79,14 @@ Note: 使用 GBK 编码
     - [11.1 二分查找](01_dataStructure/11_search/binsearch.c)
 - [12 递归](01_dataStructure/12_recursive/recursive.md)
 
-## [第二章  ](02_algorithm/algorithm.md)
+## [第二章 算法](02_algorithm/algorithm.md)
 
 - [1 蛮力法 Exhausitive Attack](02_algorithm/01_Exhaustive_Attack.md)
 - [2 分治法 Divide and Conquer](02_algorithm/02_divide_n_conquer.md)
 - [3 贪心法 Greedy Method](02_algorithm/03_greedy_method.md)
 - [4 动态规划 dynamic programming](02_algorithm/04_dynamic_programming.md)
   - [198 打家劫舍](02_algorithm/04_dynamic_programming/198_house_robber_test.go)
+  - [494 目标和-->01背包转换](02_algorithm/04_dynamic_programming/494_target_sum_test.go)
 
 
 ## 第三章 LeetCode
@@ -93,12 +94,12 @@ Note: 使用 GBK 编码
   - [1 两数之和](03_leetcode/01_hash/01_two_sum_test.go)
   - [49 字母异位词分组](03_leetcode/01_hash/49_group_anagrams_test.go)
   - [128 最长连续序列](03_leetcode/01_hash/128_longest_consecutive_sequence_test.go)
-- two_point 双指针
+- [two_point 双指针](03_leetcode/02_two_pointer/two_point.md)
   - [11 盛最多水的容器](03_leetcode/02_two_pointer/11_container_with_most_water_test.go)
   - [15 三数之和-->相向指针](03_leetcode/02_two_pointer/15_three_sum_test.go)
   - [283 移动零](03_leetcode/02_two_pointer/283_move_zeroes_test.go)
 
-- sliding windows 滑动窗口
+- [sliding windows 滑动窗口](03_leetcode/03_slides_windows/slide_windows.md)
   - [03 无重复字符的最长子串](03_leetcode/03_slides_windows/03_longest_substring_without_repeating_characters_test.go)
 
 - binary tree 二叉树
@@ -116,6 +117,7 @@ Note: 使用 GBK 编码
   - [77 组合](03_leetcode/06_backtracking/77_combinations_test.go)
   - [78 子集](03_leetcode/06_backtracking/78_subsets_test.go)
   - [131 分割回文串](03_leetcode/06_backtracking/131_palindrome_partition_test.go)
+- [单调栈](03_leetcode/07_stack/monotone_stack.md)
 
 ## 参考
 - [The Algorithms 组织开源的多种语言算法实现](https://github.com/TheAlgorithms)

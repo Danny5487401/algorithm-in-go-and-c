@@ -8,4 +8,5 @@
 
 ## 参考 
 
-[推荐查看灵茶山艾府基础算法精讲分析](https://github.com/EndlessCheng/codeforces-go/blob/master/leetcode/README.md) 
+- [推荐查看灵茶山艾府基础算法精讲分析](https://github.com/EndlessCheng/codeforces-go/blob/master/leetcode/README.md)
+- [LeetCode 刷题攻略](https://github.com/youngyangyang04/leetcode-master/tree/master)

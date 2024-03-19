@@ -8,6 +8,7 @@
     - [1 编辑距离-->转成插入insert,删除delete，替换switch](#1-%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB--%E8%BD%AC%E6%88%90%E6%8F%92%E5%85%A5insert%E5%88%A0%E9%99%A4delete%E6%9B%BF%E6%8D%A2switch)
     - [2 爬台阶](#2-%E7%88%AC%E5%8F%B0%E9%98%B6)
     - [3 找零钱](#3-%E6%89%BE%E9%9B%B6%E9%92%B1)
+    - [4 0-1 背包](#4-0-1-%E8%83%8C%E5%8C%85)
     - [4 机器人走法](#4-%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%B5%B0%E6%B3%95)
   - [解题思路](#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF)
   - [参考](#%E5%8F%82%E8%80%83)
@@ -72,6 +73,18 @@
 递推实现
 ![](.dynamic_programming_images/get_change_code2.png)
 
+
+### 4 0-1 背包
+[背包理论基础01背包-1.md](https://github.com/youngyangyang04/leetcode-master/blob/master/problems/%E8%83%8C%E5%8C%85%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%8001%E8%83%8C%E5%8C%85-1.md)
+
+![](.04_dynamic_programming_images/0-1-pack.png)
+
+
+![](.04_dynamic_programming_images/0-1-pack-transformation.png)
+
+- 最多装 capacity, 求最大值 dfs(i,c)=max(dfs(i-1.c),dfs(i-1,c-w[i],v[i])
+- 正好装 capacity, 求方案数量 dfs(i,c)=dfs(i-1,c)+dfs(i-1,c-w[i])
+- 
 
 ### 4 机器人走法
    ![](.dynamic_programming_images/robot_walk.png)
