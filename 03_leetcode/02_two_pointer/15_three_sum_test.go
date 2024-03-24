@@ -1,4 +1,4 @@
-package main
+package _2_two_pinter
 
 import (
 	"github.com/smartystreets/goconvey/convey"

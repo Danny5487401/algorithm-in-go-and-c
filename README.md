@@ -95,12 +95,18 @@ Note: 使用 GBK 编码
   - [49 字母异位词分组](03_leetcode/01_hash/49_group_anagrams_test.go)
   - [128 最长连续序列](03_leetcode/01_hash/128_longest_consecutive_sequence_test.go)
 - [two_point 双指针](03_leetcode/02_two_pointer/two_point.md)
-  - [11 盛最多水的容器](03_leetcode/02_two_pointer/11_container_with_most_water_test.go)
+  - [11 盛最多水的容器-->双向指针](03_leetcode/02_two_pointer/11_container_with_most_water_test.go)
   - [15 三数之和-->相向指针](03_leetcode/02_two_pointer/15_three_sum_test.go)
+  - [142 环形链表II-->快慢指针](03_leetcode/02_two_pointer/142_linked_list_cycle_II_test.go)
+  - [143 环形链表-->快慢指针](03_leetcode/02_two_pointer/143_linked_list_cycle_test.go)
   - [283 移动零](03_leetcode/02_two_pointer/283_move_zeroes_test.go)
+  - [876 链表的中间节点-->快慢指针](03_leetcode/02_two_pointer/876_middle_of_the_linked_list_test.go)
 
 - [sliding windows 滑动窗口](03_leetcode/03_slides_windows/slide_windows.md)
   - [03 无重复字符的最长子串](03_leetcode/03_slides_windows/03_longest_substring_without_repeating_characters_test.go)
+- 二分查找
+  - [34 在排序数组中查找元素的第一个和最后一个位置](03_leetcode/04_binary_search/34_find_first_and_last_position_of_element_in_sorted_array_test.go)
+  - [35 搜索插入位置](03_leetcode/04_binary_search/35_search_insert_position_test.go)
 
 - binary tree 二叉树
   - [94 In-order Traversal 中序遍历](03_leetcode/05_binary_tree/94_binary_tree_inorder_traversal_test.go)

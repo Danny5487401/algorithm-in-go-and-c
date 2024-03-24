@@ -1,8 +1,8 @@
-package main
+package _2_two_pinter
 
 import (
 	"testing"
-	
+
 	"github.com/smartystreets/goconvey/convey"
 )
 
@@ -28,8 +28,8 @@ func TestMoveZeros(t *testing.T) {
 }
 
 func moveZeroes(nums []int) {
-	//左指针左边均为非零数；
-	//右指针左边直到左指针处均为零
+	// 左指针左边均为非零数；
+	// 右指针左边直到左指针处均为零
 	left, right, n := 0, 0, len(nums)
 	for right < n {
 		if nums[right] != 0 {
