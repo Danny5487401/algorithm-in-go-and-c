@@ -51,11 +51,13 @@
 
 ![](.dynamic_programming_images/dp_application.png)
 
-### 1 编辑距离-->转成插入insert,删除delete，替换switch
-   ![](.dynamic_programming_images/edit_distance.png)
+### 1 编辑距离
+
+![](.dynamic_programming_images/edit_distance.png)
 
 ### 2 爬台阶
-   ![](.dynamic_programming_images/climb_stair.png)
+
+![](.dynamic_programming_images/climb_stair.png)
 
 要么n-1台阶上去，要么n-2台阶上去
 
@@ -84,11 +86,13 @@
 
 - 最多装 capacity, 求最大值 dfs(i,c)=max(dfs(i-1.c),dfs(i-1,c-w[i],v[i])
 - 正好装 capacity, 求方案数量 dfs(i,c)=dfs(i-1,c)+dfs(i-1,c-w[i])
-- 
+- 至少装 capacity, 求最小值 dfs(i,c)=min(dfs(i-1.c),dfs(i-1,c-w[i],v[i])
 
-### 4 机器人走法
-   ![](.dynamic_programming_images/robot_walk.png)
-   ![](.dynamic_programming_images/robot_code.png)
+
+
+### 5 机器人走法
+![](.dynamic_programming_images/robot_walk.png)
+![](.dynamic_programming_images/robot_code.png)
 
 递归算法：优化代码
 ![](.dynamic_programming_images/robot_code1.png)
@@ -97,6 +101,16 @@
 ![](.dynamic_programming_images/robot_code2.png)
 ![](.dynamic_programming_images/robot_code3.png)
 ![](.dynamic_programming_images/robot_code4.png)
+
+
+
+### 6 [打家劫舍](04_dynamic_programming/198_house_robber_test.go)
+![](.04_dynamic_programming_images/house_robber.png)
+![](.04_dynamic_programming_images/house_cache1.png)
+![](.04_dynamic_programming_images/house_cache2.png)
+
+可以看到 01->2 ,12->3, 32->4, 所以留下归
+![](.04_dynamic_programming_images/Recursion1.png)
 
 
 

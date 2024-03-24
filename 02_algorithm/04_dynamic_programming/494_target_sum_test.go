@@ -33,6 +33,7 @@ func TestFindTargetSumWays(t *testing.T) {
 
 }
 
+// 递归搜索 + 保存计算结果 = 记忆化搜索
 func findTargetSumWays(nums []int, target int) int {
 	// p 添加所有正数的和
 	// s 所有元素的和
@@ -50,10 +51,17 @@ func findTargetSumWays(nums []int, target int) int {
 	target = target / 2
 	length := len(nums)
 
-	// 缓存
+	// 缓存 不为负数， i，c 两个变量，所以是两层数组
+	cache := make([][]int, length) // 外层是 i
+	for i := range cache {
+		cache[i] = make([]int, target+1) // target+0所以要加一
+		for j := range cache[i] {
+			cache[i][j] = -1 // -1 表示没用访问过
+		}
+	}
 
 	var dfs func(i int, c int) int
-	dfs = func(i int, c int) int {
+	dfs = func(i int, c int) (res int) {
 		// 从后往前
 		if i < 0 {
 			if c == 0 {
@@ -62,6 +70,12 @@ func findTargetSumWays(nums []int, target int) int {
 			}
 			return 0
 		}
+		if cache[i][c] != -1 {
+			return cache[i][c]
+		}
+		defer func() {
+			cache[i][c] = res
+		}()
 		if c < nums[i] {
 			return dfs(i-1, c)
 		}

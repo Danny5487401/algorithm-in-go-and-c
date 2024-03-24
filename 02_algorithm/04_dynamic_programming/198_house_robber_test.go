@@ -61,5 +61,6 @@ func rob(nums []int) int {
 	for _, x := range nums {
 		f0, f1 = f1, max(f1, f0+x)
 	}
+	// 注意返回值是 f1 不是 f0
 	return f1
 }
