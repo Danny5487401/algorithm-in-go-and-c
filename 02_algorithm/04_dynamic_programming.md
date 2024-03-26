@@ -62,7 +62,7 @@
 
 要么n-1台阶上去，要么n-2台阶上去
 
-### 3 找零钱
+### 3 [找零钱](02_algorithm/04_dynamic_programming/322_coin_change_test.go)
 
 ![](.dynamic_programming_images/get_change1.png)
 
@@ -87,9 +87,16 @@
 
 - 最多装 capacity, 求最大值 dfs(i,c)=max(dfs(i-1.c),dfs(i-1,c-w[i],v[i])
 - 正好装 capacity, 求方案数量 dfs(i,c)=dfs(i-1,c)+dfs(i-1,c-w[i])
-- 至少装 capacity, 求最小值 dfs(i,c)=min(dfs(i-1.c),dfs(i-1,c-w[i],v[i])
+- 至少装 capacity, 求最小值 dfs(i,c)=min(dfs(i-1.c),dfs(i-1,c-w[i],v[i]) 
 
+![](.04_dynamic_programming_images/dfs_to_recursive.png)
+![](.04_dynamic_programming_images/dfs_to_recursive2.png)
 
+ 
+完全背包：物品可以重复选
+![](.04_dynamic_programming_images/full_pack1.png)
+
+-  dfs(i,c)=max(dfs(i-1.c),dfs(i,c-w[i],v[i])
 
 ### 5 机器人走法
 ![](.dynamic_programming_images/robot_walk.png)

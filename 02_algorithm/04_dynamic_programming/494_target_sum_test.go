@@ -21,12 +21,25 @@ func TestFindTargetSumWays(t *testing.T) {
 				struct {
 					nums   []int
 					target int
-				}{nums: []int{1, 1, 1, 1, 1}, target: 3}, 5,
+				}{
+					nums:   []int{1, 1, 1, 1, 1},
+					target: 3},
+				5,
+			},
+			{
+
+				struct {
+					nums   []int
+					target int
+				}{
+					nums:   []int{1},
+					target: 1},
+				1,
 			},
 		}
 
 		for _, tst := range testCase {
-			rsp := findTargetSumWays(tst.input.nums, tst.input.target)
+			rsp := findTargetSumWays2(tst.input.nums, tst.input.target)
 			convey.So(rsp, convey.ShouldEqual, tst.target)
 		}
 	})
@@ -87,3 +100,34 @@ func findTargetSumWays(nums []int, target int) int {
 }
 
 // 记忆化搜索转成递推
+func findTargetSumWays2(nums []int, target int) int {
+	// 计算 s+t
+	for _, num := range nums {
+		target += num
+	}
+	if target < 0 || target%2 == 1 {
+		return 0
+	}
+	target /= 2
+	length := len(nums)
+
+	// 二维数组  f[i+1][c] = f[i][c] + f[i][c-x]
+
+	f := make([][]int, length+1) // 防止负数
+	for i := range f {
+		f[i] = make([]int, target+1) // 防止负数
+	}
+	f[0][0] = 1
+	for i, x := range nums {
+		for c := 0; c <= target; c++ {
+			if c < x {
+				f[i+1][c] = f[i][c]
+			} else {
+				f[i+1][c] = f[i][c] + f[i][c-x]
+			}
+		}
+	}
+	return f[length][target]
+}
+
+// 推荐实现查看：https://leetcode.cn/problems/target-sum/solutions/2119041/jiao-ni-yi-bu-bu-si-kao-dong-tai-gui-hua-s1cx/

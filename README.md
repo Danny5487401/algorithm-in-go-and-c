@@ -86,6 +86,7 @@ Note: 使用 GBK 编码
 - [3 贪心法 Greedy Method](02_algorithm/03_greedy_method.md)
 - [4 动态规划 dynamic programming](02_algorithm/04_dynamic_programming.md)
   - [198 打家劫舍](02_algorithm/04_dynamic_programming/198_house_robber_test.go)
+  - [322 零钱兑换](02_algorithm/04_dynamic_programming/322_coin_change_test.go)
   - [494 目标和-->01背包转换](02_algorithm/04_dynamic_programming/494_target_sum_test.go)
 
 
