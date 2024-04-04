@@ -5,10 +5,10 @@ import (
 	"testing"
 )
 
-// 分割回文串  https://leetcode.cn/problems/palindrome-partitioning/?envType=study-plan-v2&envId=top-100-liked
+// 分割回文串 https://leetcode.cn/problems/palindrome-partitioning/?envType=study-plan-v2&envId=top-100-liked
 
 func TestPartition(t *testing.T) {
-	convey.Convey("分割回文串", t, func() {
+	convey.Convey("分割回文串：想象两个字母之间是逗号", t, func() {
 		testCase := []struct {
 			input  string
 			target [][]string
@@ -32,10 +32,11 @@ func TestPartition(t *testing.T) {
 
 // 方法二： 答案的视角（枚举子串结束位置）
 func partition(s string) (ans [][]string) {
-	path := []string{}
+	var path []string
 	n := len(s)
 	var dfs func(int)
 	dfs = func(i int) {
+		// 与 78 子集对比：这里每个字母都在答案中，所以不是一递归就放在答案中
 		if i == n {
 			ans = append(ans, append([]string(nil), path...)) // 复制 path
 			return
@@ -53,6 +54,7 @@ func partition(s string) (ans [][]string) {
 }
 
 func isPalindrome(s string, left, right int) bool {
+	// 使用相向指针
 	for left < right {
 		if s[left] != s[right] {
 			return false

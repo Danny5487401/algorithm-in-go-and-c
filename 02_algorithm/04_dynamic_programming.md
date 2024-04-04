@@ -11,6 +11,7 @@
     - [4 0-1 背包](#4-0-1-%E8%83%8C%E5%8C%85)
     - [5 机器人走法](#5-%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%B5%B0%E6%B3%95)
     - [6 打家劫舍](#6-%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D)
+    - [7 最长公共子序列--非连续](#7-%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97--%E9%9D%9E%E8%BF%9E%E7%BB%AD)
   - [解题思路](#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF)
   - [参考](#%E5%8F%82%E8%80%83)
 
@@ -52,9 +53,21 @@
 
 ![](.dynamic_programming_images/dp_application.png)
 
-### 1 编辑距离
+### 1 [编辑距离](04_dynamic_programming/72_edit_distance_test.go)
 
 ![](.dynamic_programming_images/edit_distance.png)
+
+
+s = horse
+t = ros 
+![](.04_dynamic_programming_images/edit_distance.png)
+
+dfs(i,j)= 
+  - s[i]=s[j]: dfs[i-1,j-1]
+  - s[i]!=s[j]: min(dfs[i,j-1],dfs[i-1],j,dfs[i-1,j-1]+1)
+
+
+
 
 ### 2 爬台阶
 
@@ -62,7 +75,7 @@
 
 要么n-1台阶上去，要么n-2台阶上去
 
-### 3 [找零钱](02_algorithm/04_dynamic_programming/322_coin_change_test.go)
+### 3 [找零钱](04_dynamic_programming/322_coin_change_test.go)
 
 ![](.dynamic_programming_images/get_change1.png)
 
@@ -121,6 +134,25 @@
 ![](.04_dynamic_programming_images/Recursion1.png)
 
 
+
+### 7 [最长公共子序列--非连续](04_dynamic_programming/1143_longest_common_subsequence_test.go)
+![](.04_dynamic_programming_images/Longest Common Subsequence.png)
+
+s: 第一个字符串
+t: 第二个字符串
+
+![](.04_dynamic_programming_images/Longest Common Subsequence2.png)  
+![](.04_dynamic_programming_images/Longest Common Subsequence3.png) 
+
+
+### 8 [最长递增子序列](04_dynamic_programming/300_longest_increasing_subsequence_test.go)
+
+思路一：选 或 不选， 从后面往前
+
+思路二：枚举选哪个，选比当前小的前面数据
+![](.04_dynamic_programming_images/longest_increasing_subsequence1.png)
+
+dfs[i]= max{dfs[j}+1 j<i 且 nums[j]<nums[i]
 
 ## 解题思路
 

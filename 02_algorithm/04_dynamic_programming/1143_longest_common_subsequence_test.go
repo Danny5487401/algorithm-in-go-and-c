@@ -78,7 +78,7 @@ func longestCommonSubsequence2(text1 string, text2 string) int {
 	// f[i][j] = dfs(i-1, j-1) + 1 -->f[i+1][j+1]=f[i][j]+1
 	f := make([][]int, n+1)
 	for i := range f {
-		f[i] = make([]int, m)
+		f[i] = make([]int, m+1)
 	}
 	for i, x := range text1 {
 		for j, y := range text2 {

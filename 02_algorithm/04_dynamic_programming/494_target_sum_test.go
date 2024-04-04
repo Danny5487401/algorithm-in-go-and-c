@@ -130,4 +130,4 @@ func findTargetSumWays2(nums []int, target int) int {
 	return f[length][target]
 }
 
-// 推荐实现查看：https://leetcode.cn/problems/target-sum/solutions/2119041/jiao-ni-yi-bu-bu-si-kao-dong-tai-gui-hua-s1cx/
+// 推荐实现：https://leetcode.cn/problems/target-sum/solutions/2119041/jiao-ni-yi-bu-bu-si-kao-dong-tai-gui-hua-s1cx/

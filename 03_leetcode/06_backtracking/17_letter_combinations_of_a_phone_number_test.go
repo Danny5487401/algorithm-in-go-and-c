@@ -7,7 +7,7 @@ import (
 
 // 电话号码的字母组合 https://leetcode.cn/problems/letter-combinations-of-a-phone-number/description/?envType=study-plan-v2&envId=top-100-liked
 func TestLetterCombinations(t *testing.T) {
-	convey.Convey("电话号码的字母组合 ", t, func() {
+	convey.Convey("电话号码的字母组合", t, func() {
 		testCase := []struct {
 			input  string
 			target []string
@@ -20,11 +20,15 @@ func TestLetterCombinations(t *testing.T) {
 
 				"", []string{},
 			},
+			{
+
+				"2", []string{"a", "b", "c"},
+			},
 		}
 
 		for _, tst := range testCase {
 			rsp := letterCombinations(tst.input)
-			convey.So(rsp, convey.ShouldResemble, tst.target)
+			convey.So(rsp, convey.ShouldEqual, tst.target)
 		}
 	})
 
@@ -44,6 +48,7 @@ func letterCombinations(digits string) []string {
 	var dfs func(i int)
 	dfs = func(i int) {
 		if i == length {
+			// 代表找到答案
 			ans = append(ans, string(path))
 			return
 		}
@@ -54,6 +59,6 @@ func letterCombinations(digits string) []string {
 			dfs(i + 1)
 		}
 	}
-	dfs(0)
+	dfs(0) // 递归入口
 	return ans
 }

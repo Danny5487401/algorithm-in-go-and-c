@@ -20,8 +20,8 @@ func TestSubsets(t *testing.T) {
 		}
 
 		for _, tst := range testCase {
-			rsp := subsets(tst.input)
-			convey.So(rsp, convey.ShouldResemble, tst.target)
+			rsp := subsets2(tst.input)
+			convey.So(rsp, convey.ShouldEqual, tst.target)
 		}
 	})
 
@@ -38,7 +38,7 @@ func subsets(nums []int) [][]int {
 	var dfs func(i int)
 	dfs = func(i int) {
 		if i == length {
-			ans = append(ans, append([]int(nil), path...)) // 固定答案
+			ans = append(ans, append([]int{}, path...)) // 固定答案
 			return
 		}
 		// 1 不选
@@ -47,8 +47,37 @@ func subsets(nums []int) [][]int {
 		path = append(path, nums[i])
 		dfs(i + 1)
 
-		// 返回恢复现场
+		// 选对应需要返回恢复现场
 		path = path[:len(path)-1]
+	}
+	dfs(0)
+	return ans
+}
+
+// 方案二： 从答案的视角，必须选一个
+func subsets2(nums []int) [][]int {
+	length := len(nums)
+	if length == 0 {
+		return [][]int{}
+	}
+
+	var ans = make([][]int, 0)
+	var path = make([]int, 0, length)
+	var dfs func(i int)
+	dfs = func(i int) {
+		// 由于子集长度没有约束，所以递归的每个节点都是答案
+		ans = append(ans, append([]int(nil), path...))
+		if i == length {
+			return
+		}
+		for j := i; j < length; j++ {
+			path = append(path, nums[j])
+			dfs(j + 1)
+
+			// 选对应需要返回恢复现场
+			path = path[:len(path)-1]
+		}
+
 	}
 	dfs(0)
 	return ans
