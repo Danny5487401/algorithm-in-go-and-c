@@ -8,7 +8,7 @@ import (
 // 最长公共子序列 https://leetcode.cn/problems/longest-common-subsequence/
 
 func TestLongestCommonSubsequence(t *testing.T) {
-	convey.Convey("最长公共子序列 ", t, func() {
+	convey.Convey("最长公共子序列", t, func() {
 		testCase := []struct {
 			input1 string
 			input2 string
@@ -70,7 +70,6 @@ func longestCommonSubsequence(text1 string, text2 string) int {
 }
 
 // 1:1 翻译成递推
-
 func longestCommonSubsequence2(text1 string, text2 string) int {
 	n, m := len(text1), len(text2)
 

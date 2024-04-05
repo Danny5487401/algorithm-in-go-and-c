@@ -12,6 +12,7 @@
     - [5 机器人走法](#5-%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%B5%B0%E6%B3%95)
     - [6 打家劫舍](#6-%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D)
     - [7 最长公共子序列--非连续](#7-%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97--%E9%9D%9E%E8%BF%9E%E7%BB%AD)
+    - [8 最长递增子序列](#8-%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97)
   - [解题思路](#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF)
   - [参考](#%E5%8F%82%E8%80%83)
 
@@ -49,9 +50,16 @@
 ## 场景
 如果一个问题，可以把所有可能的答案穷举出来，并且穷举出来后，发现存在重叠子问题，就可以考虑使用动态规划。
 
-比如一些求最值的场景，如最长递增子序列、最小编辑距离、背包问题、凑零钱问题等等，都是动态规划的经典应用场景。
-
 ![](.dynamic_programming_images/dp_application.png)
+
+
+分类
+- 线性动态规划：具有「线性」阶段划分的动态规划方法统称为线性动态规划（简称为「线性 DP」）
+  ![](.04_dynamic_programming_images/dp1.png)
+- DP状态机：往往是强调某一个阶段和上一个阶段之间的联系，且一个阶段里面有多种状态（比如说“有”和“无”）。
+
+
+
 
 ### 1 [编辑距离](04_dynamic_programming/72_edit_distance_test.go)
 
@@ -136,10 +144,19 @@ dfs(i,j)=
 
 
 ### 7 [最长公共子序列--非连续](04_dynamic_programming/1143_longest_common_subsequence_test.go)
+- 子数组/子串 subarray/substring 连续
+- 子序列 subsequence  非连续
+
 ![](.04_dynamic_programming_images/Longest Common Subsequence.png)
 
-s: 第一个字符串
-t: 第二个字符串
+s: 第一个字符串， 长度为 n
+t: 第二个字符串， 长度为 m
+ 
+子问题：都选==都不选
+
+dfs[i,j]=  
+ - max(dfs[i-1,j-1]+1)   s[i]=t[j]
+ - max(dfs[i-1,j],dfs[i,j-1])   s[i]!=t[j]
 
 ![](.04_dynamic_programming_images/Longest Common Subsequence2.png)  
 ![](.04_dynamic_programming_images/Longest Common Subsequence3.png) 
@@ -153,6 +170,16 @@ t: 第二个字符串
 ![](.04_dynamic_programming_images/longest_increasing_subsequence1.png)
 
 dfs[i]= max{dfs[j}+1 j<i 且 nums[j]<nums[i]
+
+思路三：LIS = nums 与排序去重后 nums 的 LCS 
+![](.04_dynamic_programming_images/longest_increasing_subsequence2.png)
+
+
+思路四：交换状态与状态值
+
+g[i] 表示 长度为 i+1 的IS 的末尾元素的最小值 
+![](.04_dynamic_programming_images/longest_increasing_subsequence3.png)
+![](.04_dynamic_programming_images/longest_increasing_subsequence4.png)
 
 ## 解题思路
 

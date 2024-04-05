@@ -33,6 +33,7 @@ func TestRob(t *testing.T) {
 
 // 1 递归搜索 + 保存计算结果 = 记忆化搜索
 func rob1(nums []int) int {
+	// dfs[i] = max(dfs(i-1), dfs(i-2)+nums[i])
 	length := len(nums)
 	memo := make([]int, length)
 	for i := range memo {

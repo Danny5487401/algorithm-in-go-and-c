@@ -6,7 +6,7 @@
   - [步骤](#%E6%AD%A5%E9%AA%A4)
   - [应用](#%E5%BA%94%E7%94%A8)
     - [1 找零钱问题](#1-%E6%89%BE%E9%9B%B6%E9%92%B1%E9%97%AE%E9%A2%98)
-    - [2 背包问题](#2-%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98)
+    - [买卖股票](#%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -33,5 +33,39 @@
 
 
 
-### 2 背包问题
 
+
+
+### 买卖股票 
+
+![](.03_greedy_method_images/buy_and_sell_stock.png)
+
+
+1 [不限交易次数](03_greedy_method/122_best_time_to_buy_and_sell_stock_II_test.go)
+![](.03_greedy_method_images/Best Time to Buy and Sell Stock2.png)
+
+
+![](.03_greedy_method_images/Best Time to Buy and Sell Stock3.png)
+
+
+状态转换 未持有 --买入--> 持有
+
+
+![](.03_greedy_method_images/Best Time to Buy and Sell Stock4.png)
+
+0 ：代表 未持有
+1 ：代表 持有
+
+![](.03_greedy_method_images/Best Time to Buy and Sell Stock5.png)
+
+最后一天肯定是卖出股票，获取最大利益
+所以入口 = dfs(n-1,0)
+![](.03_greedy_method_images/Best Time to Buy and Sell Stock6.png)
+
+2 [冷冻期](03_greedy_method/122_best_time_to_buy_and_sell_stock_II_test.go)
+
+3 限制交易次数
+
+![](.03_greedy_method_images/Best Time to Buy and Sell Stock7.png)
+
+![](.03_greedy_method_images/Best Time to Buy and Sell Stock8.png)
