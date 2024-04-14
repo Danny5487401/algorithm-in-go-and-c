@@ -29,7 +29,7 @@ func TestPermute(t *testing.T) {
 
 		for _, tst := range testCase {
 			rsp := permute(tst.input)
-			convey.So(rsp, convey.ShouldResemble, tst.target)
+			convey.So(rsp, convey.ShouldEqual, tst.target)
 		}
 	})
 

@@ -11,9 +11,11 @@
     - [4 0-1 背包](#4-0-1-%E8%83%8C%E5%8C%85)
     - [5 机器人走法](#5-%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%B5%B0%E6%B3%95)
     - [6 打家劫舍](#6-%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D)
-    - [7 最长公共子序列--非连续](#7-%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97--%E9%9D%9E%E8%BF%9E%E7%BB%AD)
+    - [7 [LCS 最长公共子序列--非连续](04_dynamic_programming/1143_longest_common_subs equence_test.go)](#7-lcs-%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97--%E9%9D%9E%E8%BF%9E%E7%BB%AD04_dynamic_programming1143_longest_common_subs-equence_testgo)
     - [8 最长递增子序列](#8-%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97)
   - [解题思路](#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF)
+    - [9 最长回文子序列](#9-%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97)
+    - [10 二叉树的直径](#10-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84)
   - [参考](#%E5%8F%82%E8%80%83)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -58,6 +60,9 @@
   ![](.04_dynamic_programming_images/dp1.png)
 - DP状态机：往往是强调某一个阶段和上一个阶段之间的联系，且一个阶段里面有多种状态（比如说“有”和“无”）。
 
+- 区间 DP: 从小区间转移到 大区间
+
+- 树形 DP
 
 
 
@@ -143,7 +148,7 @@ dfs(i,j)=
 
 
 
-### 7 [最长公共子序列--非连续](04_dynamic_programming/1143_longest_common_subsequence_test.go)
+### 7 [LCS 最长公共子序列--非连续](04_dynamic_programming/1143_longest_common_subs equence_test.go)
 - 子数组/子串 subarray/substring 连续
 - 子序列 subsequence  非连续
 
@@ -194,6 +199,23 @@ g[i] 表示 长度为 i+1 的IS 的末尾元素的最小值
 ![](.dynamic_programming_images/dp_code3.png)
 
 
+### 9 [最长回文子序列](04_dynamic_programming/516_longest_palindromic_subsequence_test.go)
+
+思路一： s 与 s反转后的 LCS(最长公共子序列) 
+
+思路二： 从两侧缩小问题规模
+![](.04_dynamic_programming_images/Longest Palindromic Subsequence1.png)
+
+左e != 右a ：所以不会同时选
+![](.04_dynamic_programming_images/Longest Palindromic Subsequence2.png)
+
+
+
+### 10 [二叉树的直径](04_dynamic_programming/543_diameter_of_binary_tree_test.go)
+
+
+
 
 ## 参考
 - [动态规划详解](https://juejin.cn/post/6951922898638471181)
+- [推荐查看灵茶山艾府DP算法](https://leetcode.cn/circle/discuss/tXLS3i/)

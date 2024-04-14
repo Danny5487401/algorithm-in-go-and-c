@@ -15,7 +15,7 @@ c 和 go 实现 数据结构与算法
 
 
 ## 第一章 数据结构与算法
-Note: 使用 GBK 编码
+Note: C语言实现使用 GBK 编码
 - [1 linear list线性表](01_dataStructure/01_linear_list/linear_list.md)
     - [1.1 顺序表 静态实现，数据元素是整数](01_dataStructure/01_linear_list/seqlist1.c)
     - [1.2 顺序表 静态实现，数据元素是结构体](01_dataStructure/01_linear_list/seqlist2.c)
@@ -114,7 +114,7 @@ Note: 使用 GBK 编码
 
 - binary tree 二叉树
   - [94 In-order Traversal 中序遍历](03_leetcode/05_binary_tree/94_binary_tree_inorder_traversal_test.go)
-  - [98 验证二叉搜索树](03_leetcode/05_binary_tree/98_validate_binary_search_tree_test.go)
+  - [98 验证二叉搜索树-->分别前序，中序，后序遍历方案](03_leetcode/05_binary_tree/98_validate_binary_search_tree_test.go)
   - [100 相同的树](03_leetcode/05_binary_tree/100_same_tree_test.go)
   - [101 对称二叉树](03_leetcode/05_binary_tree/101_symmetric_tree_test.go)
   - [101 二叉树的层序遍历](03_leetcode/05_binary_tree/102_binary_tree_level_order_traversal_test.go)

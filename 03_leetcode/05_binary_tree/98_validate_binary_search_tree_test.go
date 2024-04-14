@@ -1,10 +1,59 @@
 package _5_binary_tree
 
-import "math"
+import (
+	"github.com/smartystreets/goconvey/convey"
+	"math"
+	"testing"
+)
 
 // 验证二叉搜索树 https://leetcode.cn/problems/validate-binary-search-tree/?envType=study-plan-v2&envId=top-100-liked
 
 // 三种做法
+func TestIsValidBST(t *testing.T) {
+	convey.Convey("验证二叉搜索树", t, func() {
+		testCase := []struct {
+			input  *TreeNode
+			target bool
+		}{
+			//{
+			//	&TreeNode{
+			//		Val: 2,
+			//		Left: &TreeNode{
+			//			Val: 1,
+			//		},
+			//		Right: &TreeNode{
+			//			Val: 3,
+			//		},
+			//	},
+			//	true,
+			//},
+			{
+				&TreeNode{
+					Val: 5,
+					Left: &TreeNode{
+						Val: 1,
+					},
+					Right: &TreeNode{
+						Val: 4,
+						Left: &TreeNode{
+							Val: 3,
+						},
+						Right: &TreeNode{
+							Val: 6,
+						},
+					},
+				},
+				false,
+			},
+		}
+
+		for _, tst := range testCase {
+			rsp := isValidBST(tst.input)
+			convey.So(rsp, convey.ShouldEqual, tst.target)
+		}
+	})
+
+}
 
 // 第一种做法：前序遍历
 // 对于每个节点，还需要提供开闭区间的范围。
@@ -12,11 +61,9 @@ import "math"
 // 向右：左边界修改
 
 func isValidBST(root *TreeNode) bool {
-	// 根节点： 负无穷 正无穷
-	left := math.MinInt
-	right := math.MaxInt
+	// 根节点范围 :负无穷 正无穷 (-∞，+∞)
 
-	return checkValidBST(root, left, right)
+	return checkValidBST(root, math.MinInt, math.MaxInt)
 }
 
 func checkValidBST(node *TreeNode, left, right int) bool {

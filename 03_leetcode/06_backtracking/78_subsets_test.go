@@ -1,6 +1,7 @@
 package _6_backtracking
 
 import (
+	"github.com/google/go-cmp/cmp"
 	"github.com/smartystreets/goconvey/convey"
 	"testing"
 )
@@ -21,7 +22,8 @@ func TestSubsets(t *testing.T) {
 
 		for _, tst := range testCase {
 			rsp := subsets2(tst.input)
-			convey.So(rsp, convey.ShouldEqual, tst.target)
+			compareRsp := cmp.Equal(rsp, tst.target)
+			convey.So(compareRsp, convey.ShouldBeTrue)
 		}
 	})
 
