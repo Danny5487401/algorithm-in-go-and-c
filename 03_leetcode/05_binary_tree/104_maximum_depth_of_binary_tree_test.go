@@ -53,12 +53,6 @@ func maxDepth(root *TreeNode) int {
 
 }
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
-
 // 方法二：用全局变量保存最大值,传递节点个数
 func maxDepth2(root *TreeNode) int {
 	var ans = 0

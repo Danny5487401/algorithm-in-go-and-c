@@ -16,10 +16,16 @@ func TestDailyTemperatures(t *testing.T) {
 			{
 				[]int{73, 74, 75, 71, 69, 72, 76, 73}, []int{1, 1, 4, 2, 1, 1, 0, 0},
 			},
+			{
+				[]int{30, 40, 50, 60}, []int{1, 1, 1, 0},
+			},
+			{
+				[]int{30, 60, 90}, []int{1, 1, 0},
+			},
 		}
 
 		for _, tst := range testCase {
-			rsp := dailyTemperatures(tst.input)
+			rsp := dailyTemperatures2(tst.input)
 			convey.So(rsp, convey.ShouldEqual, tst.expected)
 		}
 	})
@@ -30,20 +36,39 @@ func dailyTemperatures(temperatures []int) []int {
 	//写法一从右到左 ：栈中记录下一个更大元素的「候选项」
 
 	length := len(temperatures)
-	ans := make([]int, length) // 记录的索引
-	stack := make([]int, 0)    // 记录的索引
+	ans := make([]int, length) // 记录索引
+	stack := make([]int, 0)    // 初始化单调栈记录索引
 	for i := length - 1; i >= 0; i-- {
 		cur := temperatures[i]
 		for len(stack) > 0 && cur >= temperatures[stack[len(stack)-1]] {
+			// 没有找到答案，取出栈顶元素，相同的时候保留左边的数字
 			stack = stack[:len(stack)-1]
 		}
 
 		if len(stack) > 0 {
-			// 只要栈内有结果，代表栈顶比当前数要大
+			// 只要栈内有结果，代表栈顶比当前数要大，取栈顶元素
 			ans[i] = stack[len(stack)-1] - i
 		}
 
 		stack = append(stack, i)
+
+	}
+	return ans
+}
+
+func dailyTemperatures2(temperatures []int) []int {
+	// 写法二从左往右：站内是还没有找到更大的数
+
+	length := len(temperatures)
+	ans := make([]int, length) // 记录索引
+	stack := make([]int, 0)    // 初始化单调栈记录索引
+	for i, cur := range temperatures {
+		for len(stack) > 0 && cur > temperatures[stack[len(stack)-1]] { // 注意是循环处理
+			j := stack[len(stack)-1] // 取出栈顶元素
+			stack = stack[:len(stack)-1]
+			ans[j] = i - j // 注意 更新的是第j个数据并且是 i-j
+		}
+		stack = append(stack, i) // 写入还没找到的数据
 
 	}
 	return ans

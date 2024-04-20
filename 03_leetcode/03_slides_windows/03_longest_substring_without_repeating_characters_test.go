@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-// 无重复字符的最长子串 https://leetcode.cn/problems/longest-substring-without-repeating-characters/solutions/227999/wu-zhong-fu-zi-fu-de-zui-chang-zi-chuan-by-leetc-2/?envType=study-plan-v2&envId=top-100-liked
+// 无重复字符的最长子串 https://leetcode.cn/problems/longest-substring-without-repeating-characters/description/?envType=study-plan-v2&envId=top-100-liked
 
 // 假设第k个字符作为起始位置，最长结束位置为Rk,那么第k+1到rk的字符肯定也是不重复，所以只要移动rk直到重复字符。
 

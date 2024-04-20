@@ -18,7 +18,6 @@ func middleNode(head *ListNode) *ListNode {
 }
 
 type ListNode struct {
-	Val int
-
+	Val  int
 	Next *ListNode
 }

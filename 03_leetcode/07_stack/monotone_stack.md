@@ -10,9 +10,12 @@
 # Monotone Stack 单调栈
 
 
-单调栈（Monotone Stack）：一种特殊的栈。在栈的「先进后出」规则基础上，要求「从 栈顶 到 栈底 的元素是单调递增（或者单调递减）」
+单调栈（Monotone Stack）：一种特殊的栈。在栈的「先进后出」规则基础上，要求「从 栈顶 到 栈底 的元素是单调递增（或者单调递减）
+
+![](.monotone_stack_images/monotone stack1.png)
 
 ![](.monotone_stack_images/Monotone_Stack.png)
+
 其中满足从栈顶到栈底的元素是单调递增的栈，叫做「单调递增栈」。满足从栈顶到栈底的元素是单调递减的栈，叫做「单调递减栈」
 注意：这里定义的顺序是从「栈顶」到「栈底」。有的文章里是反过来的.
 
@@ -27,6 +30,19 @@
 寻找左侧第一个比当前元素小的元素。
 寻找右侧第一个比当前元素大的元素。
 寻找右侧第一个比当前元素小的元素
-
+  
 
 做法：及时去掉无用数据，保证栈内元素有序
+
+
+## [每日温度](739_daily_temperatures_test.go)
+
+
+从左往右：站内是还没有找到更大的数
+![](.monotone_stack_images/daily_temperatures1.png)
+
+
+## [接雨水](42_trapping_rain_water_test.go)
+![](.monotone_stack_images/Trapping Rain Water1.png)
+
+- 需要知道栈顶及栈顶下面一个元素

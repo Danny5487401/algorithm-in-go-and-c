@@ -128,6 +128,7 @@ Note: C语言实现使用 GBK 编码
   - [78 子集](03_leetcode/06_backtracking/78_subsets_test.go)
   - [131 分割回文串-->子集型回溯](03_leetcode/06_backtracking/131_palindrome_partition_test.go)
 - [单调栈](03_leetcode/07_stack/monotone_stack.md)
+  - [739 每日温度](03_leetcode/07_stack/739_daily_temperatures_test.go)
 
 ## 参考
 - [The Algorithms 组织开源的多种语言算法实现](https://github.com/TheAlgorithms)
