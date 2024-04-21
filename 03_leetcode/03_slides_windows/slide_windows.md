@@ -17,3 +17,20 @@
 ## [长度最小的子数组](209_minimum_size_subarray_sum_test.go)
 
 要充分利用都是正数这个性质
+
+
+
+## [乘积小于 K 的子数组](713_subarray_product_less_than_k_test.go)
+
+左端点 left 
+
+右端点 right 
+
+
+如果 [left,right] 乘积小于 k, 那么 [left+1,right]也是小于 k ，所以元素个数 right- left +1
+
+## [无重复字符的最长子串](03_longest_substring_without_repeating_characters_test.go)
+
+每次接在没有重复的子串后面
+
+哈希判断是否有重复的字符, key为数据 value出现次数

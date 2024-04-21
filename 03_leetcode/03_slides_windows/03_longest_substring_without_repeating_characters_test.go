@@ -44,9 +44,11 @@ func lengthOfLongestSubstring(s string) int {
 	// 哈希判断是否有重复的字符, key为数据 value出现次数
 	count := map[byte]int{}
 	left := 0
-	for right := 0; right < length; right++ {
+	for right, subStr := range s {
 		count[s[right]]++
-		for count[s[right]] > 1 {
+		for count[byte(subStr)] > 1 { // 判断是否重复
+
+			// 恢复数据
 			count[s[left]]--
 			// 左端点右移动
 			left += 1
