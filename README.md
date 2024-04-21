@@ -106,8 +106,10 @@ Note: C语言实现使用 GBK 编码
   - [283 移动零](03_leetcode/02_two_pointer/283_move_zeroes_test.go)
   - [876 链表的中间节点-->快慢指针](03_leetcode/02_two_pointer/876_middle_of_the_linked_list_test.go)
 
-- [sliding windows 滑动窗口](03_leetcode/03_slides_windows/slide_windows.md)
+- [sliding windows 滑动窗口-->同向双指针](03_leetcode/03_slides_windows/slide_windows.md)
   - [03 无重复字符的最长子串](03_leetcode/03_slides_windows/03_longest_substring_without_repeating_characters_test.go)
+  - [209 长度最小的子数组](03_leetcode/03_slides_windows/209_minimum_size_subarray_sum_test.go)
+  - [713 乘积小于 K 的子数组 ](03_leetcode/03_slides_windows/713_subarray_product_less_than_k_test.go)
 - 二分查找
   - [34 在排序数组中查找元素的第一个和最后一个位置](03_leetcode/04_binary_search/34_find_first_and_last_position_of_element_in_sorted_array_test.go)
   - [35 搜索插入位置](03_leetcode/04_binary_search/35_search_insert_position_test.go)

@@ -4,6 +4,8 @@
 
 - [Monotone Stack 单调栈](#monotone-stack-%E5%8D%95%E8%B0%83%E6%A0%88)
   - [单调栈适用场景](#%E5%8D%95%E8%B0%83%E6%A0%88%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF)
+  - [每日温度](#%E6%AF%8F%E6%97%A5%E6%B8%A9%E5%BA%A6)
+  - [接雨水](#%E6%8E%A5%E9%9B%A8%E6%B0%B4)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
