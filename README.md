@@ -103,6 +103,7 @@ Note: C语言实现使用 GBK 编码
   - [15 三数之和-->相向指针](03_leetcode/02_two_pointer/15_three_sum_test.go)
   - [142 环形链表II-->快慢指针](03_leetcode/02_two_pointer/142_linked_list_cycle_II_test.go)
   - [143 环形链表-->快慢指针](03_leetcode/02_two_pointer/143_linked_list_cycle_test.go)
+  - [167  两数之和 II 输入有序数组-->相向指针](03_leetcode/02_two_pointer/167_two_sum_II_input_array_is_sorted_test.go)
   - [283 移动零](03_leetcode/02_two_pointer/283_move_zeroes_test.go)
   - [876 链表的中间节点-->快慢指针](03_leetcode/02_two_pointer/876_middle_of_the_linked_list_test.go)
 
