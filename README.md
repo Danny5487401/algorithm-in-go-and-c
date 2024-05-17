@@ -103,7 +103,7 @@ Note: C语言实现使用 GBK 编码
   - [15 三数之和-->相向指针](03_leetcode/02_two_pointer/15_three_sum_test.go)
   - [142 环形链表II-->快慢指针](03_leetcode/02_two_pointer/142_linked_list_cycle_II_test.go)
   - [143 环形链表-->快慢指针](03_leetcode/02_two_pointer/143_linked_list_cycle_test.go)
-  - [167  两数之和 II 输入有序数组-->相向指针](03_leetcode/02_two_pointer/167_two_sum_II_input_array_is_sorted_test.go)
+  - [167 两数之和 II 输入有序数组-->相向指针](03_leetcode/02_two_pointer/167_two_sum_II_input_array_is_sorted_test.go)
   - [283 移动零](03_leetcode/02_two_pointer/283_move_zeroes_test.go)
   - [876 链表的中间节点-->快慢指针](03_leetcode/02_two_pointer/876_middle_of_the_linked_list_test.go)
 
@@ -115,6 +115,7 @@ Note: C语言实现使用 GBK 编码
 - 二分查找
   - [34 在排序数组中查找元素的第一个和最后一个位置](03_leetcode/04_binary_search/34_find_first_and_last_position_of_element_in_sorted_array_test.go)
   - [35 搜索插入位置](03_leetcode/04_binary_search/35_search_insert_position_test.go)
+  - [162 寻找峰值](03_leetcode/04_binary_search/162_find_peak_element_test.go)
 
 - binary tree 二叉树
   - [94 In-order Traversal 中序遍历](03_leetcode/05_binary_tree/94_binary_tree_inorder_traversal_test.go)
@@ -132,6 +133,7 @@ Note: C语言实现使用 GBK 编码
   - [78 子集](03_leetcode/06_backtracking/78_subsets_test.go)
   - [131 分割回文串-->子集型回溯](03_leetcode/06_backtracking/131_palindrome_partition_test.go)
 - [单调栈](03_leetcode/07_stack/monotone_stack.md)
+  - [42 接雨水](03_leetcode/07_stack/42_trapping_rain_water_test.go)
   - [739 每日温度](03_leetcode/07_stack/739_daily_temperatures_test.go)
 
 ## 参考

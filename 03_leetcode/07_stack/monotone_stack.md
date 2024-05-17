@@ -41,10 +41,20 @@
 
 
 从左往右：站内是还没有找到更大的数
+
 ![](.monotone_stack_images/daily_temperatures1.png)
 
 
 ## [接雨水](42_trapping_rain_water_test.go)
-![](.monotone_stack_images/Trapping Rain Water1.png)
 
+![](.monotone_stack_images/Trapping Rain Water1.png)
 - 需要知道栈顶及栈顶下面一个元素
+
+方式一：
+
+![](.monotone_stack_images/trap_water2.png)
+
+前缀最大值：preMax
+后缀最大值: suffixMax
+
+1* (min(preMax,suffixMax)-height)

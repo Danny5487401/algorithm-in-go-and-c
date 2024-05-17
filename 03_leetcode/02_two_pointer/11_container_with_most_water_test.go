@@ -38,6 +38,7 @@ func maxArea(height []int) int {
 		area := min(height[left], height[right]) * (right - left)
 		ans = max(ans, area)
 		if height[left] < height[right] {
+			// 哪条线短移动哪条
 			left++
 		} else {
 			right--
