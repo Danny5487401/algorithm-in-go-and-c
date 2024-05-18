@@ -135,6 +135,10 @@ Note: C语言实现使用 GBK 编码
 - [单调栈](03_leetcode/07_stack/monotone_stack.md)
   - [42 接雨水](03_leetcode/07_stack/42_trapping_rain_water_test.go)
   - [739 每日温度](03_leetcode/07_stack/739_daily_temperatures_test.go)
+- [链表](03_leetcode/08_link_list/ReverseLinkedList.md)
+  - [25 K 个一组翻转链表](03_leetcode/08_link_list/25_reverse_nodes_in_k-Group_test.go)
+  - [92 反转链表II--中间部分反转](03_leetcode/08_link_list/92_reverse_linked_list2_test.go)
+  - [206 反转链表--中间部分反转](03_leetcode/08_link_list/206_reverse_linked_list_test.go)
 
 ## 参考
 - [The Algorithms 组织开源的多种语言算法实现](https://github.com/TheAlgorithms)

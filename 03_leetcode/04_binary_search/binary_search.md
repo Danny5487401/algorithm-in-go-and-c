@@ -44,3 +44,17 @@
 根据此定义，最右侧 6 肯定是蓝色
 
 题目 任意两个相邻数不相同
+
+## [寻找旋转排序数组的最小值]
+
+两段式递增，寻找最小值 
+
+![](.binary_search_images/Find Minimum in Rotated Sorted Array1.png)
+![](.binary_search_images/Find Minimum in Rotated Sorted Array2.png)
+
+
+
+
+## 参考
+
+- [二分查找——红蓝染色法](https://blog.csdn.net/qq_45808700/article/details/129247507)
