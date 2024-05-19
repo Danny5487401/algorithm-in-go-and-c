@@ -1,4 +1,4 @@
-package _8_link_list
+package _2_link_list
 
 type ListNode struct {
 	Val  int

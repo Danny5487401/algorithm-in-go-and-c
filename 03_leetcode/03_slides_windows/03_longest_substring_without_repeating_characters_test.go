@@ -10,7 +10,7 @@ import (
 // 假设第k个字符作为起始位置，最长结束位置为Rk,那么第k+1到rk的字符肯定也是不重复，所以只要移动rk直到重复字符。
 
 func TestLengthOfLongestSubstring(t *testing.T) {
-	convey.Convey("Move Zeroes ", t, func() {
+	convey.Convey("无重复字符的最长子串", t, func() {
 		testCase := []struct {
 			input    string
 			expected int

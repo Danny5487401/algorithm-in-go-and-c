@@ -1,4 +1,4 @@
-package _2_two_pinter
+package _2_link_list
 
 import (
 	"testing"
