@@ -60,7 +60,7 @@ func rightSideView(root *TreeNode) (ans []int) {
 			return
 		}
 		if depth == len(ans) {
-			// 当有，就记下来了
+			// 当递归深度==答案的长度，就记下来了
 			ans = append(ans, node.Val)
 		}
 		// 先右子树

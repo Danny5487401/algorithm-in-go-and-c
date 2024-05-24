@@ -65,6 +65,7 @@ func maxBalancedDepth(root *TreeNode) int {
 	// 分别左子树和右子树的最大深度 l 和 r
 	leftDepth := maxBalancedDepth(root.Left)
 	if leftDepth == -1 {
+		// 发现不平衡
 		return -1
 	}
 	rightDepth := maxBalancedDepth(root.Right)

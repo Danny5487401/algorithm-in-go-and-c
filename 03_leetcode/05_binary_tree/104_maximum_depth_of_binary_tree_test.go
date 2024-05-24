@@ -41,8 +41,10 @@ func TestMaxDepth(t *testing.T) {
 
 }
 
+// 方式一：传递节点
 func maxDepth(root *TreeNode) int {
 	if root == nil {
+		// 边界条件
 		return 0
 	}
 	// 递归 DFS max(leftDepth, rightDepth) + 1

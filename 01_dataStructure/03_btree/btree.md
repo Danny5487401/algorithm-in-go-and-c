@@ -116,6 +116,7 @@
 
 ![](.btree_images/layer_read.png)
 ![](03_dataStructure/03_btree/.btree_images/layer_read_process.png)
+
 借助队列，出队时，帮左右子元素入队。
 
 #### 过程
