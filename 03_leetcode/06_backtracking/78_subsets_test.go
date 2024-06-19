@@ -2,6 +2,7 @@ package _6_backtracking
 
 import (
 	"github.com/google/go-cmp/cmp"
+	"github.com/google/go-cmp/cmp/cmpopts"
 	"github.com/smartystreets/goconvey/convey"
 	"testing"
 )
@@ -22,7 +23,7 @@ func TestSubsets(t *testing.T) {
 
 		for _, tst := range testCase {
 			rsp := subsets2(tst.input)
-			compareRsp := cmp.Equal(rsp, tst.target)
+			compareRsp := intSliceSliceEqual(rsp, tst.target)
 			convey.So(compareRsp, convey.ShouldBeTrue)
 		}
 	})
@@ -43,6 +44,7 @@ func subsets(nums []int) [][]int {
 			ans = append(ans, append([]int{}, path...)) // 固定答案
 			return
 		}
+		// 下面两则顺序可更改（注意还原）
 		// 1 不选
 		dfs(i + 1)
 		// 2 选
@@ -83,4 +85,33 @@ func subsets2(nums []int) [][]int {
 	}
 	dfs(0)
 	return ans
+}
+
+func intSliceSliceEqual(v1, v2 [][]int) bool {
+	if len(v1) != len(v2) {
+		return false
+	}
+
+loop:
+	for _, vv1 := range v1 {
+		for _, vv2 := range v2 {
+			if len(vv1) != len(vv2) {
+				continue
+			}
+			if sliceSameValue(vv1, vv2) {
+				continue loop
+			}
+		}
+
+		return false
+	}
+
+	return true
+}
+
+func sliceSameValue(s1, s2 []int) bool {
+	if len(s1) != len(s2) {
+		return false
+	}
+	return cmp.Equal(s1, s2, cmpopts.SortSlices(func(i, j int) bool { return i < j }))
 }

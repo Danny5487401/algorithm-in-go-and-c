@@ -36,8 +36,8 @@ func partition(s string) (ans [][]string) {
 	n := len(s)
 	var dfs func(int)
 	dfs = func(i int) {
-		// 与 78 子集对比：这里每个字母都在答案中，所以不是一递归就放在答案中
 		if i == n {
+			// 与 78 子集对比：这里每个字母都在答案中，所以不是一递归就放在答案中，所以要长度相等
 			ans = append(ans, append([]string(nil), path...)) // 复制 path
 			return
 		}

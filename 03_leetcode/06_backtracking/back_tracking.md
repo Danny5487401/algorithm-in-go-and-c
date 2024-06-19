@@ -26,18 +26,32 @@ dfs(i)-->dfs(i+1)
 
 ## 分类
 [电话号码的字母组合](17_letter_combinations_of_a_phone_number_test.go)
-- 子集型回溯: 每个元素选或不选
-![](.back_tracking_images/subsequence_back_tracking.png)
-  - [子集](78_subsets_test.go)
-    ![](.back_tracking_images/sub_sequence_back_tracking2.png)
-    ![](.back_tracking_images/sub_sequence_back_tracking3.png)
-  - [分割回文串](131_palindrome_partition_test.go)
-    ![](.back_tracking_images/sub_sequnce_back_tracking4.png)
 
-- 组合型回溯：可以减枝优化
-![](.back_tracking_images/back_tracking_combination.png)
+1. [子集型回溯](78_subsets_test.go)
+
+站在输入的视角: 每个元素选或不选
+![](.back_tracking_images/subsequence_back_tracking.png)
+站在答案的视角：每个节点都是答案
+![](.back_tracking_images/sub_sequence_back_tracking2.png)
+![](.back_tracking_images/sub_sequence_back_tracking3.png)
+
+- 相同案例：[分割回文串](131_palindrome_partition_test.go)
+
+![](.back_tracking_images/palindrome_partition1.png)
+![](.back_tracking_images/sub_sequnce_back_tracking4.png)
+
+2. [组合型回溯：可以减枝优化](./77_combinations_test.go)
+
+假设遍历路径 path 长度为 m, 那么还需要查找 d=k-m 个数。如果是从[1,i]倒序这i个数中选数，如果i<d,那么肯定选不出k个数，直接return,这就是剪枝。
+
 ![](.back_tracking_images/back_tracking_combinaton2.png)
 
-- 排列型回溯
+
+组合总和 III
+![](.back_tracking_images/combinationSum3.png)
+
+
+3. 排列型回溯
+
 ![](.back_tracking_images/Permutations.png)
-![](.back_tracking_images/permutations2.png)
+![]( .back_tracking_images/permutations2.png)

@@ -124,7 +124,7 @@ Note: C语言实现使用 GBK 编码
 - 二分查找
   - [34 在排序数组中查找元素的第一个和最后一个位置](03_leetcode/04_binary_search/34_find_first_and_last_position_of_element_in_sorted_array_test.go)
   - [35 搜索插入位置](03_leetcode/04_binary_search/35_search_insert_position_test.go)
-  - [162 寻找峰值](03_leetcode/04_binary_search/162_find_peak_element_test.go)
+  - [162 寻找峰值](03_leetcode/04_binary_search/162_find_peak_element_test.go) 
 
 - binary tree 二叉树
   - [94 In-order Traversal 中序遍历](03_leetcode/05_binary_tree/94_binary_tree_inorder_traversal_test.go)
@@ -142,9 +142,10 @@ Note: C语言实现使用 GBK 编码
 - [backtracking 回溯](03_leetcode/06_backtracking/back_tracking.md)
   - [17 电话号码的字母组合-->子集型回溯](03_leetcode/06_backtracking/17_letter_combinations_of_a_phone_number_test.go)
   - [46 全排列](03_leetcode/06_backtracking/46_permute_test.go) 
-  - [77 组合](03_leetcode/06_backtracking/77_combinations_test.go)
+  - [77 组合-->剪枝优化](03_leetcode/06_backtracking/77_combinations_test.go)
   - [78 子集](03_leetcode/06_backtracking/78_subsets_test.go)
   - [131 分割回文串-->子集型回溯](03_leetcode/06_backtracking/131_palindrome_partition_test.go)
+  - [216 组合总和III-->剪枝优化](03_leetcode/06_backtracking/216_combination_sum3_test.go)
 - [单调栈](03_leetcode/07_stack/monotone_stack.md)
   - [42 接雨水](03_leetcode/07_stack/42_trapping_rain_water_test.go)
   - [739 每日温度](03_leetcode/07_stack/739_daily_temperatures_test.go)
