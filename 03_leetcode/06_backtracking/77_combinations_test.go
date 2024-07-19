@@ -9,7 +9,7 @@ import (
 // 组合 https://leetcode.cn/problems/combinations/description/ 是 子集的特殊情况 https://leetcode.cn/problems/subsets/?envType=study-plan-v2&envId=top-100-liked
 
 func TestCombination(t *testing.T) {
-	convey.Convey("组合", t, func() {
+	convey.Convey("组合: [1,n] 选 k 个数1", t, func() {
 		testCase := []struct {
 			input struct {
 				n int
@@ -48,7 +48,7 @@ func combine(n int, k int) [][]int {
 	var dfs func(i int)
 	var path = make([]int, 0)
 	dfs = func(i int) { // i 代表范围 [0,i]
-		m := len(path) // 已经选择的数量
+		m := len(path) // m 代表已经选择的数量
 		d := k - m     // 还要选 d 个数
 		if d == 0 {
 			ans = append(ans, append([]int(nil), path...)) // 记录答案

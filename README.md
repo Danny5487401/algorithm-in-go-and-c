@@ -141,6 +141,7 @@ Note: C语言实现使用 GBK 编码
   - [513 找树左下角的值](03_leetcode/05_binary_tree/513_find_bottom_left_tree_value_test.go)
 - [backtracking 回溯](03_leetcode/06_backtracking/back_tracking.md)
   - [17 电话号码的字母组合-->子集型回溯](03_leetcode/06_backtracking/17_letter_combinations_of_a_phone_number_test.go)
+  - [22 括号生成-->组合回溯](03_leetcode/06_backtracking/22_generate_parentheses_test.go)
   - [46 全排列](03_leetcode/06_backtracking/46_permute_test.go) 
   - [77 组合-->剪枝优化](03_leetcode/06_backtracking/77_combinations_test.go)
   - [78 子集](03_leetcode/06_backtracking/78_subsets_test.go)

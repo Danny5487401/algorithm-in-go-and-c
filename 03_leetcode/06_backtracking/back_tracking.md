@@ -47,11 +47,24 @@ dfs(i)-->dfs(i+1)
 ![](.back_tracking_images/back_tracking_combinaton2.png)
 
 
-组合总和 III
+[组合总和 III](./216_combination_sum3_test.go)
 ![](.back_tracking_images/combinationSum3.png)
+
+
+
+[括号生成](./22_generate_parentheses_test.go)
+
+![](.back_tracking_images/GenerateParentheses.png)
+![](.back_tracking_images/Generate Parentheses2.png)
+![](.back_tracking_images/Generate Parentheses3.png)
+
+dfs[i,open]
+- dfs[i+1,open+1] 选左括号
+- dfs[i+1,open] 选右括号
 
 
 3. 排列型回溯
 
 ![](.back_tracking_images/Permutations.png)
+
 ![]( .back_tracking_images/permutations2.png)
