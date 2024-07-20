@@ -65,6 +65,9 @@ dfs[i,open]
 
 3. 排列型回溯
 
+
+[全排列](./46_permute_test.go)
 ![](.back_tracking_images/Permutations.png)
 
 ![]( .back_tracking_images/permutations2.png)
+

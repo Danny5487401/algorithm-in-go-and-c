@@ -38,7 +38,7 @@ func TestPermute(t *testing.T) {
 func permute(nums []int) [][]int {
 	var ans = make([][]int, 0)
 	length := len(nums)
-	// 是否已选
+	// bool 数组 记录数字是否已选
 	onPath := make([]bool, length)
 	var dfs func(i int)
 	var path = make([]int, length)
@@ -48,11 +48,13 @@ func permute(nums []int) [][]int {
 			return
 		}
 		for j, on := range onPath {
-			if !on {
-				// 没有选的信息
+			if !on { // 没有选的情况下
+
 				path[i] = nums[j]
 				onPath[j] = true
 				dfs(i + 1)
+
+				// 还原
 				onPath[j] = false
 			}
 		}
