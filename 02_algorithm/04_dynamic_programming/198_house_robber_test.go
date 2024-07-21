@@ -31,11 +31,12 @@ func TestRob(t *testing.T) {
 
 }
 
+// 回溯的方式
 // 1 递归搜索 + 保存计算结果 = 记忆化搜索
 func rob1(nums []int) int {
 	// dfs[i] = max(dfs(i-1), dfs(i-2)+nums[i])
 	length := len(nums)
-	memo := make([]int, length)
+	memo := make([]int, length) // 缓存
 	for i := range memo {
 		memo[i] = -1 // 因为都是正数， -1 表示没有计算过
 
@@ -64,4 +65,18 @@ func rob(nums []int) int {
 	}
 	// 注意返回值是 f1 不是 f0
 	return f1
+}
+
+func rob2(nums []int) int {
+	// dfs[i] = max(dfs(i-1), dfs(i-2)+nums[i])
+	// 数组转换--> f[i]=max(f[i-1],f[i-2]+num[i])
+	// 因为防止负数 --> f[i+2]=max(f[i+1],f[i]+num[i])
+	n := len(nums)
+	f := make([]int, n+2)
+
+	for i, x := range nums {
+		f[i+2] = max(f[i+1], f[i]+x)
+
+	}
+	return f[n+1] // n-1 + 2
 }

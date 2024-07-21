@@ -14,36 +14,9 @@ func TestReverseBetween(t *testing.T) {
 			target      *ListNode
 		}{
 			{
-				&ListNode{
-					Val: 1,
-					Next: &ListNode{
-						Val: 2,
-						Next: &ListNode{
-							Val: 3,
-							Next: &ListNode{
-								Val: 4,
-								Next: &ListNode{
-									Val: 5,
-								},
-							},
-						},
-					},
-				},
+				GetListNodeBySlice([]int{1, 2, 3, 4, 5}),
 				2, 4,
-				&ListNode{
-					Val: 1,
-					Next: &ListNode{
-						Val: 4,
-						Next: &ListNode{
-							Val: 3,
-							Next: &ListNode{
-								Val: 2,
-								Next: &ListNode{
-									Val: 5,
-								},
-							},
-						},
-					}},
+				GetListNodeBySlice([]int{1, 4, 3, 2, 5}),
 			},
 
 			{
@@ -71,9 +44,9 @@ func reverseBetween(head *ListNode, left int, right int) *ListNode {
 		Next: head,
 	}
 
-	var p0 = dummy
-	for i := 0; i < left-1; i++ {
-		// 获取 反转段的上一个节点
+	var p0 = dummy                // p0 反转段的上一个节点
+	for i := 0; i < left-1; i++ { // left 是索引+1
+		// 获取反转段的上一个节点
 		p0 = p0.Next
 	}
 
@@ -83,10 +56,12 @@ func reverseBetween(head *ListNode, left int, right int) *ListNode {
 	for i := 0; i < right-left+1; i++ {
 		nxt := cur.Next
 		cur.Next = pre
+
 		pre = cur
 		cur = nxt
 	}
 
+	// 循环结束性质: cur 指向下个循环段的开始,  pre指定末尾,返回 pre
 	// 反转边界
 	p0.Next.Next = cur
 	p0.Next = pre // pre 这时为反转后的头节点

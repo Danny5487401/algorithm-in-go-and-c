@@ -32,7 +32,7 @@ func TestClimbStairs(t *testing.T) {
 }
 
 func climbStairs(n int) int {
-	// f[n]= f[n-1]+f[n-2]
+	// dfs(n)= dfs(n-1)+dfs(n-2)
 
 	var dfs func(i int) int
 
@@ -52,4 +52,18 @@ func climbStairs(n int) int {
 	}
 
 	return dfs(n)
+}
+
+func climbStairs2(n int) int {
+	// n >= 1
+	// f[n]= f[n-1]+f[n-2]
+	// f[n+2]= f[n+1]+f[n]
+	var f = make([]int, n+2)
+	f[0] = 1 // 注意这里是 1， 不是 0
+	f[1] = 1
+	for i := 0; i < n; i++ {
+		f[i+2] = f[i+1] + f[i]
+	}
+	return f[n] // 注意这里是 f[n], 不是 f[n-1]
+
 }

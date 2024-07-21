@@ -9,7 +9,7 @@ import (
 // 三数之和 https://leetcode.cn/problems/3sum/?envType=study-plan-v2&envId=top-100-liked
 
 func TestThreeSum(t *testing.T) {
-	convey.Convey("三数之和：不可以包含重复的三元组", t, func() {
+	convey.Convey("三数之和为0：未排序，不可以包含重复的三元组", t, func() {
 		testCase := []struct {
 			input    []int
 			expected [][]int

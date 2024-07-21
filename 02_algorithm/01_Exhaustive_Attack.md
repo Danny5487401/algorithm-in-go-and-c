@@ -2,8 +2,11 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [Exhaustive Search穷举法(Brute-Force蛮力法)](#exhaustive-search%E7%A9%B7%E4%B8%BE%E6%B3%95brute-force%E8%9B%AE%E5%8A%9B%E6%B3%95)
+- [Exhaustive Search 穷举法(Brute-Force蛮力法)](#exhaustive-search-%E7%A9%B7%E4%B8%BE%E6%B3%95brute-force%E8%9B%AE%E5%8A%9B%E6%B3%95)
   - [特点](#%E7%89%B9%E7%82%B9)
+    - [优点](#%E4%BC%98%E7%82%B9)
+    - [缺点](#%E7%BC%BA%E7%82%B9)
+    - [剪枝策略](#%E5%89%AA%E6%9E%9D%E7%AD%96%E7%95%A5)
   - [应用](#%E5%BA%94%E7%94%A8)
   - [解决方式](#%E8%A7%A3%E5%86%B3%E6%96%B9%E5%BC%8F)
 

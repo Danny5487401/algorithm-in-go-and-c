@@ -7,7 +7,7 @@ import (
 
 // 两数之和 II 输入有序数组 https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/description/
 func TestTwoSumII(t *testing.T) {
-	convey.Convey("two sums ", t, func() {
+	convey.Convey("two sums: 有序 ", t, func() {
 		testCase := []struct {
 			input    []int
 			target   int
@@ -35,7 +35,7 @@ func TestTwoSumII(t *testing.T) {
 func twoSum(numbers []int, target int) []int {
 	length := len(numbers)
 	first := 0
-	var ans = make([]int, 0)
+	var ans = make([]int, 0) // 记录索引下标+1
 	last := length - 1
 	for first < last {
 		sum := numbers[first] + numbers[last]

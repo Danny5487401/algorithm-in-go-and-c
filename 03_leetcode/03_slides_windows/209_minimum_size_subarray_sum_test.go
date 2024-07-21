@@ -8,7 +8,7 @@ import (
 
 // 长度最小的子数组 https://leetcode.cn/problems/minimum-size-subarray-sum/
 func TestMinSubArrayLen(t *testing.T) {
-	convey.Convey("长度最小的子数组", t, func() {
+	convey.Convey("长度最小的子数组：选择最小的正数和小于 target", t, func() {
 		testCase := []struct {
 			nums   []int
 			target int
@@ -46,15 +46,17 @@ func minSubArrayLen(target int, nums []int) int {
 	for right, num := range nums {
 		sum += num
 		for sum-nums[left] >= target { // 这里没有判断左端点大于右端点，因为target >0
+			// 不断缩小左端点
 			sum -= nums[left]
 			left++
 		}
 		if sum >= target {
+			// 记录答案
 			ans = min(ans, right-left+1)
 		}
 
 	}
-	if ans <= length {
+	if ans <= length { // 无穷大	判断
 		return ans
 	}
 

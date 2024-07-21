@@ -15,69 +15,15 @@ func TestReverseKGroup(t *testing.T) {
 			target *ListNode
 		}{
 			{
-				&ListNode{
-					Val: 1,
-					Next: &ListNode{
-						Val: 2,
-						Next: &ListNode{
-							Val: 3,
-							Next: &ListNode{
-								Val: 4,
-								Next: &ListNode{
-									Val: 5,
-								},
-							},
-						},
-					},
-				},
+				GetListNodeBySlice([]int{1, 2, 3, 4, 5}),
 				2,
-				&ListNode{
-					Val: 2,
-					Next: &ListNode{
-						Val: 1,
-						Next: &ListNode{
-							Val: 4,
-							Next: &ListNode{
-								Val: 3,
-								Next: &ListNode{
-									Val: 5,
-								},
-							},
-						},
-					}},
+				GetListNodeBySlice([]int{2, 1, 4, 3, 5}),
 			},
 
 			{
-				&ListNode{
-					Val: 1,
-					Next: &ListNode{
-						Val: 2,
-						Next: &ListNode{
-							Val: 3,
-							Next: &ListNode{
-								Val: 4,
-								Next: &ListNode{
-									Val: 5,
-								},
-							},
-						},
-					},
-				},
+				GetListNodeBySlice([]int{1, 2, 3, 4, 5}),
 				3,
-				&ListNode{
-					Val: 3,
-					Next: &ListNode{
-						Val: 2,
-						Next: &ListNode{
-							Val: 1,
-							Next: &ListNode{
-								Val: 4,
-								Next: &ListNode{
-									Val: 5,
-								},
-							},
-						},
-					}},
+				GetListNodeBySlice([]int{3, 2, 1, 4, 5}),
 			},
 		}
 
@@ -90,13 +36,14 @@ func TestReverseKGroup(t *testing.T) {
 }
 
 func reverseKGroup(head *ListNode, k int) *ListNode {
-	var n = 0
-	cur := head
-	for cur != nil {
+	var n = 0 // 链表长度
+	curTmp := head
+	for curTmp != nil {
 		n++ // 获取链表长度
-		cur = cur.Next
+		curTmp = curTmp.Next
 	}
 
+	// 创建哨兵节点
 	var dummy = &ListNode{
 		Next: head,
 	}
@@ -115,8 +62,13 @@ func reverseKGroup(head *ListNode, k int) *ListNode {
 		}
 		// 记录下次循环的开始
 		nxt := p0.Next
+
+		// 循环结束性质: cur 指向下个循环段的开始,  pre指定末尾,返回 pre
+		// 反转边界
 		p0.Next.Next = cur
 		p0.Next = pre
+
+		// 更改反转段的上一个节点
 		p0 = nxt
 	}
 

@@ -8,7 +8,7 @@ import (
 
 // 寻找峰值 https://leetcode.cn/problems/find-peak-element/description/
 func TestFindPeakElement(t *testing.T) {
-	convey.Convey("Find First and Last Position of Element in Sorted Array ", t, func() {
+	convey.Convey("寻找峰值  ", t, func() {
 		testCase := []struct {
 			input    []int
 			expected int
@@ -30,12 +30,12 @@ func TestFindPeakElement(t *testing.T) {
 }
 
 func findPeakElement(nums []int) int {
-	// 范围 [0,n-2]-->开区间 (-1,n-1)
+	// 二分的范围 [0,n-2] --> 开区间 (-1,n-1)
 	/*
 		- 红色：峰顶左侧元素
 		- 蓝色：峰顶及其右侧元素
 		- 白色：不确定
-		根据此定义，最右侧肯定是蓝色
+		根据此定义，因为 nums >0, 峰值一定存在，那么最右侧为蓝色
 	*/
 	left := -1
 	right := len(nums) - 1

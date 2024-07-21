@@ -14,35 +14,8 @@ func TestReverseList(t *testing.T) {
 			target *ListNode
 		}{
 			{
-				&ListNode{
-					Val: 1,
-					Next: &ListNode{
-						Val: 2,
-						Next: &ListNode{
-							Val: 3,
-							Next: &ListNode{
-								Val: 4,
-								Next: &ListNode{
-									Val: 5,
-								},
-							},
-						},
-					},
-				},
-				&ListNode{
-					Val: 5,
-					Next: &ListNode{
-						Val: 4,
-						Next: &ListNode{
-							Val: 3,
-							Next: &ListNode{
-								Val: 2,
-								Next: &ListNode{
-									Val: 1,
-								},
-							},
-						},
-					}},
+				GetListNodeBySlice([]int{1, 2, 3, 4, 5}),
+				GetListNodeBySlice([]int{5, 4, 3, 2, 1}),
 			},
 
 			{
@@ -71,17 +44,21 @@ func TestReverseList(t *testing.T) {
 
 func reverseList(head *ListNode) *ListNode {
 	var pre *ListNode = nil
+
 	var cur = head
 	for cur != nil {
 		// 记录当前节点的下一个节点
 		nxt := cur.Next
-		// 反转
+
+		// 反转： 将当前节点的下个节点指向上一个节点
 		cur.Next = pre
+
 		// 更新 pre 和 cur: 注意顺序
 		pre = cur
 		cur = nxt
 	}
 
+	// 循环结束: cur 指定空,  pre 指定末尾,返回 pre
 	return pre
 
 }

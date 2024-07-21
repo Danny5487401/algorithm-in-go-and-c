@@ -7,7 +7,7 @@ import (
 
 // 乘积小于 K 的子数组 https://leetcode.cn/problems/subarray-product-less-than-k/
 func TestNumSubarrayProductLessThanK(t *testing.T) {
-	convey.Convey("长度最小的子数组", t, func() {
+	convey.Convey("乘积小于 K 的子数组:求个数", t, func() {
 		testCase := []struct {
 			nums     []int
 			target   int
@@ -48,7 +48,7 @@ func numSubarrayProductLessThanK(nums []int, k int) int {
 			// 不断缩小左端点
 			left++
 		}
-		ans += right - left + 1
+		ans += right - left + 1 // 一个元素也算，所以 +1
 	}
 	return ans
 }

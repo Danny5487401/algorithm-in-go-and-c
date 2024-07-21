@@ -140,11 +140,23 @@ dfs(i,j)=
 
 ### 6 [打家劫舍](04_dynamic_programming/198_house_robber_test.go)
 ![](.04_dynamic_programming_images/house_robber.png)
+
 ![](.04_dynamic_programming_images/house_cache1.png)
+
+加*缓存*优化后
 ![](.04_dynamic_programming_images/house_cache2.png)
 
 可以看到 01->2 ,12->3, 32->4, 所以留下归
+
 ![](.04_dynamic_programming_images/Recursion1.png)
+
+
+从后面开始算: dfs[i] = max(dfs(i-1), dfs(i-2)+nums[i])
+
+数组转换--> f[i]=max(f[i-1],f[i-2]+num[i])
+
+因为防止负数 --> f[i+2]=max(f[i+1],f[i]+num[i])
+
 
 
 

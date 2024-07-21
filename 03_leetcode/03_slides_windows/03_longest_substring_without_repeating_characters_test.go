@@ -47,7 +47,7 @@ func lengthOfLongestSubstring(s string) int {
 	for right, subStr := range s {
 		count[s[right]]++
 		for count[byte(subStr)] > 1 { // 判断是否重复
-
+			// 说明有重复
 			// 恢复数据
 			count[s[left]]--
 			// 左端点右移动

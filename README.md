@@ -116,12 +116,14 @@ Note: C语言实现使用 GBK 编码
   - [237 删除链表中的节点](03_leetcode/02_link_list/237_delete_node_in_a_linked_list_test.go)
   - [283 移动零](03_leetcode/02_link_list/283_move_zeroes_test.go)
   - [876 链表的中间节点-->快慢指针](03_leetcode/02_link_list/876_middle_of_the_linked_list_test.go)
+  - [2824 统计和小于目标的下标对数目-->相向双指针](03_leetcode/02_link_list/2824_count_pairs_whose_sum_is_less_than_target_test.go)
 
 - [sliding windows 滑动窗口-->同向双指针](03_leetcode/03_slides_windows/slide_windows.md)
   - [03 无重复字符的最长子串](03_leetcode/03_slides_windows/03_longest_substring_without_repeating_characters_test.go)
   - [209 长度最小的子数组](03_leetcode/03_slides_windows/209_minimum_size_subarray_sum_test.go)
   - [239 滑动窗口最大值 ](03_leetcode/03_slides_windows/239_sliding_window_maximum_test.go)
   - [713 乘积小于 K 的子数组 ](03_leetcode/03_slides_windows/713_subarray_product_less_than_k_test.go)
+  - [2958 最多 K 个重复元素的最长子数组](03_leetcode/03_slides_windows/2958_length_of_longest_subarray_with_at_most_K_frequency_test.go)
 - 二分查找
   - [34 在排序数组中查找元素的第一个和最后一个位置](03_leetcode/04_binary_search/34_find_first_and_last_position_of_element_in_sorted_array_test.go)
   - [35 搜索插入位置](03_leetcode/04_binary_search/35_search_insert_position_test.go)
