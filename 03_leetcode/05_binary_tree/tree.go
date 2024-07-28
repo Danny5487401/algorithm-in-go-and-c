@@ -13,7 +13,7 @@ func CreateTreeByArray(nums []int) *TreeNode {
 	queue := make([]*TreeNode, 0)
 	head := &TreeNode{Val: nums[0]}
 	queue = append(queue, head)
-	for i := 1; i < len(nums); {
+	for i := 1; i < len(nums); i += 2 {
 		if nums[i] != 0 {
 			queue[0].Left = &TreeNode{Val: nums[i]}
 			queue = append(queue, queue[0].Left)
@@ -24,7 +24,7 @@ func CreateTreeByArray(nums []int) *TreeNode {
 		}
 
 		queue = queue[1:]
-		i += 2
+
 	}
 	return head
 }

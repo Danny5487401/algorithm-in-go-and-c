@@ -48,7 +48,7 @@ func numSubarrayProductLessThanK(nums []int, k int) int {
 			// 不断缩小左端点
 			left++
 		}
-		ans += right - left + 1 // 一个元素也算，所以 +1
+		ans += right - left + 1 // 一个元素也算，所以 +1. 如果 [left,right] 乘积小于 k, 那么 [left+1,right]也是小于 k ，所以元素个数 right- left +1
 	}
 	return ans
 }

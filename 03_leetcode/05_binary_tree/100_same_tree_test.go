@@ -14,39 +14,13 @@ func TestIsSameTree(t *testing.T) {
 			target bool
 		}{
 			{
-				&TreeNode{
-					Val: 1,
-					Left: &TreeNode{
-						Val: 2,
-					},
-					Right: &TreeNode{
-						Val: 3,
-					},
-				},
-				&TreeNode{
-					Val: 1,
-					Left: &TreeNode{
-						Val: 2,
-					},
-					Right: &TreeNode{
-						Val: 3,
-					},
-				},
+				CreateTreeByArray([]int{1, 2, 3}),
+				CreateTreeByArray([]int{1, 2, 3}),
 				true,
 			},
 			{
-				&TreeNode{
-					Val: 1,
-					Left: &TreeNode{
-						Val: 2,
-					},
-				},
-				&TreeNode{
-					Val: 1,
-					Right: &TreeNode{
-						Val: 2,
-					},
-				},
+				CreateTreeByArray([]int{1, 2}),
+				CreateTreeByArray([]int{1, 0, 2}),
 				false,
 			},
 		}

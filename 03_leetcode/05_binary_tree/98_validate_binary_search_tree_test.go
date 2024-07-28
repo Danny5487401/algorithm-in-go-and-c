@@ -16,33 +16,11 @@ func TestIsValidBST(t *testing.T) {
 			target bool
 		}{
 			{
-				&TreeNode{
-					Val: 2,
-					Left: &TreeNode{
-						Val: 1,
-					},
-					Right: &TreeNode{
-						Val: 3,
-					},
-				},
+				CreateTreeByArray([]int{2, 1, 3}),
 				true,
 			},
 			{
-				&TreeNode{
-					Val: 5,
-					Left: &TreeNode{
-						Val: 1,
-					},
-					Right: &TreeNode{
-						Val: 4,
-						Left: &TreeNode{
-							Val: 3,
-						},
-						Right: &TreeNode{
-							Val: 6,
-						},
-					},
-				},
+				CreateTreeByArray([]int{5, 1, 4, 0, 0, 3, 6}),
 				false,
 			},
 		}

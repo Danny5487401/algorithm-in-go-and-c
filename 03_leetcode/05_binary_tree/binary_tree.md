@@ -8,6 +8,7 @@
   - [平衡二叉树](#%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91)
   - [二叉树的右视图](#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%8F%B3%E8%A7%86%E5%9B%BE)
   - [验证二叉搜索树](#%E9%AA%8C%E8%AF%81%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91)
+    - [第一种做法：前序遍历](#%E7%AC%AC%E4%B8%80%E7%A7%8D%E5%81%9A%E6%B3%95%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86)
   - [二叉树的最近公共祖先](#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88)
   - [二叉搜索树的最近公共祖先](#%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88)
 
@@ -51,6 +52,10 @@
 
 ## [验证二叉搜索树](98_validate_binary_search_tree_test.go)
 
+### 第一种做法：前序遍历
+对于每个节点，还需要提供开闭区间的范围。
+- 向左：右边界修改
+- 向右：左边界修改
 
 
 ## [二叉树的最近公共祖先](236_lowest_common_ancestor_of_a_binary_tree_test.go)
@@ -66,5 +71,6 @@
 
 
 ## [二叉搜索树的最近公共祖先](235_lowest_common_ancestor_of_a_binary_search_tree_test.go)
-![](.binary_tree_images/ Lowest Common Ancestor of a Binary Search Tree1.png)
+
+![](.binary_tree_images/Lowest Common Ancestor of a Binary Search Tree1.png)
 

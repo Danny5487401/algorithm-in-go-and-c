@@ -13,22 +13,7 @@ func TestRightSideView(t *testing.T) {
 			target []int
 		}{
 			{
-				&TreeNode{
-					Val: 1,
-					Left: &TreeNode{
-						Val: 2,
-
-						Right: &TreeNode{
-							Val: 5,
-						},
-					},
-					Right: &TreeNode{
-						Val: 3,
-						Right: &TreeNode{
-							Val: 4,
-						},
-					},
-				},
+				CreateTreeByArray([]int{1, 2, 3, 0, 5, 0, 4}),
 				[]int{1, 3, 4},
 			},
 			{

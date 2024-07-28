@@ -14,27 +14,11 @@ func TestIsBalanced(t *testing.T) {
 			target bool
 		}{
 			{
-				&TreeNode{
-					Val: 1,
-					Left: &TreeNode{
-						Val: 2,
-						Left: &TreeNode{
-							Val: 3,
-							Left: &TreeNode{
-								Val: 4,
-							},
-							Right: &TreeNode{
-								Val: 4,
-							},
-						},
-						Right: &TreeNode{
-							Val: 3,
-						},
-					},
-					Right: &TreeNode{
-						Val: 2,
-					},
-				},
+				CreateTreeByArray([]int{3, 9, 20, 0, 0, 15, 7}),
+				true,
+			},
+			{
+				CreateTreeByArray([]int{1, 2, 2, 3, 3, 0, 0, 4, 4}),
 				false,
 			},
 			{
@@ -68,7 +52,9 @@ func maxBalancedDepth(root *TreeNode) int {
 		// 发现不平衡
 		return -1
 	}
+
 	rightDepth := maxBalancedDepth(root.Right)
+
 	if rightDepth == -1 || math.Abs(float64(rightDepth)-float64(leftDepth)) > 1 {
 		// 平衡的要求是高度差不大于1
 		return -1

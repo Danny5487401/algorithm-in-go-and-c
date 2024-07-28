@@ -5,6 +5,7 @@ import (
 	"testing"
 )
 
+// 最多 K 个重复元素的最长子数组 https://leetcode.cn/problems/length-of-longest-subarray-with-at-most-k-frequency/
 func TestMaxSubarrayLength(t *testing.T) {
 	convey.Convey("最多 K 个重复元素的最长子数组", t, func() {
 		testCase := []struct {
@@ -29,7 +30,7 @@ func TestMaxSubarrayLength(t *testing.T) {
 }
 
 func maxSubarrayLength(nums []int, k int) int {
-	var count = make(map[int]int)
+	var count = make(map[int]int) // 计算出现次数
 
 	left := 0
 	length := len(nums)
@@ -41,7 +42,7 @@ func maxSubarrayLength(nums []int, k int) int {
 
 	for right, v := range nums {
 		count[v]++
-		for count[v] > k {
+		for count[v] > k { // 无重复字符的最长子串 https://leetcode.cn/problems/longest-substring-without-repeating-characters/solution/xia-biao-zong-suan-cuo-qing-kan-zhe-by-e-iaks/
 			count[nums[left]]--
 			left++
 		}
