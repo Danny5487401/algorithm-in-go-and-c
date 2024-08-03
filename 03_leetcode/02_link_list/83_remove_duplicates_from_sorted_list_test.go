@@ -7,53 +7,18 @@ import (
 
 // 删除排序链表中的重复元素 https://leetcode.cn/problems/remove-duplicates-from-sorted-list/description/
 func TestDeleteDuplicates(t *testing.T) {
-	convey.Convey("deleteDuplicates ", t, func() {
+	convey.Convey("删除排序链表中的重复元素:保留一个重复 ", t, func() {
 		testCase := []struct {
 			input  *ListNode
 			target *ListNode
 		}{
 			{
-				&ListNode{
-					Val: 1,
-					Next: &ListNode{
-						Val: 1,
-						Next: &ListNode{
-							Val: 2,
-						},
-					},
-				},
-				&ListNode{
-					Val: 1,
-					Next: &ListNode{
-						Val: 2,
-					},
-				},
+				getListNodeBySlice([]int{1, 1, 2}),
+				getListNodeBySlice([]int{1, 2}),
 			},
 			{
-				&ListNode{
-					Val: 1,
-					Next: &ListNode{
-						Val: 1,
-						Next: &ListNode{
-							Val: 2,
-							Next: &ListNode{
-								Val: 3,
-								Next: &ListNode{
-									Val: 3,
-								},
-							},
-						},
-					},
-				},
-				&ListNode{
-					Val: 1,
-					Next: &ListNode{
-						Val: 2,
-						Next: &ListNode{
-							Val: 3,
-						},
-					},
-				},
+				getListNodeBySlice([]int{1, 1, 2, 3, 3}),
+				getListNodeBySlice([]int{1, 2, 3}),
 			},
 		}
 
@@ -69,6 +34,8 @@ func deleteDuplicates(head *ListNode) *ListNode {
 	if head == nil {
 		return nil
 	}
+
+	// 可以保留头节点，所以可以不用 dummy node
 
 	var cur = head
 

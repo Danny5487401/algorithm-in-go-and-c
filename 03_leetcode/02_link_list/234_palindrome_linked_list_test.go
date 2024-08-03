@@ -33,10 +33,6 @@ func isPalindrome(head *ListNode) bool {
 	mid := middleNode(head)
 	head2 := reverseList(mid) // 这里分成两段链表
 	for head2 != nil {
-		if head == mid {
-			break
-		}
-
 		if head.Val != head2.Val {
 			return false
 		}

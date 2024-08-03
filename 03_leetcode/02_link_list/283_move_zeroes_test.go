@@ -7,9 +7,8 @@ import (
 )
 
 // 移动零 https://leetcode.cn/problems/move-zeroes/description/?envType=study-plan-v2&envId=top-100-liked
-
 func TestMoveZeros(t *testing.T) {
-	convey.Convey("Move Zeroes ", t, func() {
+	convey.Convey("移动零：0 在末尾，其他元素顺序不变 ", t, func() {
 		testCase := []struct {
 			input    []int
 			expected []int
@@ -28,7 +27,7 @@ func TestMoveZeros(t *testing.T) {
 }
 
 func moveZeroes(nums []int) {
-	// 左指针左边均为非零数；
+	// 左指针左边均为非零数
 	// 右指针左边直到左指针处均为零
 	left, right, n := 0, 0, len(nums)
 	for right < n {

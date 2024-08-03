@@ -7,59 +7,17 @@ import (
 
 // 删除排序链表中的重复元素II https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/description/
 func TestDeleteDuplicatesII(t *testing.T) {
-	convey.Convey("deleteDuplicates II", t, func() {
+	convey.Convey("deleteDuplicates II：删除所有重复，不保留自身", t, func() {
 		testCase := []struct {
 			input  *ListNode
 			target *ListNode
 		}{
 			{
-				&ListNode{
-					Val: 1,
-					Next: &ListNode{
-						Val: 2,
-						Next: &ListNode{
-							Val: 3,
-							Next: &ListNode{
-								Val: 3,
-								Next: &ListNode{
-									Val: 4,
-									Next: &ListNode{
-										Val: 4,
-										Next: &ListNode{
-											Val: 5,
-										},
-									},
-								},
-							},
-						},
-					},
-				},
-				&ListNode{
-					Val: 1,
-					Next: &ListNode{
-						Val: 2,
-						Next: &ListNode{
-							Val: 5,
-						},
-					},
-				},
+				getListNodeBySlice([]int{1, 2, 3, 3, 4, 4, 5}),
+				getListNodeBySlice([]int{1, 2, 5}),
 			},
 			{
-				&ListNode{
-					Val: 1,
-					Next: &ListNode{
-						Val: 1,
-						Next: &ListNode{
-							Val: 1,
-							Next: &ListNode{
-								Val: 2,
-								Next: &ListNode{
-									Val: 3,
-								},
-							},
-						},
-					},
-				},
+				getListNodeBySlice([]int{1, 1, 1, 2, 3}),
 				&ListNode{
 					Val: 2,
 					Next: &ListNode{
@@ -82,15 +40,18 @@ func deleteDuplicatesII(head *ListNode) *ListNode {
 		return nil
 	}
 
-	var dummmy = &ListNode{
+	var dummy = &ListNode{
 		Next: head,
 	}
 
-	var cur = dummmy
+	var cur = dummy
 
+	// 每次循环看下个节点和下下个节点
 	for cur.Next != nil && cur.Next.Next != nil {
 		nextVal := cur.Next.Val
-		if nextVal == cur.Next.Next.Val {
+		if nextVal == cur.Next.Next.Val { // 当前下个 == 当前下下个
+			// 可能连续2个以上相同
+
 			for cur.Next != nil && nextVal == cur.Next.Val {
 				// 再下一节点循环判断
 				cur.Next = cur.Next.Next
@@ -101,5 +62,5 @@ func deleteDuplicatesII(head *ListNode) *ListNode {
 		}
 	}
 
-	return dummmy.Next
+	return dummy.Next
 }
