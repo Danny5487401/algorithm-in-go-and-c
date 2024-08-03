@@ -113,6 +113,7 @@ Note: C语言实现使用 GBK 编码
   - [143 重排链表](03_leetcode/02_link_list/143_reorder_list_test.go)
   - [167 两数之和 II 输入有序数组-->相向指针](03_leetcode/02_link_list/167_two_sum_II_input_array_is_sorted_test.go)
   - [206 反转链表--中间部分反转](03_leetcode/02_link_list/206_reverse_linked_list_test.go)
+  - [234 回文链表](03_leetcode/02_link_list/234_palindrome_linked_list_test.go)
   - [237 删除链表中的节点](03_leetcode/02_link_list/237_delete_node_in_a_linked_list_test.go)
   - [283 移动零](03_leetcode/02_link_list/283_move_zeroes_test.go)
   - [876 链表的中间节点-->快慢指针](03_leetcode/02_link_list/876_middle_of_the_linked_list_test.go)

@@ -141,8 +141,8 @@ slow 从相遇点出发，head 从头节点出发，两个都走c步，slow 到�
 ![](.two_point_images/Reorder List2.png)
 ![](.two_point_images/Reorder List3.png)
 ![](.two_point_images/Reorder List4.png)
-- 首先找到中间链表
-- 接着反转链表得到两段链表 
+- 首先找到中间链表: 12345
+- 接着反转链表得到两段链表: head 1->2  head2 3<-4<-5 
 - 定义：head指左边头节点， head2指右边头节点
 - 将 head 指向 head2 ,head2 指向 head.next
 - 移动 head, 和 head2 , 需要提交记录 head.next 和 head2.next 
