@@ -15,48 +15,18 @@ func TestInvertTree(t *testing.T) {
 			target *TreeNode
 		}{
 			{
-				&TreeNode{
-					Val: 4,
-					Left: &TreeNode{
-						Val: 2,
-						Left: &TreeNode{
-							Val: 1,
-						},
-						Right: &TreeNode{
-							Val: 3,
-						},
-					},
-					Right: &TreeNode{
-						Val: 7,
-						Left: &TreeNode{
-							Val: 6,
-						},
-						Right: &TreeNode{
-							Val: 9,
-						},
-					},
-				},
-				&TreeNode{
-					Val: 4,
-					Left: &TreeNode{
-						Val: 7,
-						Left: &TreeNode{
-							Val: 9,
-						},
-						Right: &TreeNode{
-							Val: 6,
-						},
-					},
-					Right: &TreeNode{
-						Val: 2,
-						Left: &TreeNode{
-							Val: 3,
-						},
-						Right: &TreeNode{
-							Val: 1,
-						},
-					},
-				},
+				Ints2TreeNode([]int{4, 2, 7, 1, 3, 6, 9}),
+				Ints2TreeNode([]int{4, 7, 2, 9, 6, 3, 1}),
+			},
+
+			{
+				Ints2TreeNode([]int{2, 1, 3}),
+				Ints2TreeNode([]int{2, 3, 1}),
+			},
+
+			{
+				Ints2TreeNode([]int{}),
+				Ints2TreeNode([]int{}),
 			},
 		}
 
@@ -69,13 +39,16 @@ func TestInvertTree(t *testing.T) {
 }
 
 func invertTree(root *TreeNode) *TreeNode {
-
+	//对于根节点，它的左右儿子必须交换，即左儿子变成右儿子，右儿子变成左儿子。
+	//对于根节点的左右子树，也需要翻转其内部节点。
 	if root == nil {
 		return nil
 	}
 	// left 然后 right, 代表从左下面往上
-	left := invertTree(root.Left)
-	right := invertTree(root.Right)
+	left := invertTree(root.Left)   // 获取到左子树翻转后的结果 left
+	right := invertTree(root.Right) // 获取到右子树翻转后的结果 right
+
+	// 交换左右儿子
 	root.Left = right
 	root.Right = left
 	return root

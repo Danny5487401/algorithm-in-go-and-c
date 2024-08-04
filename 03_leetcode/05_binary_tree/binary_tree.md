@@ -17,7 +17,6 @@
 # 二叉树
 
 
-
 ## [二叉树的最大深度](104_maximum_depth_of_binary_tree_test.go)
 ![](.binary_tree_images/max_binary_tree_depth0.png)
 ![](.binary_tree_images/max_binary_tree_depth1.png)
@@ -26,6 +25,13 @@
 整个树的最大深度 = max(左子树最大深度,右子树最大深度)+1
 
 类比循环，执行的代码相同，但是子问题的计算结果要返回给上一级问题，所以用递归 
+
+边界调节：空节点
+
+
+- 方式一：传递节点
+- 方式二：传递节点个数
+![](.binary_tree_images/maximun_depth4.png)
 
 
 ## [相同的树](100_same_tree_test.go)

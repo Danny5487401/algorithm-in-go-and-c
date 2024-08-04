@@ -6,7 +6,6 @@ import (
 )
 
 // 全排列 https://leetcode.cn/problems/permutations/description/
-
 func TestPermute(t *testing.T) {
 	convey.Convey("permute 全排列 ", t, func() {
 		testCase := []struct {
@@ -49,11 +48,10 @@ func permute(nums []int) [][]int {
 		}
 		for j, on := range onPath {
 			if !on { // 没有选的情况下
-
 				path[i] = nums[j]
 				onPath[j] = true
-				dfs(i + 1)
 
+				dfs(i + 1)
 				// 还原
 				onPath[j] = false
 			}

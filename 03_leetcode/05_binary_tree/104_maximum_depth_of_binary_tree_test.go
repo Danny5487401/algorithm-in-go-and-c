@@ -17,10 +17,14 @@ func TestMaxDepth(t *testing.T) {
 				CreateTreeByArray([]int{3, 9, 20, 0, 0, 15, 7}),
 				3,
 			},
+			{
+				CreateTreeByArray([]int{1, 0, 2}),
+				2,
+			},
 		}
 
 		for _, tst := range testCase {
-			rsp := maxDepth(tst.input)
+			rsp := maxDepth2(tst.input)
 			convey.So(rsp, convey.ShouldEqual, tst.target)
 		}
 	})
@@ -44,18 +48,18 @@ func maxDepth(root *TreeNode) int {
 // 方法二：用全局变量保存最大值,传递节点个数
 func maxDepth2(root *TreeNode) int {
 	var ans = 0
-	var dfs func(node *TreeNode, count int)
-	dfs = func(node *TreeNode, count int) {
+	var dfs func(node *TreeNode, depth int)
+	dfs = func(node *TreeNode, depth int) {
 		if node == nil {
 			return
 		}
 		// 每次到一个节点 +1
-		count++
-		ans = max(ans, count)
+		depth++
+		ans = max(ans, depth)
 
 		// 递归左右子树
-		dfs(node.Left, count)
-		dfs(node.Right, count)
+		dfs(node.Left, depth)
+		dfs(node.Right, depth)
 	}
 	dfs(root, 0)
 	return ans
