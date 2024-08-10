@@ -8,7 +8,7 @@ import (
 // 爬楼梯 https://leetcode.cn/problems/climbing-stairs/?envType=study-plan-v2&envId=top-100-liked
 
 func TestClimbStairs(t *testing.T) {
-	convey.Convey("爬楼梯 ", t, func() {
+	convey.Convey("爬楼梯，只能走 n 步", t, func() {
 		testCase := []struct {
 			input  int
 			target int
@@ -62,7 +62,7 @@ func climbStairs2(n int) int {
 	f[0] = 1 // 注意这里是 1， 不是 0
 	f[1] = 1
 	for i := 0; i < n; i++ {
-		f[i+2] = f[i+1] + f[i]
+		f[i+2] = f[i+1] + f[i] // f[2]= f[0]+f[1]=1+1=2
 	}
 	return f[n] // 注意这里是 f[n], 不是 f[n-1]
 

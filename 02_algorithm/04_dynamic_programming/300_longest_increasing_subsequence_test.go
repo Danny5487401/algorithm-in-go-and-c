@@ -7,7 +7,7 @@ import (
 
 // 最长递增子序列 https://leetcode.cn/problems/longest-increasing-subsequence/?envType=study-plan-v2&envId=top-100-liked
 func TestLengthOfLIS(t *testing.T) {
-	convey.Convey("最长递增子序列 ", t, func() {
+	convey.Convey("最长递增子序列：不运行相同", t, func() {
 		testCase := []struct {
 			input  []int
 			target int
@@ -45,6 +45,7 @@ func lengthOfLIS(nums []int) int {
 		if cache[i] != 0 {
 			return cache[i]
 		}
+
 		res := 0
 		for j := 0; j < i; j++ {
 			if nums[j] < nums[i] {
@@ -61,6 +62,8 @@ func lengthOfLIS(nums []int) int {
 
 	} // dfs[i]= max{dfs[j}+1
 	ans := 0
+
+	// 从后面开始
 	for i := n - 1; i >= 0; i-- {
 		ans = max(ans, dfs(i))
 	}

@@ -14,11 +14,11 @@ func TestMaxDepth(t *testing.T) {
 			target int
 		}{
 			{
-				CreateTreeByArray([]int{3, 9, 20, 0, 0, 15, 7}),
+				Ints2TreeNode([]int{3, 9, 20, NULL, NULL, 15, 7}),
 				3,
 			},
 			{
-				CreateTreeByArray([]int{1, 0, 2}),
+				Ints2TreeNode([]int{1, NULL, 2}),
 				2,
 			},
 		}

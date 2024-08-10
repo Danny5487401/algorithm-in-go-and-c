@@ -8,7 +8,7 @@ import (
 // 目标和 https://leetcode.cn/problems/target-sum/description/
 
 func TestFindTargetSumWays(t *testing.T) {
-	convey.Convey("目标和 ", t, func() {
+	convey.Convey("目标和：加减实现 ", t, func() {
 		testCase := []struct {
 			input struct {
 				nums   []int
@@ -89,7 +89,7 @@ func findTargetSumWays(nums []int, target int) int {
 		defer func() {
 			cache[i][c] = res
 		}()
-		if c < nums[i] {
+		if c < nums[i] { // 代表不能选
 			return dfs(i-1, c)
 		}
 		return dfs(i-1, c) + dfs(i-1, c-nums[i])

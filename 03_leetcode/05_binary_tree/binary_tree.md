@@ -57,6 +57,9 @@
 
 
 ## [验证二叉搜索树](98_validate_binary_search_tree_test.go)
+![](.binary_tree_images/isValidBST1.png)
+
+
 
 ### 第一种做法：前序遍历
 对于每个节点，还需要提供开闭区间的范围。

@@ -14,13 +14,13 @@ func TestIsSameTree(t *testing.T) {
 			target bool
 		}{
 			{
-				CreateTreeByArray([]int{1, 2, 3}),
-				CreateTreeByArray([]int{1, 2, 3}),
+				Ints2TreeNode([]int{1, 2, 3}),
+				Ints2TreeNode([]int{1, 2, 3}),
 				true,
 			},
 			{
-				CreateTreeByArray([]int{1, 2}),
-				CreateTreeByArray([]int{1, 0, 2}),
+				Ints2TreeNode([]int{1, 2}),
+				Ints2TreeNode([]int{1, 0, 2}),
 				false,
 			},
 		}

@@ -8,7 +8,7 @@ import (
 // 二叉树的直径 https://leetcode.cn/problems/diameter-of-binary-tree/description/
 
 func TestDiameterOfBinaryTree(t *testing.T) {
-	convey.Convey("二叉树的直径", t, func() {
+	convey.Convey("二叉树的直径：两点最大距离", t, func() {
 		testCase := []struct {
 			input  *TreeNode
 			target int

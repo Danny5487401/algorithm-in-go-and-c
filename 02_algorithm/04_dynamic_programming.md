@@ -11,7 +11,7 @@
     - [4 0-1 背包](#4-0-1-%E8%83%8C%E5%8C%85)
     - [5 机器人走法](#5-%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%B5%B0%E6%B3%95)
     - [6 打家劫舍](#6-%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D)
-    - [7 [LCS 最长公共子序列--非连续](04_dynamic_programming/1143_longest_common_subs equence_test.go)](#7-lcs-%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97--%E9%9D%9E%E8%BF%9E%E7%BB%AD04_dynamic_programming1143_longest_common_subs-equence_testgo)
+    - [7 LCS 最长公共子序列--非连续](#7-lcs-%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97--%E9%9D%9E%E8%BF%9E%E7%BB%AD)
     - [8 最长递增子序列](#8-%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97)
   - [解题思路](#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF)
     - [9 最长回文子序列](#9-%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97)
@@ -160,7 +160,7 @@ dfs(i,j)=
 
 
 
-### 7 [LCS 最长公共子序列--非连续](04_dynamic_programming/1143_longest_common_subs equence_test.go)
+### [7 LCS 最长公共子序列--非连续](04_dynamic_programming/1143_longest_common_subsequence_test.go)
 - 子数组/子串 subarray/substring 连续
 - 子序列 subsequence  非连续
 
@@ -179,7 +179,7 @@ dfs[i,j]=
 ![](.04_dynamic_programming_images/Longest Common Subsequence3.png) 
 
 
-### 8 [最长递增子序列](04_dynamic_programming/300_longest_increasing_subsequence_test.go)
+### [8 最长递增子序列](04_dynamic_programming/300_longest_increasing_subsequence_test.go)
 
 思路一：选 或 不选， 从后面往前
 

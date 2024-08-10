@@ -6,9 +6,8 @@ import (
 )
 
 // 编辑距离 https://leetcode.cn/problems/edit-distance/description/
-
 func TestMinDistance(t *testing.T) {
-	convey.Convey("编辑距离 ", t, func() {
+	convey.Convey("编辑距离:增删改字符 ", t, func() {
 		testCase := []struct {
 			input1 string
 			input2 string

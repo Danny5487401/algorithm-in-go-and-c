@@ -16,11 +16,11 @@ func TestIsValidBST(t *testing.T) {
 			target bool
 		}{
 			{
-				CreateTreeByArray([]int{2, 1, 3}),
+				Ints2TreeNode([]int{2, 1, 3}),
 				true,
 			},
 			{
-				CreateTreeByArray([]int{5, 1, 4, 0, 0, 3, 6}),
+				Ints2TreeNode([]int{5, 1, 4, 0, 0, 3, 6}),
 				false,
 			},
 		}
@@ -39,7 +39,7 @@ func TestIsValidBST(t *testing.T) {
 // 向右：左边界修改
 
 func isValidBST(root *TreeNode) bool {
-	// 根节点范围 :负无穷 正无穷 (-∞，+∞)
+	// 根节点范围: 负无穷 正无穷 (-∞，+∞)
 
 	return checkValidBST(root, math.MinInt, math.MaxInt)
 }

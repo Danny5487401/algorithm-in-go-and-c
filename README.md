@@ -90,9 +90,14 @@ Note: C语言实现使用 GBK 编码
   - [188 最多K次数买卖股票](02_algorithm/03_greedy_method/188_best_time_to_buy_and_sell_stock_IV_test.go)
   - [309 冷冻期买卖股票](02_algorithm/03_greedy_method/122_best_time_to_buy_and_sell_stock_II_test.go)
 - [4 动态规划 dynamic programming](02_algorithm/04_dynamic_programming.md)
+  - [70 爬楼梯](02_algorithm/04_dynamic_programming/70_climbing_stairs_test.go)
+  - [72 编辑距离](02_algorithm/04_dynamic_programming/72_edit_distance_test.go)
   - [198 打家劫舍](02_algorithm/04_dynamic_programming/198_house_robber_test.go)
+  - [300 最长递增子序列](02_algorithm/04_dynamic_programming/300_longest_increasing_subsequence_test.go)
   - [322 零钱兑换](02_algorithm/04_dynamic_programming/322_coin_change_test.go)
   - [494 目标和-->01背包转换](02_algorithm/04_dynamic_programming/494_target_sum_test.go)
+  - [543 二叉树的直径](02_algorithm/04_dynamic_programming/543_diameter_of_binary_tree_test.go)
+  - [1143 最长公共子序列](02_algorithm/04_dynamic_programming/1143_longest_common_subsequence_test.go)
 
 
 ## 第三章 LeetCode
@@ -148,6 +153,9 @@ Note: C语言实现使用 GBK 编码
   - [235 二叉搜索树的最近公共祖先](03_leetcode/05_binary_tree/235_lowest_common_ancestor_of_a_binary_search_tree_test.go)
   - [236 二叉树的最近公共祖先](03_leetcode/05_binary_tree/236_lowest_common_ancestor_of_a_binary_tree_test.go)
   - [513 找树左下角的值](03_leetcode/05_binary_tree/513_find_bottom_left_tree_value_test.go)
+  - [700 二叉搜索树中的搜索](03_leetcode/05_binary_tree/700_search_in_a_binary_search_tree_test.go)
+  - [938 二叉搜索树的范围和](03_leetcode/05_binary_tree/938_range_sum_of_BST_test.go)
+  - [951 翻转等价二叉树:选择任意节点，然后交换它的左子树和右子树](03_leetcode/05_binary_tree/951_flip_equivalent_binary_trees_test.go)
 - [backtracking 回溯](03_leetcode/06_backtracking/back_tracking.md)
   - [17 电话号码的字母组合-->子集型回溯](03_leetcode/06_backtracking/17_letter_combinations_of_a_phone_number_test.go)
   - [22 括号生成-->组合回溯](03_leetcode/06_backtracking/22_generate_parentheses_test.go)

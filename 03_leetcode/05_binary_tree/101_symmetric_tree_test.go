@@ -14,11 +14,11 @@ func TestIsSymmetric(t *testing.T) {
 			target bool
 		}{
 			{
-				CreateTreeByArray([]int{1, 2, 2, 3, 4, 4, 3}),
+				Ints2TreeNode([]int{1, 2, 2, 3, 4, 4, 3}),
 				true,
 			},
 			{
-				CreateTreeByArray([]int{1, 2, 2, 0, 3, 0, 3}),
+				Ints2TreeNode([]int{1, 2, 2, 0, 3, 0, 3}),
 				false,
 			},
 		}
