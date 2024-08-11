@@ -7,9 +7,9 @@ import (
 
 // 二叉树最近公共祖先 https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/?envType=study-plan-v2&envId=top-100-liked
 func TestLowestCommonAncestor(t *testing.T) {
-	root1 := CreateTreeByArray([]int{3, 5, 1, 6, 2, 9, 8, 0, 0, 7, 4})
-	root2 := CreateTreeByArray([]int{3, 5, 1, 6, 2, 9, 8, 0, 0, 7, 4})
-	root3 := CreateTreeByArray([]int{1, 2})
+	root1 := Ints2TreeNode([]int{3, 5, 1, 6, 2, 9, 8, NULL, NULL, 7, 4})
+	root2 := Ints2TreeNode([]int{3, 5, 1, 6, 2, 9, 8, NULL, NULL, 7, 4})
+	root3 := Ints2TreeNode([]int{1, 2})
 
 	type args struct {
 		root *TreeNode

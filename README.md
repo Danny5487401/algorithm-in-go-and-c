@@ -164,6 +164,7 @@ Note: C语言实现使用 GBK 编码
   - [78 子集](03_leetcode/06_backtracking/78_subsets_test.go)
   - [131 分割回文串-->子集型回溯](03_leetcode/06_backtracking/131_palindrome_partition_test.go)
   - [216 组合总和III-->剪枝优化](03_leetcode/06_backtracking/216_combination_sum3_test.go)
+  - [257 二叉树的所有路径](03_leetcode/06_backtracking/257_binary_tree_paths_test.go)
 - [单调栈](03_leetcode/07_stack/monotone_stack.md)
   - [42 接雨水](03_leetcode/07_stack/42_trapping_rain_water_test.go)
   - [739 每日温度](03_leetcode/07_stack/739_daily_temperatures_test.go)

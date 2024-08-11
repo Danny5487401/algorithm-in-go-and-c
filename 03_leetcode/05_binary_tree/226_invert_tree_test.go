@@ -7,7 +7,6 @@ import (
 )
 
 // 翻转二叉树: https://leetcode.cn/problems/invert-binary-tree/?envType=study-plan-v2&envId=top-100-liked
-
 func TestInvertTree(t *testing.T) {
 	convey.Convey("翻转二叉树", t, func() {
 		testCase := []struct {

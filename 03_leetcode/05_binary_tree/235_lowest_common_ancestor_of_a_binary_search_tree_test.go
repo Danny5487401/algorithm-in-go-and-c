@@ -7,9 +7,9 @@ import (
 
 // 二叉搜索树的最近公共祖先 https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/?envType=study-plan-v2&envId=top-100-liked
 func TestLowestCommonAncestorBinarySearchTree(t *testing.T) {
-	root1 := CreateTreeByArray([]int{6, 2, 8, 0, 4, 7, 9, 0, 0, 3, 5})
-	root2 := CreateTreeByArray([]int{6, 2, 8, 0, 4, 7, 9, 0, 0, 3, 5})
-	root3 := CreateTreeByArray([]int{1, 2})
+	root1 := Ints2TreeNode([]int{6, 2, 8, 0, 4, 7, 9, NULL, NULL, 3, 5})
+	root2 := Ints2TreeNode([]int{6, 2, 8, 0, 4, 7, 9, NULL, NULL, 3, 5})
+	root3 := Ints2TreeNode([]int{1, 2})
 
 	type args struct {
 		root *TreeNode
@@ -64,16 +64,18 @@ func TestLowestCommonAncestorBinarySearchTree(t *testing.T) {
 }
 
 func lowestCommonAncestor2(root, p, q *TreeNode) *TreeNode {
+	// 节点范围不为空
+
 	val := root.Val
-	if p.Val < val && q.Val < val {
+	if p.Val < val && q.Val < val { // p,q 都是左子树
 		// 在左子树中
 		return lowestCommonAncestor(root.Left, p, q)
 	}
 
-	if p.Val > val && q.Val > val {
+	if p.Val > val && q.Val > val { // p,q 都是右子树
 		// 在右子树中
 		return lowestCommonAncestor(root.Right, p, q)
 	}
 
-	return root
+	return root // p,q 在两侧
 }

@@ -10,7 +10,7 @@ import (
 // 子集 https://leetcode.cn/problems/subsets/?envType=study-plan-v2&envId=top-100-liked
 
 func TestSubsets(t *testing.T) {
-	convey.Convey("subsets ", t, func() {
+	convey.Convey("子集 ", t, func() {
 		testCase := []struct {
 			input  []int
 			target [][]int
@@ -19,10 +19,14 @@ func TestSubsets(t *testing.T) {
 
 				[]int{1, 2, 3}, [][]int{{}, {1}, {2}, {1, 2}, {3}, {1, 3}, {2, 3}, {1, 2, 3}},
 			},
+			{
+
+				[]int{0}, [][]int{{}, {0}},
+			},
 		}
 
 		for _, tst := range testCase {
-			rsp := subsets2(tst.input)
+			rsp := subsets(tst.input)
 			compareRsp := intSliceSliceEqual(rsp, tst.target)
 			convey.So(compareRsp, convey.ShouldBeTrue)
 		}
