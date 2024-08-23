@@ -9,7 +9,7 @@ import (
 // 组合 https://leetcode.cn/problems/combinations/description/ 是 子集的特殊情况 https://leetcode.cn/problems/subsets/?envType=study-plan-v2&envId=top-100-liked
 
 func TestCombination(t *testing.T) {
-	convey.Convey("组合: [1,n] 选 k 个数1", t, func() {
+	convey.Convey("组合: [1,n] 选 k 个数", t, func() {
 		testCase := []struct {
 			input struct {
 				n int

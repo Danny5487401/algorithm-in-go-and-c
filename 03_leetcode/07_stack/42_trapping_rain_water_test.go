@@ -8,7 +8,7 @@ import (
 // 接雨水 https://leetcode.cn/problems/trapping-rain-water/description/
 
 func TestTrap(t *testing.T) {
-	convey.Convey("dailyTemperatures ", t, func() {
+	convey.Convey("接雨水 ", t, func() {
 		testCase := []struct {
 			input    []int
 			expected int
@@ -33,10 +33,11 @@ func TestTrap(t *testing.T) {
 func trap1(height []int) int {
 	ans := 0
 	length := len(height)
+	// 分别求前缀和后缀最大值
 	preMax := make([]int, len(height)) // preMax[i] 表示从 height[0] 到 height[i] 的最大值
 	preMax[0] = height[0]
 	for i := 1; i < len(height); i++ {
-		preMax[i] = max(preMax[i-1], height[i])
+		preMax[i] = max(preMax[i-1], height[i]) // 取当前与上一个的最大值
 	}
 
 	suffixMax := make([]int, len(height)) //  suffixMax[i] 表示从 height[i] 到 height[n-1] 的最大值
@@ -46,7 +47,7 @@ func trap1(height []int) int {
 	}
 
 	for i := 0; i < len(height); i++ {
-		ans += min(preMax[i], suffixMax[i]) - height[i]
+		ans += min(preMax[i], suffixMax[i]) - height[i] // 1* (min(preMax,suffixMax)-height)
 	}
 	return ans
 

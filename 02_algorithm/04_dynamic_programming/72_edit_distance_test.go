@@ -57,7 +57,7 @@ func minDistance(word1 string, word2 string) int {
 			cache[i][j] = res
 		}()
 		if word1[i] == word2[j] {
-			return dfs(i-1, j-1)
+			return dfs(i-1, j-1) //相等，不需要操作
 		}
 		// 分别对应 新增，删除，替换
 		return min(dfs(i, j-1), dfs(i-1, j), dfs(i-1, j-1)) + 1

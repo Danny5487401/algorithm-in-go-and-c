@@ -30,9 +30,9 @@ func moveZeroes(nums []int) {
 	// 左指针左边均为非零数
 	// 右指针左边直到左指针处均为零
 	left, right, n := 0, 0, len(nums)
-	for right < n {
+	for right < n { //
 		if nums[right] != 0 {
-			nums[left], nums[right] = nums[right], nums[left]
+			nums[left], nums[right] = nums[right], nums[left] // 左右指针交换
 			left++
 		}
 		right++

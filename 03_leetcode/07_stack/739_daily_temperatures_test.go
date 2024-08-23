@@ -8,7 +8,7 @@ import (
 // 每日温度 https://leetcode.cn/problems/daily-temperatures/?envType=study-plan-v2&envId=top-100-liked
 
 func TestDailyTemperatures(t *testing.T) {
-	convey.Convey("dailyTemperatures ", t, func() {
+	convey.Convey("每日温度 ", t, func() {
 		testCase := []struct {
 			input    []int
 			expected []int
@@ -32,8 +32,8 @@ func TestDailyTemperatures(t *testing.T) {
 
 }
 
+// 写法一从右到左 ：栈中记录下一个更大元素的「候选项」
 func dailyTemperatures(temperatures []int) []int {
-	//写法一从右到左 ：栈中记录下一个更大元素的「候选项」
 
 	length := len(temperatures)
 	ans := make([]int, length) // 记录索引
@@ -56,8 +56,8 @@ func dailyTemperatures(temperatures []int) []int {
 	return ans
 }
 
+// 写法二从左往右：栈内是还没有找到更大的数
 func dailyTemperatures2(temperatures []int) []int {
-	// 写法二从左往右：站内是还没有找到更大的数
 
 	length := len(temperatures)
 	ans := make([]int, length) // 记录索引

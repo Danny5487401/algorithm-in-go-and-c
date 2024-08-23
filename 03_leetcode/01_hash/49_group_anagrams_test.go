@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
 	"github.com/smartystreets/goconvey/convey"
@@ -11,16 +10,16 @@ import (
 
 // 字母异位词分组 https://leetcode.cn/problems/group-anagrams/description/?envType=study-plan-v2&envId=top-100-liked
 func TestGroupAnagrams(t *testing.T) {
-	convey.Convey("two sums ", t, func() {
+	convey.Convey("字母异位词分组 ", t, func() {
 		testCase := []struct {
 			input    []string
 			expected [][]string
 		}{
 			{
 				[]string{"eat", "tea", "tan", "ate", "nat", "bat"}, [][]string{
-					[]string{"bat"},
-					[]string{"nat", "tan"},
-					[]string{"ate", "eat", "tea"},
+					{"bat"},
+					{"nat", "tan"},
+					{"ate", "eat", "tea"},
 				},
 			},
 
@@ -31,7 +30,6 @@ func TestGroupAnagrams(t *testing.T) {
 
 		for _, tst := range testCase {
 			ret := groupAnagrams(tst.input)
-			fmt.Println(cmp.Equal(ret, tst.expected, cmpopts.SortSlices(func(x, y int) bool { return x < y })))
 			convey.ShouldBeTrue(cmp.Equal(ret, tst.expected, cmpopts.SortSlices(func(x, y int) bool { return x < y })), true)
 		}
 	})

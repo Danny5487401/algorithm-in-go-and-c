@@ -16,8 +16,8 @@ func TestThreeSum(t *testing.T) {
 		}{
 			{
 				[]int{-1, 0, 1, 2, -1, -4}, [][]int{
-					[]int{-1, -1, 2},
-					[]int{-1, 0, 1},
+					{-1, -1, 2},
+					{-1, 0, 1},
 				},
 			},
 			{
@@ -25,7 +25,7 @@ func TestThreeSum(t *testing.T) {
 			},
 			{
 				[]int{0, 0, 0}, [][]int{
-					[]int{0, 0, 0},
+					{0, 0, 0},
 				},
 			},
 		}

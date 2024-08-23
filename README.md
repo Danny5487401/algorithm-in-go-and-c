@@ -100,7 +100,7 @@ Note: C语言实现使用 GBK 编码
   - [1143 最长公共子序列](02_algorithm/04_dynamic_programming/1143_longest_common_subsequence_test.go)
 
 
-## 第三章 LeetCode
+## [第三章 LeetCode](03_leetcode/leetcode.md)
 - hash
   - [1 两数之和](03_leetcode/01_hash/01_two_sum_test.go)
   - [49 字母异位词分组](03_leetcode/01_hash/49_group_anagrams_test.go)
@@ -134,9 +134,12 @@ Note: C语言实现使用 GBK 编码
   - [2930 找到最长的半重复子字符串](03_leetcode/03_slides_windows/2730_longestSemiRepetitiveSubstring_test.go)
   - [2958 最多 K 个重复元素的最长子数组](03_leetcode/03_slides_windows/2958_length_of_longest_subarray_with_at_most_K_frequency_test.go)
 - 二分查找
+  - [33 搜索旋转排序数组](03_leetcode/04_binary_search/33_search_in_rotated_sorted_array_test.go)
   - [34 在排序数组中查找元素的第一个和最后一个位置](03_leetcode/04_binary_search/34_find_first_and_last_position_of_element_in_sorted_array_test.go)
   - [35 搜索插入位置](03_leetcode/04_binary_search/35_search_insert_position_test.go)
+  - [153 寻找旋转排序数组中的最小值](03_leetcode/04_binary_search/153_find_minimum_in_rotated_sorted_array_test.go)
   - [162 寻找峰值](03_leetcode/04_binary_search/162_find_peak_element_test.go) 
+  - [1901 寻找峰值II](03_leetcode/04_binary_search/1901_find_peak_element_II_test.go)
 
 - binary tree 二叉树
   - [94 In-order Traversal 中序遍历](03_leetcode/05_binary_tree/94_binary_tree_inorder_traversal_test.go)

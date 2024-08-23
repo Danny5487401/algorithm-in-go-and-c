@@ -12,7 +12,7 @@
 # Monotone Stack 单调栈
 
 
-单调栈（Monotone Stack）：一种特殊的栈。在栈的「先进后出」规则基础上，要求「从 栈顶 到 栈底 的元素是单调递增（或者单调递减）
+单调栈（Monotone Stack）：一种特殊的栈。在栈的「先进后出」规则基础上，要求 从 栈顶 到 栈底 的元素是单调递增（或者单调递减）
 
 ![](.monotone_stack_images/monotone stack1.png)
 

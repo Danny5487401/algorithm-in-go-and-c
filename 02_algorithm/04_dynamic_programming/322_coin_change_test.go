@@ -9,7 +9,7 @@ import (
 // 零钱兑换 https://leetcode.cn/problems/coin-change/?envType=study-plan-v2&envId=top-100-liked
 
 func TestCoinChange(t *testing.T) {
-	convey.Convey("零钱兑换 ", t, func() {
+	convey.Convey("零钱兑换:最少的数量，可以重复选硬币 ", t, func() {
 		testCase := []struct {
 			input  []int
 			amount int
@@ -42,7 +42,7 @@ func coinChange(coins []int, amount int) int {
 
 	memo := make([][]int, length)
 	for i := range memo {
-		memo[i] = make([]int, amount+1)
+		memo[i] = make([]int, amount+1) // 需要记录 0，所以 +1
 		for j := range memo[i] {
 			memo[i][j] = -1 // -1 表示没有访问过
 		}
@@ -51,8 +51,8 @@ func coinChange(coins []int, amount int) int {
 	var dfs func(i int, c int) int
 	dfs = func(i int, c int) (res int) {
 		if i < 0 {
-			if c == 0 {
-				return 0 // 注意不是返回 1，因为 i <0
+			if c == 0 { // 题目表示 方案数目为0
+				return 0 // 注意不是返回 1，因为 i < 0
 
 			}
 			return math.MaxInt / 2 // 因为取最小值，所以这里取无穷大，除 2 是防止下面方案 + 1 溢出

@@ -93,7 +93,7 @@ func lowerBound2(nums []int, target int) int {
 func lowerBound3(nums []int, target int) int {
 	left, right := -1, len(nums) // 左开右开 (left,right)
 	for left+1 < right {
-		mid := left + (right-left)/2 // 溢出处理
+		mid := (right-left)/2 + left // 溢出处理
 		if nums[mid] < target {
 			left = mid // 闭区间 (mid,right)
 		} else {
