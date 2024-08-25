@@ -53,7 +53,7 @@ func searchRange(nums []int, target int) []int {
 		return []int{-1, -1}
 	}
 	// 小于等于转换 >=
-	end := lowerBound(nums, target+1) - 1 // 注意最后一个位置查找是 target - 1
+	end := lowerBound3(nums, target+1) - 1 // 注意最后一个位置查找是 target - 1
 	return []int{start, end}
 
 }

@@ -16,12 +16,12 @@ c 和 go 实现 数据结构与算法
 
 ## 第一章 数据结构与算法
 Note: C语言实现使用 GBK 编码
-- [1 linear list线性表](01_dataStructure/01_linear_list/linear_list.md)
+- [1 linear list 线性表](01_dataStructure/01_linear_list/linear_list.md)
   - [1.1 顺序表 静态实现，数据元素是整数](01_dataStructure/01_linear_list/seqlist1.c)
   - [1.2 顺序表 静态实现，数据元素是结构体](01_dataStructure/01_linear_list/seqlist2.c)
   - [1.3 顺序表 动态实现，数据元素是整数](01_dataStructure/01_linear_list/seqlist3.c)
   - [1.4 顺序表 动态实现，数据元素是结构体](01_dataStructure/01_linear_list/seqlist4.c)
-- [2 link list链表](01_dataStructure/02_link_list/link_list.md)
+- [2 link list 链表](01_dataStructure/02_link_list/link_list.md)
   - [2.1 带头结点的单链表的实现，数据元素是整数](01_dataStructure/02_link_list/linklist1.c)
   - [2.2 带头结点的单链表的实现，数据元素是结构体](01_dataStructure/02_link_list/linklist2.c)
   - [2.3 不带头结点的单链表的实现](01_dataStructure/02_link_list/linklist3.c)

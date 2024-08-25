@@ -8,7 +8,7 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# 串string
+# 串 string
 ![](.string_images/string.png)
 
 ## 串的顺序存储

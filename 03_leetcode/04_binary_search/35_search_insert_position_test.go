@@ -9,7 +9,7 @@ import (
 // 搜索插入位置 https://leetcode.cn/problems/search-insert-position/?envType=study-plan-v2&envId=top-100-liked
 
 func TestSearchInsert(t *testing.T) {
-	convey.Convey("Find First and Last Position of Element in Sorted Array ", t, func() {
+	convey.Convey("搜索插入位置:排序数组，相同元素取该索引", t, func() {
 		testCase := []struct {
 			input    []int
 			target   int
@@ -28,7 +28,7 @@ func TestSearchInsert(t *testing.T) {
 		}
 
 		for _, tst := range testCase {
-			rsp := searchInsert(tst.input, tst.target)
+			rsp := searchInsert2(tst.input, tst.target)
 			convey.So(rsp, convey.ShouldResemble, tst.expected)
 		}
 	})
@@ -37,5 +37,10 @@ func TestSearchInsert(t *testing.T) {
 
 func searchInsert(nums []int, target int) int {
 	index := sort.SearchInts(nums, target)
+	return index
+}
+
+func searchInsert2(nums []int, target int) int {
+	index := lowerBound3(nums, target)
 	return index
 }
