@@ -35,9 +35,10 @@ func TestSmallestDivisor(t *testing.T) {
 }
 
 func smallestDivisor(nums []int, threshold int) int {
-	// 二分查找的下限是 1，这是最小的正整数。而二分查找的上限可以设置为数组 nums 中的最大值 M，这是因为当除数 d >= M 时，数组 nums 中的每个数除以 d 的结果均为 1，total 的值恒等于数组 nums
+	// 二分查找的下限是 1，这是最小的正整数。而二分查找的上限可以设置为数组 nums 中的最大值 M，
+	// 这是因为当除数 d >= M 时，数组 nums 中的每个数除以 d 的结果均为 1，total 的值恒等于数组 nums
 
-	left, right := 1, getMax(nums) // 范围 1 <= nums[i] <= 10^6
+	left, right := 1, getMax(nums) // 范围 1 <= nums[i] <= 10^6 , nums.length <= threshold <= 106
 	var ans int
 	for left <= right {
 		mid := (left + right) / 2

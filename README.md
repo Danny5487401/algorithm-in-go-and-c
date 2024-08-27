@@ -129,7 +129,7 @@ Note: C语言实现使用 GBK 编码
 - [sliding windows 滑动窗口-->同向双指针](03_leetcode/03_slides_windows/slide_windows.md)
   - [03 无重复字符的最长子串](03_leetcode/03_slides_windows/03_longest_substring_without_repeating_characters_test.go)
   - [209 长度最小的子数组](03_leetcode/03_slides_windows/209_minimum_size_subarray_sum_test.go)
-  - [239 滑动窗口最大值 ](03_leetcode/03_slides_windows/239_sliding_window_maximum_test.go)
+  - [239 滑动窗口最大值-->单调队列](03_leetcode/03_slides_windows/239_sliding_window_maximum_test.go)
   - [713 乘积小于 K 的子数组 ](03_leetcode/03_slides_windows/713_subarray_product_less_than_k_test.go)
   - [2930 找到最长的半重复子字符串](03_leetcode/03_slides_windows/2730_longestSemiRepetitiveSubstring_test.go)
   - [2958 最多 K 个重复元素的最长子数组](03_leetcode/03_slides_windows/2958_length_of_longest_subarray_with_at_most_K_frequency_test.go)
