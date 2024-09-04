@@ -109,6 +109,7 @@ Note: C语言实现使用 GBK 编码
   - [11 盛最多水的容器-->双向指针](03_leetcode/02_link_list/11_container_with_most_water_test.go)
   - [15 三数之和-->相向指针](03_leetcode/02_link_list/15_three_sum_test.go)
   - [19 删除链表的倒数第 N 个结点](03_leetcode/02_link_list/19_remove_nth_node_from_end_of_list_test.go)
+  - [24 两两交换链表中的节点](03_leetcode/02_link_list/24_swap_nodes_in_pairs_test.go)
   - [25 K 个一组翻转链表](03_leetcode/02_link_list/25_reverse_nodes_in_k-Group_test.go)
   - [82 删除排序链表中的重复元素II](03_leetcode/02_link_list/82_remove_duplicates_from_sorted_list_II_test.go)
   - [83 删除排序链表中的重复元素](03_leetcode/02_link_list/83_remove_duplicates_from_sorted_list_test.go)
@@ -123,6 +124,8 @@ Note: C语言实现使用 GBK 编码
   - [237 删除链表中的节点](03_leetcode/02_link_list/237_delete_node_in_a_linked_list_test.go)
   - [283 移动零](03_leetcode/02_link_list/283_move_zeroes_test.go)
   - [876 链表的中间节点-->快慢指针](03_leetcode/02_link_list/876_middle_of_the_linked_list_test.go)
+  - [1669 合并两个链表](03_leetcode/02_link_list/1669_merge_In_between_linked_lists_test.go)
+  - [2487 从链表中移除节点](03_leetcode/02_link_list/2487_remove_nodes_from_linked_list_test.go)
   - [2824 统计和小于目标的下标对数目-->相向双指针](03_leetcode/02_link_list/2824_count_pairs_whose_sum_is_less_than_target_test.go)
   - [3217 从链表中移除在数组中存在的节点](03_leetcode/02_link_list/3217_delete_nodes_from_linked_list_present_in_array_test.go)
 
