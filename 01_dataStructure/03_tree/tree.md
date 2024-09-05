@@ -155,9 +155,12 @@
 ### 层次遍历
 
 ![](.btree_images/layer_read.png)
-![](03_dataStructure/03_btree/.btree_images/layer_read_process.png)
 
-借助队列，出队时，帮左右子元素入队。
+![](.btree_images/layer_read_process.png)
+
+借助队列1，自己出队时放到队列2，接着把左右子元素入队列1。
+
+
 
 #### 过程
 

@@ -13,26 +13,22 @@ func TestLevelOrder(t *testing.T) {
 			target [][]int
 		}{
 			{
-				&TreeNode{
-					Val: 3,
-					Left: &TreeNode{
-						Val: 9,
-					},
-					Right: &TreeNode{
-						Val: 20,
-						Left: &TreeNode{
-							Val: 15,
-						},
-						Right: &TreeNode{
-							Val: 7,
-						},
-					},
-				},
+				Ints2TreeNode([]int{3, 9, 20, NULL, NULL, 15, 7}),
 				[][]int{
 					{3},
 					{9, 20},
 					{15, 7},
 				},
+			},
+			{
+				Ints2TreeNode([]int{1}),
+				[][]int{
+					{1},
+				},
+			},
+			{
+				Ints2TreeNode([]int{}),
+				[][]int{},
 			},
 		}
 
@@ -58,6 +54,7 @@ func levelOrder(root *TreeNode) [][]int {
 			node := queue[0]
 			queue = queue[1:]
 			value[i] = node.Val
+			// 将左右儿子入队
 			if node.Left != nil {
 				queue = append(queue, node.Left)
 			}

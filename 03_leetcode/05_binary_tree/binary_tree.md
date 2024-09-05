@@ -16,7 +16,6 @@
 
 # 二叉树
 
-
 ## [二叉树的最大深度](104_maximum_depth_of_binary_tree_test.go)
 ![](.binary_tree_images/max_binary_tree_depth0.png)
 ![](.binary_tree_images/max_binary_tree_depth1.png)

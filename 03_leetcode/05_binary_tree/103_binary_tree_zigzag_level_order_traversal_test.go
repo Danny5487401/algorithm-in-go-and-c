@@ -7,27 +7,13 @@ import (
 
 // 二叉树的锯齿形层序遍历 https://leetcode.cn/problems/binary-tree-zigzag-level-order-traversal/description/
 func TestZigzagLevelOrder(t *testing.T) {
-	convey.Convey("二叉树的锯齿形层序遍历", t, func() {
+	convey.Convey("二叉树的锯齿形层序遍历:先从左往右，再从右往左进行下一层遍历，以此类推，层与层之间交替进行", t, func() {
 		testCase := []struct {
 			input  *TreeNode
 			target [][]int
 		}{
 			{
-				&TreeNode{
-					Val: 3,
-					Left: &TreeNode{
-						Val: 9,
-					},
-					Right: &TreeNode{
-						Val: 20,
-						Left: &TreeNode{
-							Val: 15,
-						},
-						Right: &TreeNode{
-							Val: 7,
-						},
-					},
-				},
+				Ints2TreeNode([]int{3, 9, 20, NULL, NULL, 15, 7}),
 				[][]int{
 					{3},
 					{20, 9},
@@ -35,12 +21,14 @@ func TestZigzagLevelOrder(t *testing.T) {
 				},
 			},
 			{
-				&TreeNode{
-					Val: 1,
-				},
+				Ints2TreeNode([]int{1}),
 				[][]int{
 					{1},
 				},
+			},
+			{
+				Ints2TreeNode([]int{}),
+				[][]int{},
 			},
 		}
 
@@ -65,15 +53,16 @@ func zigzagLevelOrder(root *TreeNode) [][]int {
 		for i := range value {
 			node := queue[0]
 			queue = queue[1:]
+
 			if !even {
 				value[i] = node.Val
 			} else {
 				value[n-1-i] = node.Val
 			}
+
 			if node.Left != nil {
 				queue = append(queue, node.Left)
 			}
-
 			if node.Right != nil {
 				queue = append(queue, node.Right)
 			}
