@@ -5,26 +5,26 @@ import (
 	"testing"
 )
 
-// 路径总和
+// 路径总和 https://leetcode.cn/problems/path-sum/description/
 func TestHasPathSum(t *testing.T) {
-	convey.Convey("路径总和", t, func() {
+	convey.Convey("路径总和:是否存在 根节点到叶子节点 的路径，这条路径上所有节点值相加等于目标和 targetSum", t, func() {
 		testCase := []struct {
 			input  *TreeNode
 			sum    int
 			target bool
 		}{
 			{
-				CreateTreeByArray([]int{5, 4, 8, 11, 0, 13, 4, 7, 2, 0, 0, 0, 1}),
+				Ints2TreeNode([]int{5, 4, 8, 11, NULL, 13, 4, 7, 2, NULL, NULL, NULL, 1}),
 				22,
 				true,
 			},
 			{
-				CreateTreeByArray([]int{1, 2, 3}),
+				Ints2TreeNode([]int{1, 2, 3}),
 				5,
 				false,
 			},
 			{
-				CreateTreeByArray([]int{}),
+				Ints2TreeNode([]int{}),
 				0,
 				false,
 			},

@@ -8,27 +8,45 @@ import (
 
 // 二叉树的最小深度 https://leetcode.cn/problems/minimum-depth-of-binary-tree/description/
 func TestMinDepth(t *testing.T) {
-	convey.Convey("二叉树的最小深度: 最短路径", t, func() {
+	convey.Convey("二叉树的最小深度: 最短路径,左右儿子为空", t, func() {
 		testCase := []struct {
 			input  *TreeNode
 			target int
 		}{
 			{
-				CreateTreeByArray([]int{3, 9, 20, 0, 0, 15, 7}),
+				Ints2TreeNode([]int{3, 9, 20, NULL, NULL, 15, 7}),
 				2,
 			},
 			{
-				CreateTreeByArray([]int{2, 0, 3, 0, 4, 0, 5, 0, 6}),
+				Ints2TreeNode([]int{2, NULL, 3, NULL, 4, NULL, 5, NULL, 6}),
 				5,
 			},
 		}
 
 		for _, tst := range testCase {
-			rsp := minDepth2(tst.input)
+			rsp := minDepth3(tst.input)
 			convey.So(rsp, convey.ShouldEqual, tst.target)
 		}
 	})
 
+}
+
+// 使用深度优先搜索的方法，遍历整棵树，记录最小深度
+func minDepth(root *TreeNode) int {
+	if root == nil {
+		return 0
+	}
+	if root.Left == nil && root.Right == nil {
+		return 1
+	}
+	minD := math.MaxInt32
+	if root.Left != nil {
+		minD = min(minDepth(root.Left), minD)
+	}
+	if root.Right != nil {
+		minD = min(minDepth(root.Right), minD)
+	}
+	return minD + 1
 }
 
 // 自底向上「归」
@@ -75,22 +93,4 @@ func minDepth3(root *TreeNode) int {
 
 	dfs(root, 0)
 	return ans
-}
-
-// 使用深度优先搜索的方法，遍历整棵树，记录最小深度
-func minDepth(root *TreeNode) int {
-	if root == nil {
-		return 0
-	}
-	if root.Left == nil && root.Right == nil {
-		return 1
-	}
-	minD := math.MaxInt32
-	if root.Left != nil {
-		minD = min(minDepth(root.Left), minD)
-	}
-	if root.Right != nil {
-		minD = min(minDepth(root.Right), minD)
-	}
-	return minD + 1
 }

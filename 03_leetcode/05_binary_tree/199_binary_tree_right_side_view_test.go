@@ -48,10 +48,11 @@ func rightSideView(root *TreeNode) (ans []int) {
 			// 当递归深度==答案的长度，就记下来了
 			ans = append(ans, node.Val)
 		}
+		depth++
 		// 先右子树
-		dfs(node.Right, depth+1)
+		dfs(node.Right, depth)
 		// 再左子树
-		dfs(node.Left, depth+1)
+		dfs(node.Left, depth)
 	}
 	dfs(root, 0)
 	return

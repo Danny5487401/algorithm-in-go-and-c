@@ -8,13 +8,13 @@ import (
 // 求根节点到叶节点数字之和 https://leetcode.cn/problems/sum-root-to-leaf-numbers/description/
 
 func TestSumNumbers(t *testing.T) {
-	convey.Convey("求根节点到叶节点数字之和 ", t, func() {
+	convey.Convey("求根节点到叶节点数字之和 :计算从根节点到叶节点生成的 所有数字之和 ", t, func() {
 		testCase := []struct {
 			input  *TreeNode
 			target int
 		}{
 			{
-				CreateTreeByArray([]int{1, 2, 3}),
+				Ints2TreeNode([]int{1, 2, 3}),
 				25,
 			},
 			{
@@ -40,7 +40,7 @@ func sumNumbers(root *TreeNode) int {
 			return
 		}
 		tmpSum = tmpSum*10 + node.Val
-		if node.Left == node.Right { // node 是叶子节点
+		if node.Left == nil && node.Right == nil { // node 是叶子节点,0 <= Node.val <= 9
 			sum += tmpSum
 			return
 		}
