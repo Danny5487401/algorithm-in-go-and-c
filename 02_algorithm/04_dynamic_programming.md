@@ -16,6 +16,7 @@
   - [解题思路](#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF)
     - [9 最长回文子序列](#9-%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97)
     - [10 二叉树的直径](#10-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84)
+    - [区间 DP](#%E5%8C%BA%E9%97%B4-dp)
   - [参考](#%E5%8F%82%E8%80%83)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -60,8 +61,8 @@
   ![](.04_dynamic_programming_images/dp1.png)
 - DP状态机：往往是强调某一个阶段和上一个阶段之间的联系，且一个阶段里面有多种状态（比如说“有”和“无”）。
 
-- 区间 DP: 从小区间转移到 大区间
-
+- 区间 DP: 从小区间转移到大区间
+![](.04_dynamic_programming_images/region_dp.png)
 - 树形 DP
 
 
@@ -78,8 +79,6 @@ t = ros
 dfs(i,j)= 
   - s[i]=s[j]: dfs[i-1,j-1]
   - s[i]!=s[j]: min(dfs[i,j-1],dfs[i-1],j,dfs[i-1,j-1]+1)
-
-
 
 
 ### 2 爬台阶
@@ -159,7 +158,6 @@ dfs(i,j)=
 
 
 
-
 ### [7 LCS 最长公共子序列--非连续](04_dynamic_programming/1143_longest_common_subsequence_test.go)
 - 子数组/子串 subarray/substring 连续
 - 子序列 subsequence  非连续
@@ -215,16 +213,45 @@ g[i] 表示 长度为 i+1 的IS 的末尾元素的最小值
 
 思路一： s 与 s反转后的 LCS(最长公共子序列) 
 
+- S1=eacbba
+- S2=abbcae
+
 思路二： 从两侧缩小问题规模
 ![](.04_dynamic_programming_images/Longest Palindromic Subsequence1.png)
 
-左e != 右a ：所以不会同时选
+因为 最左e != 最右a：所以不能同时选
 ![](.04_dynamic_programming_images/Longest Palindromic Subsequence2.png)
 
+dfs(i,j)= 
+- dfs(i+1,j-1)+2   s[i]=s[j]
+- max(dfs(i+1,j),dfs(i,j-1))  s[i]!=s[j]
+
+
+递归边界
+- 如果剩余一个字母,为回文 dfs(i,i)=1 
+- 两个字母相同时,比如bb dfs(i,i+1)-->dfs(i+1,i)
+
+
+
+![](.04_dynamic_programming_images/Longest Palindromic Subsequence3.png)
+翻译成递推
+f[i][j] =
+- 0 i>j
+- 1 i=j
+- f[i+1][j-1]+2  s[i]=s[j]
+- max(f[i+1][j],f[i+1][j-1]) s[i]!=s[j]
+
+- 因为需要从 f[i+1]->f[i],所以 i 逆序，
+- 因为从 s[i][j-1]->f[i][j], 所以 j 正序
+
+答案是 f[0][n-1]
 
 
 ### 10 [二叉树的直径](04_dynamic_programming/543_diameter_of_binary_tree_test.go)
 
+
+### 区间 DP 
+ 
 
 
 

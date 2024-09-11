@@ -96,6 +96,7 @@ Note: C语言实现使用 GBK 编码
   - [300 最长递增子序列](02_algorithm/04_dynamic_programming/300_longest_increasing_subsequence_test.go)
   - [322 零钱兑换](02_algorithm/04_dynamic_programming/322_coin_change_test.go)
   - [494 目标和-->01背包转换](02_algorithm/04_dynamic_programming/494_target_sum_test.go)
+  - [516 最长回文子序列-->区间DP](02_algorithm/04_dynamic_programming/494_target_sum_test.go)
   - [543 二叉树的直径](02_algorithm/04_dynamic_programming/543_diameter_of_binary_tree_test.go)
   - [1143 最长公共子序列](02_algorithm/04_dynamic_programming/1143_longest_common_subsequence_test.go)
 
