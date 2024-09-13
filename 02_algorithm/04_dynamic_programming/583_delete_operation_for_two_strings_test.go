@@ -5,33 +5,33 @@ import (
 	"testing"
 )
 
-// 编辑距离 https://leetcode.cn/problems/edit-distance/description/
-func TestMinDistance(t *testing.T) {
-	convey.Convey("编辑距离:增删改字符 ", t, func() {
+// 两个字符串的删除操作 https://leetcode.cn/problems/delete-operation-for-two-strings/description/
+func TestMinDistance2(t *testing.T) {
+	convey.Convey("两个字符串的删除操作", t, func() {
 		testCase := []struct {
 			input1 string
 			input2 string
 			target int
 		}{
 			{
-
-				"horse", "ros", 3,
+				// 第一步将 "sea" 变为 "ea" ，第二步将 "eat "变为 "ea"
+				"sea", "eat", 2,
 			},
 			{
 
-				"intention", "execution", 5,
+				"leetcode", "etco", 4,
 			},
 		}
 
 		for _, tst := range testCase {
-			rsp := minDistance(tst.input1, tst.input2)
+			rsp := minDistance2(tst.input1, tst.input2)
 			convey.So(rsp, convey.ShouldEqual, tst.target)
 		}
 	})
 
 }
 
-func minDistance(word1 string, word2 string) int {
+func minDistance2(word1 string, word2 string) int {
 	m := len(word1)
 	n := len(word2)
 
@@ -57,10 +57,10 @@ func minDistance(word1 string, word2 string) int {
 			cache[i][j] = res
 		}()
 		if word1[i] == word2[j] {
-			return dfs(i-1, j-1) //相等，不需要操作
+			return dfs(i-1, j-1) // 相等，不需要操作
 		}
-		// 分别对应 新增，删除，替换
-		return min(dfs(i, j-1), dfs(i-1, j), dfs(i-1, j-1)) + 1
+		//
+		return min(dfs(i, j-1), dfs(i-1, j)) + 1
 	}
 
 	return dfs(m-1, n-1)

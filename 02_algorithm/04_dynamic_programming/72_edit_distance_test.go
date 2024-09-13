@@ -7,14 +7,18 @@ import (
 
 // 编辑距离 https://leetcode.cn/problems/edit-distance/description/
 func TestMinDistance(t *testing.T) {
-	convey.Convey("编辑距离:增删改字符 ", t, func() {
+	convey.Convey("编辑距离:增删改字符,使 A --> B , ", t, func() {
 		testCase := []struct {
 			input1 string
 			input2 string
 			target int
 		}{
 			{
-
+				/*
+					horse -> rorse (replace 'h' with 'r')
+					rorse -> rose (remove 'r')
+					rose -> ros (remove 'e')
+				*/
 				"horse", "ros", 3,
 			},
 			{
