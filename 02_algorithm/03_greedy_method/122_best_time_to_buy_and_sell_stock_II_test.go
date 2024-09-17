@@ -10,7 +10,7 @@ import (
 // 不限 交易次数
 
 func TestMaxProfit(t *testing.T) {
-	convey.Convey("买卖股票的最佳时机  ", t, func() {
+	convey.Convey("买卖股票的最佳时机II: 不限交易次数", t, func() {
 		testCase := []struct {
 			input  []int
 			target int
@@ -38,6 +38,12 @@ func TestMaxProfit(t *testing.T) {
 }
 
 func maxProfit(prices []int) int {
+	/*
+		- 未持有 --(买入)--> 持有   dfs(i,1)=dfs(i-1,0)-price[i]
+		- 持有 --(卖出-)--> 未持有  dfs(i,0)=dfs(i-1,1)+price[i]
+		- 未持有(do nothing) dfs(i,0) = dfs(i-1,0)
+		- 持有(do nothing)  dfs(i,1) = dfs(i-1,1)
+	*/
 	n := len(prices)
 
 	var cache = make([][2]int, n)
@@ -47,10 +53,10 @@ func maxProfit(prices []int) int {
 	var dfs func(i int, hold int) int
 	dfs = func(i int, hold int) (res int) {
 		if i < 0 {
-			if hold == 1 {
+			if hold == 1 { // dfs(-1.1)= -∞ 第0天开始不可能持有股票
 				return math.MinInt64
 			} else {
-				return 0
+				return 0 // dfs(-1.0)= 0 第0天开始未持有股票
 			}
 		}
 		p := &cache[i][hold]
@@ -59,12 +65,12 @@ func maxProfit(prices []int) int {
 		}
 
 		defer func() { *p = res }() // 记忆化
-		if hold == 1 {
+		if hold == 1 {              // 计算持有股票的状态
 			// dfs[i,1]=  max(dfs(i-1, 1), dfs(i-1, 0)-prices[i])
 			return max(dfs(i-1, 1), dfs(i-1, 0)-prices[i]) // 不交易 或则 买入股票
 		}
 		// dfs[i,0]=  max(dfs(i-1, 0), dfs(i-1, 1)+prices[i]) // 不交易 或则 卖出股票
 		return max(dfs(i-1, 0), dfs(i-1, 1)+prices[i])
 	}
-	return dfs(n-1, 0) // 最后一天卖出股票
+	return dfs(n-1, 0) // 最后一天卖出股票 dfs(n-1, 1) < dfs(n-1, 0)
 }

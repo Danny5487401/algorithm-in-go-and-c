@@ -6,7 +6,6 @@ import (
 )
 
 // 打家劫舍 https://leetcode.cn/problems/house-robber/description/
-
 func TestRob(t *testing.T) {
 	convey.Convey("打家劫舍 ", t, func() {
 		testCase := []struct {

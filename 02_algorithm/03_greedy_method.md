@@ -6,7 +6,7 @@
   - [步骤](#%E6%AD%A5%E9%AA%A4)
   - [应用](#%E5%BA%94%E7%94%A8)
     - [1 找零钱问题](#1-%E6%89%BE%E9%9B%B6%E9%92%B1%E9%97%AE%E9%A2%98)
-    - [买卖股票](#%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8)
+    - [2 买卖股票](#2-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -32,34 +32,42 @@
 ![](.03_greedy_method_images/coin_change_code.png)
 
 
-
-
-
-
-### 买卖股票 
+### 2 买卖股票 
 
 ![](.03_greedy_method_images/buy_and_sell_stock.png)
 
 
 1 [不限交易次数](03_greedy_method/122_best_time_to_buy_and_sell_stock_II_test.go)
+
 ![](.03_greedy_method_images/Best Time to Buy and Sell Stock2.png)
 
+prices = [7,1,5,3,6,4]
+
+从第 0 天开始到第 5 天结束时的利润 = 从第 0 天开始到第 4 天结束时的利润 + 第 5 天的利润 
 
 ![](.03_greedy_method_images/Best Time to Buy and Sell Stock3.png)
 
+- 0：代表未持有
+- 1：代表持有
 
-状态转换 未持有 --买入--> 持有
+状态转换: 
+- 未持有 --(买入)--> 持有   dfs(i,1)=dfs(i-1,0)-price[i]
+- 持有 --(卖出-)--> 未持有  dfs(i,0)=dfs(i-1,1)+price[i]
+- 未持有(do nothing) dfs(i,0) = dfs(i-1,0)
+- 持有(do nothing)  dfs(i,1) = dfs(i-1,1)
 
 
 ![](.03_greedy_method_images/Best Time to Buy and Sell Stock4.png)
 
-0 ：代表 未持有
-1 ：代表 持有
+
+
+状态机：状态之间转换关系的图
 
 ![](.03_greedy_method_images/Best Time to Buy and Sell Stock5.png)
 
-最后一天肯定是卖出股票，获取最大利益
-所以入口 = dfs(n-1,0)
+由于第 i-1 天的结束是第i天的开始，所以 dfs(i-1,*)表示第i天开始时的最大利润。
+
+最后一天肯定是卖出股票，获取最大利益, 所以入口 = dfs(n-1,0).
 ![](.03_greedy_method_images/Best Time to Buy and Sell Stock6.png)
 
 2 [冷冻期](03_greedy_method/122_best_time_to_buy_and_sell_stock_II_test.go)

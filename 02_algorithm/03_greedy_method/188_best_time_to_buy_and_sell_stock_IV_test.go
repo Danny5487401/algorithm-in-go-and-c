@@ -6,11 +6,11 @@ import (
 	"testing"
 )
 
-// 买卖股票的最佳时机 IV : https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iv/description/
+// 买卖股票的最佳时机IV : https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iv/description/
 // 交易次数最多为K
 
 func TestMaxProfitIV(t *testing.T) {
-	convey.Convey("买卖股票的最佳时机  ", t, func() {
+	convey.Convey("买卖股票的最佳时机 IV:交易次数最多为K ", t, func() {
 		testCase := []struct {
 			input  []int
 			k      int
