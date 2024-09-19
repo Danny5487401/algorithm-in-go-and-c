@@ -63,11 +63,12 @@ func maxProfitIV(k int, prices []int) int {
 		}
 
 		defer func() { *p = res }() // 记忆化
+		// 备注：卖出和买入算一次交易，所以只要一次 count-1 即可
 		if hold == 1 {
 			// dfs[i,k,1]=  max(dfs(i-1, k,1), dfs(i-1,k-1, 0)-prices[i])
 			return max(dfs(i-1, count, 1), dfs(i-1, count-1, 0)-prices[i]) // 不交易 或则 买入股票
 		}
-		// dfs[i,k,0]=  max(dfs(i-1, k,0), dfs(i-1,k-1, 1)+prices[i]) // 不交易 或则 卖出股票
+		// dfs[i,k,0]=  max(dfs(i-1, k,0), dfs(i-1,k, 1)+prices[i]) // 不交易 或则 卖出股票
 		return max(dfs(i-1, count, 0), dfs(i-1, count, 1)+prices[i])
 	}
 	return dfs(n-1, k, 0) // 最后一天卖出股票
