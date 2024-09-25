@@ -12,6 +12,7 @@
     - [区间 DP](#%E5%8C%BA%E9%97%B4-dp)
       - [最长回文子序列](#%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97)
     - [状态机 DP](#%E7%8A%B6%E6%80%81%E6%9C%BA-dp)
+    - [树形 DP](#%E6%A0%91%E5%BD%A2-dp)
     - [2 爬台阶](#2-%E7%88%AC%E5%8F%B0%E9%98%B6)
     - [3 找零钱](#3-%E6%89%BE%E9%9B%B6%E9%92%B1)
     - [4 0-1 背包](#4-0-1-%E8%83%8C%E5%8C%85)
@@ -19,7 +20,6 @@
     - [6 打家劫舍](#6-%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D)
     - [8 最长递增子序列](#8-%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97)
   - [解题思路](#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF)
-    - [10 二叉树的直径](#10-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84)
   - [参考](#%E5%8F%82%E8%80%83)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -136,6 +136,21 @@ dfs(i,j)=
 
 ![](.04_dynamic_programming_images/state_dp.png)
 
+
+### 树形 DP
+![](.04_dynamic_programming_images/tree_dp.png)
+
+
+[二叉树的直径](04_dynamic_programming/543_diameter_of_binary_tree_test.go)
+
+![](.04_dynamic_programming_images/binary_diameter1.png)
+![](.04_dynamic_programming_images/binary_diameter2.png)
+![](.04_dynamic_programming_images/binary_diameter3.png)
+
+
+
+[二叉树的最大路径和](04_dynamic_programming/543_diameter_of_binary_tree_test.go)
+![](.04_dynamic_programming_images/max_path_sum1.png)
 
 
 
@@ -265,7 +280,6 @@ f[i][j] =
 答案是 f[0][n-1]
 
 
-### 10 [二叉树的直径](04_dynamic_programming/543_diameter_of_binary_tree_test.go)
 
 
 

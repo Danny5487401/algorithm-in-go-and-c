@@ -14,11 +14,11 @@ func TestIsBalanced(t *testing.T) {
 			target bool
 		}{
 			{
-				CreateTreeByArray([]int{3, 9, 20, 0, 0, 15, 7}),
+				Ints2TreeNode([]int{3, 9, 20, NULL, NULL, 15, 7}),
 				true,
 			},
 			{
-				CreateTreeByArray([]int{1, 2, 2, 3, 3, 0, 0, 4, 4}),
+				Ints2TreeNode([]int{1, 2, 2, 3, 3, NULL, NULL, 4, 4}),
 				false,
 			},
 			{
