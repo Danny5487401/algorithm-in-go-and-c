@@ -59,7 +59,6 @@ func minDistance2(word1 string, word2 string) int {
 		if word1[i] == word2[j] {
 			return dfs(i-1, j-1) // 相等，不需要操作
 		}
-		//
 		return min(dfs(i, j-1), dfs(i-1, j)) + 1
 	}
 

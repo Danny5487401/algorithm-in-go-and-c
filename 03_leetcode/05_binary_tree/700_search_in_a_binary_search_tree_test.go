@@ -42,6 +42,7 @@ func searchBST(root *TreeNode, val int) *TreeNode {
 	}
 
 	if root.Val > val {
+		// 在左侧
 		return searchBST(root.Left, val)
 	} else {
 		return searchBST(root.Right, val)
