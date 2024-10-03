@@ -13,15 +13,7 @@ func TestInorderTraversal(t *testing.T) {
 			target []int
 		}{
 			{
-				&TreeNode{
-					Val: 1,
-					Right: &TreeNode{
-						Val: 2,
-						Left: &TreeNode{
-							Val: 3,
-						},
-					},
-				},
+				Ints2TreeNode([]int{1, NULL, 2, 3}),
 				[]int{1, 3, 2},
 			},
 			{
@@ -33,7 +25,7 @@ func TestInorderTraversal(t *testing.T) {
 		}
 
 		for _, tst := range testCase {
-			rsp := inorderTraversal(tst.input)
+			rsp := inorderTraversal2(tst.input)
 			convey.So(rsp, convey.ShouldEqual, tst.target)
 		}
 	})
@@ -55,5 +47,20 @@ func inorderTraversal(root *TreeNode) []int {
 	// 最后右子树
 	right := inorderTraversal(root.Right)
 	ans = append(ans, right...)
+	return ans
+}
+
+func inorderTraversal2(root *TreeNode) []int {
+	var ans = make([]int, 0)
+	var dfs func(node *TreeNode)
+	dfs = func(node *TreeNode) {
+		if node == nil {
+			return
+		}
+		dfs(node.Left)
+		ans = append(ans, node.Val)
+		dfs(node.Right)
+	}
+	dfs(root)
 	return ans
 }
