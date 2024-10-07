@@ -8,7 +8,7 @@ import (
 // 每日温度 https://leetcode.cn/problems/daily-temperatures/?envType=study-plan-v2&envId=top-100-liked
 
 func TestDailyTemperatures(t *testing.T) {
-	convey.Convey("每日温度 ", t, func() {
+	convey.Convey("每日温度:下一个更高温度", t, func() {
 		testCase := []struct {
 			input    []int
 			expected []int
