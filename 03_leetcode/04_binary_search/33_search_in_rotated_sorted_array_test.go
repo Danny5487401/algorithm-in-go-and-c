@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-// https://leetcode.cn/problems/search-in-rotated-sorted-array/description/
+// 搜索旋转排序数组 https://leetcode.cn/problems/search-in-rotated-sorted-array/description/
 func TestSearch(t *testing.T) {
 	convey.Convey("搜索旋转排序数组：升序 ", t, func() {
 		testCase := []struct {
@@ -26,7 +26,7 @@ func TestSearch(t *testing.T) {
 		}
 
 		for _, tst := range testCase {
-			rsp := search(tst.input, tst.target)
+			rsp := search3(tst.input, tst.target)
 			convey.So(rsp, convey.ShouldResemble, tst.expected)
 		}
 	})
@@ -77,4 +77,32 @@ func search(nums []int, target int) int {
 		return -1
 	}
 	return right
+}
+
+// 方式三：
+func search3(nums []int, target int) int {
+	var left, right = 0, len(nums) - 1
+	for left <= right {
+		mid := left + (right-left)/2
+		if nums[mid] == target {
+			return mid
+		}
+		// 判断mid是在左边递增区间还是右边递增区间
+		if nums[left] <= nums[mid] { // 左边区间  [left,mid] 单调递增
+			// 判断 target 是否在这区间
+			if nums[left] <= target && target < nums[mid] {
+				right = mid - 1
+			} else {
+				left = mid + 1
+			}
+
+		} else { // 左边区间  [mid,right] 单调递增
+			if nums[mid] < target && target <= nums[right] {
+				left = mid + 1
+			} else {
+				right = mid - 1
+			}
+		}
+	}
+	return -1
 }

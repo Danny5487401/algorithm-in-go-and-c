@@ -28,7 +28,7 @@ func TestLongestConsecutive(t *testing.T) {
 func longestConsecutive(nums []int) int {
 	numSet := map[int]bool{}
 	for _, num := range nums {
-		numSet[num] = true
+		numSet[num] = true // 记录出现的数字
 	}
 	// 最长数字连续序列数
 	longestStreak := 0

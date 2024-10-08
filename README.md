@@ -189,7 +189,8 @@ Note: C语言实现使用 GBK 编码
   - [257 二叉树的所有路径](03_leetcode/06_backtracking/257_binary_tree_paths_test.go)
 - [单调栈](03_leetcode/07_stack/monotone_stack.md)
   - [42 接雨水](03_leetcode/07_stack/42_trapping_rain_water_test.go)
-  - [496 下一个更大元素 I](03_leetcode/07_stack/496_next_greater_element_test.go)
+  - [496 下一个更大元素 I: nums1 是 nums2 的子集](03_leetcode/07_stack/496_next_greater_element_test.go)
+  - [503 下一个更大元素 II: 循环数组](03_leetcode/07_stack/503_next_greater_element_ii_test.go)
   - [739 每日温度](03_leetcode/07_stack/739_daily_temperatures_test.go)
 
 
