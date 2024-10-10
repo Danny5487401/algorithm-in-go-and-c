@@ -8,31 +8,31 @@ import (
 // 环形链表 https://leetcode.cn/problems/linked-list-cycle/description/?envType=study-plan-v2&envId=top-100-liked
 func TestHasCycle(t *testing.T) {
 	convey.Convey("环形链表", t, func() {
-		node1 := &ListNode{Val: 3}
-		node1.Next = &ListNode{Val: 2}
-		node1.Next.Next = &ListNode{Val: 0}
-		node1.Next.Next.Next = &ListNode{Val: -4}
-		node1.Next.Next.Next.Next = node1.Next
+		exampleNode1 := &ListNode{Val: 3}
+		exampleNode1.Next = &ListNode{Val: 2}
+		exampleNode1.Next.Next = &ListNode{Val: 0}
+		exampleNode1.Next.Next.Next = &ListNode{Val: -4}
+		exampleNode1.Next.Next.Next.Next = exampleNode1.Next
 
-		node2 := &ListNode{Val: 1}
-		node2.Next = &ListNode{Val: 2}
-		node2.Next.Next = node2
+		exampleNode2 := &ListNode{Val: 1}
+		exampleNode2.Next = &ListNode{Val: 2}
+		exampleNode2.Next.Next = exampleNode2
 
-		node3 := &ListNode{Val: 1}
+		exampleNode3 := &ListNode{Val: 1}
 		testCase := []struct {
 			input  *ListNode
 			target bool
 		}{
 			{
-				node1,
+				exampleNode1,
 				true,
 			},
 			{
-				node2,
+				exampleNode2,
 				true,
 			},
 			{
-				node3,
+				exampleNode3,
 				false,
 			},
 		}

@@ -36,10 +36,10 @@ func TestReorderList(t *testing.T) {
 }
 
 func reorderList(head *ListNode) {
-	// 取中间节点
+	// 876.取中间节点
 	mid := middleNode(head)
 
-	// 反转
+	// 206. 反转
 	head2 := reverseList(mid)
 
 	for head2.Next != nil {

@@ -8,7 +8,7 @@ import (
 
 // 反转链表 https://leetcode.cn/problems/reverse-linked-list/?envType=study-plan-v2&envId=top-100-liked
 func TestReverseList(t *testing.T) {
-	convey.Convey("反转链表", t, func() {
+	convey.Convey("反转链表:将当前节点的下一个节点指向上一个节点", t, func() {
 		testCase := []struct {
 			input  *ListNode
 			target *ListNode

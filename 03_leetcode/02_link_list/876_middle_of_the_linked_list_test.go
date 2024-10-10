@@ -32,8 +32,7 @@ func TestMiddleNode(t *testing.T) {
 
 func middleNode(head *ListNode) *ListNode {
 
-	var slow = head
-	var fast = head
+	var slow, fast = head, head
 
 	for fast != nil && fast.Next != nil { // fast==nil 偶数，fast.Next==nil 奇数
 		// 快指针为空 或则 快指针的下一节点为空 退出循环，上面为反过来判断
@@ -43,16 +42,4 @@ func middleNode(head *ListNode) *ListNode {
 
 	return slow
 
-}
-
-func getListNodeBySlice(s []int) *ListNode {
-	head := &ListNode{Val: 0}
-	tmp := head
-
-	for _, v := range s {
-		node := &ListNode{Val: v}
-		head.Next = node
-		head = node
-	}
-	return tmp.Next
 }

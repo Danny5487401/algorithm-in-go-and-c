@@ -117,6 +117,7 @@ Note: C语言实现使用 GBK 编码
   - [11 盛最多水的容器-->双向指针](03_leetcode/02_link_list/11_container_with_most_water_test.go)
   - [15 三数之和-->相向指针](03_leetcode/02_link_list/15_three_sum_test.go)
   - [19 删除链表的倒数第 N 个结点](03_leetcode/02_link_list/19_remove_nth_node_from_end_of_list_test.go)
+  - [21 合并两个有序链表-->归并排序](03_leetcode/02_link_list/21_merge_two_lists_test.go)
   - [24 两两交换链表中的节点](03_leetcode/02_link_list/24_swap_nodes_in_pairs_test.go)
   - [25 K 个一组翻转链表](03_leetcode/02_link_list/25_reverse_nodes_in_k-Group_test.go)
   - [82 删除排序链表中的重复元素II](03_leetcode/02_link_list/82_remove_duplicates_from_sorted_list_II_test.go)
@@ -142,7 +143,8 @@ Note: C语言实现使用 GBK 编码
   - [209 长度最小的子数组](03_leetcode/03_slides_windows/209_minimum_size_subarray_sum_test.go)
   - [239 滑动窗口最大值-->单调队列](03_leetcode/03_slides_windows/239_sliding_window_maximum_test.go)
   - [713 乘积小于 K 的子数组 ](03_leetcode/03_slides_windows/713_subarray_product_less_than_k_test.go)
-  - [2930 找到最长的半重复子字符串](03_leetcode/03_slides_windows/2730_longestSemiRepetitiveSubstring_test.go)
+  - [2730 找到最长的半重复子字符串](03_leetcode/03_slides_windows/2730_longest_semi_repetitive_substring_test.go)
+  - [2779 数组的最大美丽值](03_leetcode/03_slides_windows/2779_maximum_beauty_test.go)
   - [2958 最多 K 个重复元素的最长子数组](03_leetcode/03_slides_windows/2958_length_of_longest_subarray_with_at_most_K_frequency_test.go)
 - 二分查找
   - [33 搜索旋转排序数组](03_leetcode/04_binary_search/33_search_in_rotated_sorted_array_test.go)

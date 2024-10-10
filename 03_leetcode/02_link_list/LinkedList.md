@@ -116,9 +116,10 @@ cur: 遍历到的当前节点
 需要找到环的入口
 
 ![](.two_point_images/Linked List Cycle.png)
+a: 头到相遇入口的距离
 
 环长= b + c
-慢指针移动距离 = a +b
+慢指针移动距离 = a + b
 快指针移动距离 = a +  k( b +c ) + b
 
 快指针移动距离时慢指针的两倍
