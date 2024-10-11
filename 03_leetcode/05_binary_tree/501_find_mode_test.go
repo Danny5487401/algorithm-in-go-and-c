@@ -31,6 +31,7 @@ func TestFindMode(t *testing.T) {
 }
 
 func findMode(root *TreeNode) (answer []int) {
+	// -105 <= Node.val <= 105
 	var base, count, maxCount int
 
 	update := func(x int) {

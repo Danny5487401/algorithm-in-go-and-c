@@ -25,13 +25,14 @@ func TestInorderTraversal(t *testing.T) {
 		}
 
 		for _, tst := range testCase {
-			rsp := inorderTraversal2(tst.input)
+			rsp := inorderTraversal3(tst.input)
 			convey.So(rsp, convey.ShouldEqual, tst.target)
 		}
 	})
 
 }
 
+// 方式一:递归
 func inorderTraversal(root *TreeNode) []int {
 	var ans = make([]int, 0)
 	if root == nil {
@@ -64,3 +65,21 @@ func inorderTraversal2(root *TreeNode) []int {
 	dfs(root)
 	return ans
 }
+
+// 方式二: 迭代
+func inorderTraversal3(root *TreeNode) (res []int) {
+	var stack []*TreeNode
+	for root != nil || len(stack) > 0 {
+		for root != nil {
+			stack = append(stack, root)
+			root = root.Left
+		}
+		root = stack[len(stack)-1]
+		stack = stack[:len(stack)-1]
+		res = append(res, root.Val)
+		root = root.Right
+	}
+	return
+}
+
+// 方式三: Morris 中序遍历

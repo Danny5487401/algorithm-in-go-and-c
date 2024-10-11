@@ -33,7 +33,7 @@ func TestIsValidBST(t *testing.T) {
 
 }
 
-// 第一种做法：前序遍历
+// 第一种做法：前序遍历,先访问节点值,再遍历左右节点
 // 对于每个节点，还需要提供开闭区间的范围。
 // 向左：右边界修改
 // 向右：左边界修改
@@ -66,8 +66,12 @@ func isValidBST2(root *TreeNode) bool {
 			return true
 		}
 		// 检查左子树
-		// 当前节点 < 上一个节点
-		if !dfs(node.Left) || node.Val <= pre {
+		if !dfs(node.Left) {
+			return false
+		}
+
+		// 当前节点 <= 上一个节点
+		if node.Val <= pre {
 			return false
 		}
 		pre = node.Val

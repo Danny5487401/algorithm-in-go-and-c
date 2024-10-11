@@ -7,7 +7,7 @@ import (
 
 // 二叉搜索树中的搜索 https://leetcode.cn/problems/search-in-a-binary-search-tree/
 func TestSearchBST(t *testing.T) {
-	convey.Convey("二叉搜索树中的搜索 ", t, func() {
+	convey.Convey("二叉搜索树中的搜索:在 BST 中找到节点值等于 val 的节点, 返回以该节点为根的子树 ", t, func() {
 		testCase := []struct {
 			root   *TreeNode
 			val    int

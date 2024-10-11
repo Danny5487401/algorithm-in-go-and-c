@@ -7,7 +7,7 @@ import (
 
 // 二叉树的层序遍历 https://leetcode.cn/problems/binary-tree-level-order-traversal/description/?envType=study-plan-v2&envId=top-100-liked
 func TestLevelOrder(t *testing.T) {
-	convey.Convey("二叉树的层序遍历", t, func() {
+	convey.Convey("二叉树的层序遍历: 自顶向下的层序遍历", t, func() {
 		testCase := []struct {
 			input  *TreeNode
 			target [][]int

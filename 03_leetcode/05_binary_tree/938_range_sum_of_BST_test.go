@@ -7,7 +7,7 @@ import (
 
 // 二叉搜索树的范围和  https://leetcode.cn/problems/range-sum-of-bst/
 func TestRangeSumBST(t *testing.T) {
-	convey.Convey("二叉搜索树的范围和", t, func() {
+	convey.Convey("二叉搜索树的范围和:返回值位于范围 [low, high] 之间的所有结点的值的和", t, func() {
 		testCase := []struct {
 			root   *TreeNode
 			low    int
