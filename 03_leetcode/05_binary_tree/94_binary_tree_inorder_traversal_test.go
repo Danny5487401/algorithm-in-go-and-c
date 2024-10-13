@@ -71,11 +71,15 @@ func inorderTraversal3(root *TreeNode) (res []int) {
 	var stack []*TreeNode
 	for root != nil || len(stack) > 0 {
 		for root != nil {
+			// 先本身入栈,再遍历左儿子
 			stack = append(stack, root)
 			root = root.Left
 		}
+		// 出栈: 先出左儿子
 		root = stack[len(stack)-1]
 		stack = stack[:len(stack)-1]
+
+		// 记录答案
 		res = append(res, root.Val)
 		root = root.Right
 	}

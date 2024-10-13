@@ -7,7 +7,7 @@ import (
 
 // 二叉搜索树中第K小的元素 https://leetcode.cn/problems/kth-smallest-element-in-a-bst/description/
 func TestKthSmallest(t *testing.T) {
-	convey.Convey("二叉搜索树中第K小的元素", t, func() {
+	convey.Convey("二叉搜索树中第K小的元素:中序遍历", t, func() {
 		testCase := []struct {
 			input  *TreeNode
 			k      int
@@ -34,6 +34,7 @@ func TestKthSmallest(t *testing.T) {
 }
 
 func kthSmallest(root *TreeNode, k int) int {
+	// 94. 二叉树的中序遍历
 	stack := []*TreeNode{root}
 	for root != nil || len(stack) > 0 {
 		for root != nil {
@@ -42,6 +43,8 @@ func kthSmallest(root *TreeNode, k int) int {
 		}
 		root = stack[len(stack)-1]
 		stack = stack[:len(stack)-1]
+
+		// 开始记录答案
 		k--
 		if k == 0 {
 			return root.Val

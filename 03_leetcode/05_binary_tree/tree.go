@@ -6,28 +6,11 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-// todo: 节点不支持 0
-func CreateTreeByArray(nums []int) *TreeNode {
-	if len(nums) <= 0 {
-		return nil
-	}
-	queue := make([]*TreeNode, 0)
-	head := &TreeNode{Val: nums[0]}
-	queue = append(queue, head)
-	for i := 1; i < len(nums); i += 2 {
-		if nums[i] != 0 {
-			queue[0].Left = &TreeNode{Val: nums[i]}
-			queue = append(queue, queue[0].Left)
-		}
-		if i+1 < len(nums) && nums[i+1] != 0 {
-			queue[0].Right = &TreeNode{Val: nums[i+1]}
-			queue = append(queue, queue[0].Right)
-		}
-
-		queue = queue[1:]
-
-	}
-	return head
+type Node struct {
+	Val   int
+	Left  *Node
+	Right *Node
+	Next  *Node
 }
 
 // NULL 方便添加测试数据
@@ -65,4 +48,27 @@ func Ints2TreeNode(ints []int) *TreeNode {
 	}
 
 	return root
+}
+
+func CreateNodeByArray(nums []int) *Node {
+	if len(nums) <= 0 {
+		return nil
+	}
+	queue := make([]*Node, 0)
+	head := &Node{Val: nums[0]}
+	queue = append(queue, head)
+	for i := 1; i < len(nums); {
+		if nums[i] != 0 {
+			queue[0].Left = &Node{Val: nums[i]}
+			queue = append(queue, queue[0].Left)
+		}
+		if i+1 < len(nums) && nums[i+1] != 0 {
+			queue[0].Right = &Node{Val: nums[i+1]}
+			queue = append(queue, queue[0].Right)
+		}
+
+		queue = queue[1:]
+		i += 2
+	}
+	return head
 }

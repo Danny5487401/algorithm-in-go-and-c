@@ -59,6 +59,6 @@ func kthLargestLevelSum(root *TreeNode, k int) int64 {
 	if k > n {
 		return -1
 	}
-	slices.Sort(depthAns) // 注意需要排序
+	slices.Sort(depthAns) // 注意这里是升序
 	return depthAns[n-k]
 }
