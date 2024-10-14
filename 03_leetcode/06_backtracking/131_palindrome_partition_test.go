@@ -23,6 +23,7 @@ func TestPartition(t *testing.T) {
 		}
 
 		for _, tst := range testCase {
+
 			rsp := partition(tst.input)
 			convey.So(rsp, convey.ShouldEqual, tst.target)
 		}
@@ -42,8 +43,8 @@ func partition(s string) (ans [][]string) {
 			return
 		}
 		for j := i; j < n; j++ { // 枚举子串的结束位置
-			if isPalindrome(s, i, j) {
-				path = append(path, s[i:j+1])
+			if isPalindrome(s, i, j) { // 回文的情况
+				path = append(path, s[i:j+1]) // 这里注意是左闭右开区间
 				dfs(j + 1)
 				path = path[:len(path)-1] // 恢复现场
 			}

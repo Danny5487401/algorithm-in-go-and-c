@@ -41,6 +41,7 @@ func sortList(head *ListNode) *ListNode {
 	return sysSort(head, nil)
 }
 
+// 方式一: 自顶向下归并排序
 func sysSort(head, tail *ListNode) *ListNode {
 
 	// 以中点为分界，将链表拆分成两个子链表
@@ -53,6 +54,7 @@ func sysSort(head, tail *ListNode) *ListNode {
 		return head
 	}
 
+	// 找到中间节点
 	slow, fast := head, head
 	for fast != tail {
 		slow = slow.Next

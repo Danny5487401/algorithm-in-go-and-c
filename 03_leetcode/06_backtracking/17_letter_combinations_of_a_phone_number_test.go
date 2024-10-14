@@ -38,6 +38,10 @@ func TestLetterCombinations(t *testing.T) {
 var mapping = []string{"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"}
 
 func letterCombinations(digits string) []string {
+	/*
+		0 <= digits.length <= 4
+
+	*/
 	length := len(digits)
 	if length == 0 {
 		return []string{}
