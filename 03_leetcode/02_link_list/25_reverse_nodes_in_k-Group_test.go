@@ -50,6 +50,10 @@ func reverseKGroup(head *ListNode, k int) *ListNode {
 	p0 := dummy // 反转段的上一个节点
 	for n >= k {
 		n -= k
+
+		// 记录下次循环的开始
+		nxtRound := p0.Next
+
 		// 同反转中间部分链表 https://leetcode.cn/problems/reverse-linked-list-ii/description/
 
 		var pre *ListNode = nil
@@ -60,8 +64,6 @@ func reverseKGroup(head *ListNode, k int) *ListNode {
 			pre = cur
 			cur = nxt
 		}
-		// 记录下次循环的开始
-		nxt := p0.Next
 
 		// 循环结束性质: cur 指向下个循环段的开始,  pre指定末尾,返回 pre
 		// 反转边界
@@ -69,7 +71,7 @@ func reverseKGroup(head *ListNode, k int) *ListNode {
 		p0.Next = pre
 
 		// 更改反转段的上一个节点
-		p0 = nxt
+		p0 = nxtRound
 	}
 
 	return dummy.Next

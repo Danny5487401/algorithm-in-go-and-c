@@ -34,15 +34,20 @@ func TestBuildTree(t *testing.T) {
 }
 
 func buildTree(preorder []int, inorder []int) *TreeNode {
+	/*
+		- 前序遍历: [ 根节点, [左子树的前序遍历结果], [右子树的前序遍历结果] ]
+		- 中序遍历: [ [左子树的中序遍历结果], 根节点, [右子树的中序遍历结果] ]
+	*/
 	if len(preorder) == 0 {
 		return nil
 	}
 
 	// 根节点
 	root := &TreeNode{Val: preorder[0]}
+
 	i := 0
 	for ; i < len(inorder); i++ {
-		// 查找跟节点,划分左右边界
+		// 查找根节点,划分左右边界
 		if inorder[i] == root.Val {
 			break
 		}

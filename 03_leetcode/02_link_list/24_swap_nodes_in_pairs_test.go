@@ -7,7 +7,7 @@ import (
 
 // 两两交换链表中的节点 https://leetcode.cn/problems/swap-nodes-in-pairs/description/
 func TestSwapPairs(t *testing.T) {
-	convey.Convey("两两交换链表中的节点:两两交换其中相邻的节点 ", t, func() {
+	convey.Convey("两两交换链表中的节点:两两交换其中相邻的节点", t, func() {
 		testCase := []struct {
 			input    *ListNode
 			expected *ListNode
@@ -39,13 +39,13 @@ func swapPairs(head *ListNode) *ListNode {
 	node1 := head
 	for node1 != nil && node1.Next != nil { // 至少有两个节点
 
-		// node0 -> node1 -> node2 -> node3
+		// 交换前: node0 -> node1 -> node2 -> node3 -> node4
 
 		// 记录下次开始节点 node2 node3
 		node2 := node1.Next
 		node3 := node2.Next
 
-		// node0 -> node2 -> node1 -> node3
+		// 交换后: node0 -> node2 -> node1 -> node3 -> node4
 		node0.Next = node2 // 0 -> 2
 		node2.Next = node1 // 2 -> 1
 		node1.Next = node3 // 1 -> 3
