@@ -32,8 +32,8 @@ func TestIsSymmetric(t *testing.T) {
 }
 
 func isSymmetric(root *TreeNode) bool {
-	if root == nil {
-		return false
+	if root == nil { // 树中节点数目在范围 [1, 1000] 内
+		return true
 	}
 	// 平分根节点，就与 100. 相同的树 相似：https://leetcode.cn/problems/same-tree/
 	return isSymmetricTree(root.Left, root.Right)

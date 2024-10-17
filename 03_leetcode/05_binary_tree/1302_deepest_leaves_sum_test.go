@@ -1,6 +1,36 @@
 package _5_binary_tree
 
+import (
+	"github.com/smartystreets/goconvey/convey"
+	"testing"
+)
+
 // 层数最深叶子节点的和 https://leetcode.cn/problems/deepest-leaves-sum/
+
+func TestDeepestLeavesSum(t *testing.T) {
+	convey.Convey("二叉搜索树最近节点查询", t, func() {
+		testCase := []struct {
+			input  *TreeNode
+			target int
+		}{
+			{
+				Ints2TreeNode([]int{1, 2, 3, 4, 5, NULL, 6, 7, NULL, NULL, NULL, NULL, 8}),
+				15,
+			},
+
+			{
+				Ints2TreeNode([]int{6, 7, 8, 2, 7, 1, 3, 9, NULL, 1, 4, NULL, NULL, NULL, 5}),
+				19,
+			},
+		}
+
+		for _, tst := range testCase {
+			rsp := deepestLeavesSum(tst.input)
+			convey.So(rsp, convey.ShouldEqual, tst.target)
+		}
+	})
+
+}
 func deepestLeavesSum(root *TreeNode) (sum int) {
 	if root == nil {
 		return 0

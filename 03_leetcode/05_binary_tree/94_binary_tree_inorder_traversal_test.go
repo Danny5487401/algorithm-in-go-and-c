@@ -25,7 +25,7 @@ func TestInorderTraversal(t *testing.T) {
 		}
 
 		for _, tst := range testCase {
-			rsp := inorderTraversal3(tst.input)
+			rsp := inorderTraversal2(tst.input)
 			convey.So(rsp, convey.ShouldEqual, tst.target)
 		}
 	})
@@ -81,6 +81,8 @@ func inorderTraversal3(root *TreeNode) (res []int) {
 
 		// 记录答案
 		res = append(res, root.Val)
+
+		// 再右儿子
 		root = root.Right
 	}
 	return

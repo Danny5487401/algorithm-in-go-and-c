@@ -63,6 +63,7 @@ func TestLowestCommonAncestor(t *testing.T) {
 
 }
 
+// 满足 x 是 p、q 的祖先且 x 的深度尽可能大
 func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
 	if root == nil || root == p || root == q {
 		// 如果当前节点为空，为p,为q, 直接返回
