@@ -10,7 +10,7 @@ import (
 // 二叉树中的最大路径和 https://leetcode.cn/problems/binary-tree-maximum-path-sum/description/
 
 func TestMaxPathSum(t *testing.T) {
-	convey.Convey("二叉树中的最大路径和", t, func() {
+	convey.Convey("二叉树中的最大路径和: 节点值相加", t, func() {
 		testCase := []struct {
 			input  *TreeNode
 			target int
@@ -37,7 +37,7 @@ func maxPathSum(root *TreeNode) int {
 
 	var dfs func(root *TreeNode) int
 
-	var ans = math.MinInt
+	var ans = math.MinInt // 节点节点数目范围是 [1, 3 * 104], -1000 <= Node.val <= 1000
 	dfs = func(node *TreeNode) int {
 		if node == nil {
 			return 0 // 没有节点，和为 0
@@ -53,5 +53,6 @@ func maxPathSum(root *TreeNode) int {
 
 	}
 	dfs(root)
+
 	return ans
 }

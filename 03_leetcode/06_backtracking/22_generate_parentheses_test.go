@@ -51,14 +51,12 @@ func generateParenthesis(n int) []string {
 			ans = append(ans, strings.Join(path, ""))
 		}
 
-		if left < n {
-			// 说明还可以选择左括号
+		if left < n { // 说明还可以选择左括号
 			path[i] = "("
 			dfs(i+1, left+1)
 		}
 
-		if i-left < left {
-			// 右括号小于左括号
+		if i-left < left { // 右括号小于左括号
 			path[i] = ")"
 			dfs(i+1, left)
 		}

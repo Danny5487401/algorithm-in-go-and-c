@@ -6,7 +6,6 @@ import (
 )
 
 // 爬楼梯 https://leetcode.cn/problems/climbing-stairs/?envType=study-plan-v2&envId=top-100-liked
-
 func TestMinCostClimbingStairs(t *testing.T) {
 	convey.Convey("使用最小花费爬楼梯 :向上爬一个或者两个台阶,可以选择从下标为 0 或下标为 1 的台阶开始爬楼梯", t, func() {
 		testCase := []struct {

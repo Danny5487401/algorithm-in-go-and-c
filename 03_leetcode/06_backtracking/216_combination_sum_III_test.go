@@ -8,7 +8,7 @@ import (
 // 组合总和III :https://leetcode.cn/problems/combination-sum-iii/solutions/2071013/hui-su-bu-hui-xie-tao-lu-zai-ci-pythonja-feme/
 
 func TestCombination3(t *testing.T) {
-	convey.Convey("组合总和III ", t, func() {
+	convey.Convey("组合总和 III:相加之和为 n 的 k 个数的组合,只使用数字1到9,每个数字 最多使用一次  ", t, func() {
 		testCase := []struct {
 			input struct {
 				k int
@@ -44,7 +44,7 @@ func TestCombination3(t *testing.T) {
 		}
 
 		for _, tst := range testCase {
-			rsp := combinationSum3(tst.input.k, tst.input.n)
+			rsp := combinationSumIII_1(tst.input.k, tst.input.n)
 			compareRsp := intSliceSliceEqual(rsp, tst.target)
 			convey.So(compareRsp, convey.ShouldBeTrue)
 		}
@@ -56,25 +56,24 @@ func TestCombination3(t *testing.T) {
 // 元素和超过 n 优化
 // 元素和选择最大前几个小于 n 优化
 
-func combinationSum3(k int, n int) [][]int {
+func combinationSumIII_2(k int, n int) [][]int {
 	var ans = make([][]int, 0)
 
 	var dfs func(i, t int)
 
 	var path = make([]int, 0)
 
-	dfs = func(i, t int) {
+	dfs = func(i, t int) { // t 代表目标值
 		m := len(path)
 		d := k - m // 还要选 d 个数
 
-		if t < 0 || t > (i*2-d+1)*d/2 {
+		// 这里进行剪枝优化
+		if t < 0 || t > (i+i-d+1)*d/2 { // 剩余选择最大的
 			return
 		}
 
-		if d == 0 { // 上面可以判断 t<0 ||t>0
-
+		if d == 0 { // 上面可以判断 t<0 || t>0
 			ans = append(ans, append([]int(nil), path...)) // 记录答案
-
 			return
 		}
 
@@ -91,8 +90,8 @@ func combinationSum3(k int, n int) [][]int {
 	return ans
 }
 
-// 方式一：相比77 简单多个判断
-func combinationSum3Extra1(k int, n int) [][]int {
+// 方法一：枚举下一个数选哪个
+func combinationSumIII_1(k int, n int) [][]int {
 	var ans = make([][]int, 0)
 
 	var dfs func(i int)
@@ -104,6 +103,7 @@ func combinationSum3Extra1(k int, n int) [][]int {
 		d := k - m // 还要选 d 个数
 
 		if d == 0 {
+			// 相比 77 组合 https://leetcode.cn/problems/combinations/description/ 简单多个判断
 			var sum int
 			for _, v := range path {
 				sum += v

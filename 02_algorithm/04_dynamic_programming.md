@@ -150,10 +150,37 @@ dfs(i,j)=
 
 
 [二叉树的最大路径和](04_dynamic_programming/543_diameter_of_binary_tree_test.go)
+
 ![](.04_dynamic_programming_images/max_path_sum1.png)
 
 
 
+相邻字符不同的最长路径
+![](.04_dynamic_programming_images/longest-path-with-different-adjacent-characters.png)
+
+
+打家劫舍III
+![](.04_dynamic_programming_images/house-robber-III_1.png)
+
+![](.04_dynamic_programming_images/house-robber-III_2.png)
+
+![](.04_dynamic_programming_images/house-robber-III_3.png)
+
+监控二叉树
+
+![](.04_dynamic_programming_images/binary-tree-cameras1.png)
+![](.04_dynamic_programming_images/binary-tree-cameras2.png)
+
+![](.04_dynamic_programming_images/binary-tree-cameras3.png)
+蓝色=min(左蓝,左黄,左红)+min(右蓝,右黄,右红)+1
+
+![](.04_dynamic_programming_images/binary-tree-cameras4.png)
+黄色=min(左蓝,左红)+min(右蓝,右红)+1
+
+![](.04_dynamic_programming_images/binary-tree-cameras5.png)
+红色=min(左蓝,右红)+min(右红,右蓝)+min(左蓝,右蓝)
+
+![](.04_dynamic_programming_images/binary-tree-cameras6.png)
 
 
 ### 2 爬台阶
