@@ -41,7 +41,7 @@ Note: C语言实现使用 GBK 编码
 - [4 图](01_dataStructure/04_graph/graph.md)
   - 4.1 BFS (Breadth First Search 广度优先遍历）
   - 4.2 DFS (Depth First Search 深度优先搜索)
-  - 4.3 单源最短路径算法(Floyd(弗洛伊德)算法)
+  - [4.3 单源最短路径算法(Floyd(弗洛伊德)算法)](01_dataStructure/04_graph/floyd.c)
   - 4.4 拓扑排序
   - 4.5 关键路径
 - 5 hash 哈希表
@@ -197,7 +197,7 @@ Note: C语言实现使用 GBK 编码
   - [78 子集](03_leetcode/06_backtracking/78_subsets_test.go)
   - [113 路径总和II](03_leetcode/06_backtracking/113_path_sum_ii_test.go)
   - [131 分割回文串-->子集型回溯](03_leetcode/06_backtracking/131_palindrome_partition_test.go)
-  - [216 组合总和III-->剪枝优化](03_leetcode/06_backtracking/216_combination_sum3_test.go)
+  - [216 组合总和III-->剪枝优化](03_leetcode/06_backtracking/216_combination_sum_III_test.go)
   - [257 二叉树的所有路径](03_leetcode/06_backtracking/257_binary_tree_paths_test.go)
   - [784 字母大小写全排列](03_leetcode/06_backtracking/784_letter_case_permutation_test.go)
 - [单调栈](03_leetcode/07_stack/monotone_stack.md)

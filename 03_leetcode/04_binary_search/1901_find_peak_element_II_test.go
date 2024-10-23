@@ -8,7 +8,7 @@ import (
 
 // 寻找峰值II https://leetcode.cn/problems/find-a-peak-element-ii/description/
 func TestFindPeakElementII(t *testing.T) {
-	convey.Convey("寻找峰值II:  严格大于 其相邻格子(上、下、左、右)的元素,相邻数字不同 ", t, func() {
+	convey.Convey("寻找峰值II:  严格大于其相邻格子(上、下、左、右)的元素,相邻数字不同 ", t, func() {
 		testCase := []struct {
 			input    [][]int
 			expected []int
@@ -46,14 +46,15 @@ func findPeakGrid(mat [][]int) []int {
 
 	*/
 
-	left, right := -1, len(mat)-1
+	// 范围:1 <= m, n <= 500
+	left, right := -1, len(mat)-1 // 注意这里是 right= len(mat)-1, 因为后面会进行 +1 判断
 	for left+1 < right {
-		i := left + (right-left)/2
-		j := indexOfMax(mat[i])
-		if mat[i][j] > mat[i+1][j] {
-			right = i
+		mid := left + (right-left)/2
+		j := indexOfMax(mat[mid])
+		if mat[mid][j] > mat[mid+1][j] { // 相邻对比
+			right = mid
 		} else {
-			left = i
+			left = mid
 		}
 	}
 	return []int{right, indexOfMax(mat[right])}

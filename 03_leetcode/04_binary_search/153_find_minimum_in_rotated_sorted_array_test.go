@@ -7,8 +7,8 @@ import (
 
 // 寻找旋转排序数组中的最小值 https://leetcode.cn/problems/find-minimum-in-rotated-sorted-array/description/
 func TestFindMin(t *testing.T) {
-	convey.Convey("寻找旋转排序数组中的最小值：原先升序排列,"+
-		"考虑数组中的最后一个元素 x：在最小值右侧的元素（不包括最后一个元素本身），它们的值一定都严格小于 x；而在最小值左侧的元素，它们的值一定都严格大于 x ", t, func() {
+	convey.Convey("寻找旋转排序数组中的最小值："+
+		"原先升序排列,考虑数组中的最后一个元素 x：在最小值右侧的元素（不包括最后一个元素本身），它们的值一定都严格小于 x；而在最小值左侧的元素，它们的值一定都严格大于 x ", t, func() {
 		testCase := []struct {
 			input    []int
 			expected int

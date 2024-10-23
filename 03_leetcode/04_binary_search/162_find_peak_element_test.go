@@ -8,7 +8,7 @@ import (
 
 // 寻找峰值 https://leetcode.cn/problems/find-peak-element/description/
 func TestFindPeakElement(t *testing.T) {
-	convey.Convey("寻找峰值  ", t, func() {
+	convey.Convey("寻找峰值", t, func() {
 		testCase := []struct {
 			input    []int
 			expected int
