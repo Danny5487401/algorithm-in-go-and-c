@@ -137,6 +137,7 @@ Note: C语言实现使用 GBK 编码
   - [876 链表的中间节点-->快慢指针](03_leetcode/02_link_list/876_middle_of_the_linked_list_test.go)
   - [1669 合并两个链表](03_leetcode/02_link_list/1669_merge_In_between_linked_lists_test.go)
   - [2487 从链表中移除节点](03_leetcode/02_link_list/2487_remove_nodes_from_linked_list_test.go)
+  - [2816 翻倍以链表形式表示的数字](03_leetcode/02_link_list/2816-double-a-number-represented-as-a-linked-list_test.go)
   - [2824 统计和小于目标的下标对数目-->相向双指针](03_leetcode/02_link_list/2824_count_pairs_whose_sum_is_less_than_target_test.go)
   - [3217 从链表中移除在数组中存在的节点](03_leetcode/02_link_list/3217_delete_nodes_from_linked_list_present_in_array_test.go)
 
