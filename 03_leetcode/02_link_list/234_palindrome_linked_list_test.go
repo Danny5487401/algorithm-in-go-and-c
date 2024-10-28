@@ -7,7 +7,7 @@ import (
 
 // 回文链表 https://leetcode.cn/problems/palindrome-linked-list/
 func TestIsPalindrome(t *testing.T) {
-	convey.Convey("重排链表：L0 → Ln → L1 → Ln - 1 → L2 → Ln - 2 → …", t, func() {
+	convey.Convey("该链表是否为 回文链表 ", t, func() {
 		testCase := []struct {
 			input  *ListNode
 			target bool

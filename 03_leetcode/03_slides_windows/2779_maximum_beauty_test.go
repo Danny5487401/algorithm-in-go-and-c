@@ -9,7 +9,7 @@ import (
 //  数组的最大美丽值 https://leetcode.cn/problems/maximum-beauty-of-an-array-after-applying-operation/
 
 func TestMaximumBeauty(t *testing.T) {
-	convey.Convey("数组的最大美丽值: 美丽值 定义为数组中由相等元素组成的最长子序列的长度,可以 nums[i] 替换为范围 [nums[i] - k, nums[i] + k] 内的任一整数", t, func() {
+	convey.Convey("数组的最大美丽值: 美丽值定义为数组中由相等元素组成的最长子序列的长度,可以 nums[i] 替换为范围 [nums[i] - k, nums[i] + k] 内的任一整数", t, func() {
 		testCase := []struct {
 			nums     []int
 			k        int

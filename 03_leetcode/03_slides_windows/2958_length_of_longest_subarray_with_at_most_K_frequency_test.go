@@ -40,9 +40,9 @@ func maxSubarrayLength(nums []int, k int) int {
 
 	var ans int
 
-	for right, v := range nums {
-		count[v]++
-		for count[v] > k { // 无重复字符的最长子串 https://leetcode.cn/problems/longest-substring-without-repeating-characters/solution/xia-biao-zong-suan-cuo-qing-kan-zhe-by-e-iaks/
+	for right, num := range nums {
+		count[num]++
+		for count[num] > k { // 无重复字符的最长子串 https://leetcode.cn/problems/longest-substring-without-repeating-characters/solution/xia-biao-zong-suan-cuo-qing-kan-zhe-by-e-iaks/
 			count[nums[left]]--
 			left++
 		}
