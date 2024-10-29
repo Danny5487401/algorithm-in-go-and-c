@@ -197,6 +197,7 @@ Note: C语言实现使用 GBK 编码
   - [46 全排列](03_leetcode/06_backtracking/46_permute_test.go) 
   - [77 组合-->剪枝优化](03_leetcode/06_backtracking/77_combinations_test.go)
   - [78 子集](03_leetcode/06_backtracking/78_subsets_test.go)
+  - [93 复原 IP 地址-->剪枝优化](03_leetcode/06_backtracking/93_restore-ip-addresses_test.go)
   - [113 路径总和II](03_leetcode/06_backtracking/113_path_sum_ii_test.go)
   - [131 分割回文串-->子集型回溯](03_leetcode/06_backtracking/131_palindrome_partition_test.go)
   - [216 组合总和III-->剪枝优化](03_leetcode/06_backtracking/216_combination_sum_III_test.go)
