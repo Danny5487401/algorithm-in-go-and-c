@@ -54,6 +54,7 @@ func restoreIpAddresses(s string) (ans []string) {
 			if numStr[0] == '0' && length > 1 { // 此段可能为'0', 但不能为'0x' 或 '0xx'
 				return
 			}
+			// 剪枝优化 4
 			if num, _ := strconv.Atoi(numStr); num > 255 { // 值域需介于[0,255]
 				return
 			}
