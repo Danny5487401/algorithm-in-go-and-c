@@ -10,6 +10,7 @@
   - [数据抽象 item](#%E6%95%B0%E6%8D%AE%E6%8A%BD%E8%B1%A1-item)
   - [Strict Weak Ordering](#strict-weak-ordering)
   - [插入数据](#%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE)
+  - [应用-->etcd](#%E5%BA%94%E7%94%A8--etcd)
   - [参考](#%E5%8F%82%E8%80%83)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -230,6 +231,41 @@ func (n *node[T]) maybeSplitChild(i, maxItems int) bool {
 	n.items.insertAt(i, item)
 	n.children.insertAt(i+1, second)
 	return true
+}
+```
+
+## 应用-->etcd
+![](.btree_images/etcd_read.png) 
+treeIndex模块是基于Google开源的内存版btree库实现的,treeIndex模块只会保存用户的key和相关版本号信息，用户key的value数据存储在boltdb里面
+
+```go
+// https://github.com/etcd-io/etcd/blob/4345f74426f1ca521b0042dd18fc0ae4b27b56ff/mvcc/index.go
+
+// 放入信息
+func (ti *treeIndex) Put(key []byte, rev revision) {
+	keyi := &keyIndex{key: key}
+
+	ti.Lock()
+	defer ti.Unlock()
+	item := ti.tree.Get(keyi)
+	if item == nil {
+		keyi.put(ti.lg, rev.main, rev.sub)
+		ti.tree.ReplaceOrInsert(keyi)
+		return
+	}
+	okeyi := item.(*keyIndex)
+	okeyi.put(ti.lg, rev.main, rev.sub)
+}
+
+// 获取信息
+func (ti *treeIndex) Get(key []byte, atRev int64) (modified, created revision, ver int64, err error) {
+	keyi := &keyIndex{key: key}
+	ti.RLock()
+	defer ti.RUnlock()
+	if keyi = ti.keyIndex(keyi); keyi == nil {
+		return revision{}, revision{}, 0, ErrRevisionNotFound
+	}
+	return keyi.get(ti.lg, atRev)
 }
 ```
 

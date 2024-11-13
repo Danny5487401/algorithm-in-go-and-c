@@ -92,6 +92,7 @@ Note: C语言实现使用 GBK 编码
   - [188 买卖股票最多交易K次](02_algorithm/03_greedy_method/188_best_time_to_buy_and_sell_stock_IV_test.go)
   - [309 冷冻期买卖股票](02_algorithm/03_greedy_method/122_best_time_to_buy_and_sell_stock_II_test.go)
 - [4 动态规划 dynamic programming](02_algorithm/04_dynamic_programming.md)
+  - [53 最大子数组和](02_algorithm/04_dynamic_programming/53_maximum-subarray_test.go)
   - [70 爬楼梯](02_algorithm/04_dynamic_programming/70_climbing_stairs_test.go)
   - [72 编辑距离](02_algorithm/04_dynamic_programming/72_edit_distance_test.go)
   - [124 二叉树中的最大路径和](02_algorithm/04_dynamic_programming/124_max_path_sum_test.go)

@@ -6,7 +6,7 @@ import (
 )
 
 // 买卖股票的最佳时机 :https://leetcode.cn/problems/best-time-to-buy-and-sell-stock/description/
-// 不限 交易次数
+// 只能买卖一次
 
 func TestMaxProfitI(t *testing.T) {
 	convey.Convey("买卖股票的最佳时机: 只有买和卖一次交易次数", t, func() {
@@ -44,8 +44,8 @@ func maxProfitI(prices []int) int {
 	minPrice := prices[0]
 	var ans int
 	for _, p := range prices {
-		ans = max(ans, p-minPrice)
-		minPrice = min(minPrice, p)
+		ans = max(ans, p-minPrice)  // 最大利润
+		minPrice = min(minPrice, p) // 股票价格的最小值
 	}
 	return ans
 
