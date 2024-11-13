@@ -41,7 +41,7 @@ func twoSum(nums []int, target int) []int {
 		if p, ok := hashTable[target-x]; ok {
 			return []int{p, i} // 小的索引在前面
 		}
-		hashTable[x] = i
+		hashTable[x] = i // 注意这在判断之后
 	}
 	return nil
 }

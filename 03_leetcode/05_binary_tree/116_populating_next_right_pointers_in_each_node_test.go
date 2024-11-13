@@ -7,7 +7,7 @@ import (
 
 // 填充每个节点的下一个右侧节点指针 https://leetcode.cn/problems/populating-next-right-pointers-in-each-node/description/
 func TestConnect(t *testing.T) {
-	convey.Convey("填充每个节点的下一个右侧节点指针: 完美二叉树", t, func() {
+	convey.Convey("填充每个节点的下一个右侧节点指针: 给定一个*完美二叉树*,让这个指针指向其下一个右侧节点。如果找不到下一个右侧节点，则将 next 指针设置为 NULL", t, func() {
 		testCase := []struct {
 			input  *Node
 			sum    int
@@ -85,16 +85,18 @@ func connectBFS(root *Node) *Node {
 	for len(queue) > 0 {
 
 		tmp := queue
-		queue = nil // 每层归0
-		for i, n := range tmp {
-			if i > 0 {
-				tmp[i-1].Next = n
+		//queue = nil // 每层归0
+		for i, _ := range tmp {
+			node := queue[0]
+			queue = queue[1:]
+			if i > 0 { // 从第二个开始
+				tmp[i-1].Next = node
 			}
-			if n.Left != nil {
-				queue = append(queue, n.Left)
+			if node.Left != nil {
+				queue = append(queue, node.Left)
 			}
-			if n.Right != nil {
-				queue = append(queue, n.Right)
+			if node.Right != nil {
+				queue = append(queue, node.Right)
 			}
 		}
 

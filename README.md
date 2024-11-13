@@ -60,17 +60,17 @@ Note: C语言实现使用 GBK 编码
   - [7.4 用顺序栈实现中缀表达式转后缀表达式](01_dataStructure/07_stack/seqstack3.c)
 
 - [8 排序算法](01_dataStructure/08_sort/sort.md)
-  - 8.1 冒泡排序
-  - 8.2 桶排序
-  - 8.3 计数排序
+  - [8.1 冒泡排序](01_dataStructure/08_sort/bubblesort.c)
+  - [8.2 桶排序](01_dataStructure/08_sort/bucketsort)
+  - [8.3 计数排序](01_dataStructure/08_sort/countsort.c)
   - [8.4 堆排序](01_dataStructure/08_sort/heapsort.c)
   - [8.5 插入排序](01_dataStructure/08_sort/insertsort.c)
   - 8.6 归并排序
       - [递归的方法实现](01_dataStructure/08_sort/mergesort.c)
       - [循环的方法实现](01_dataStructure/08_sort/mergesort1.c)
-  - 8.7 快速排序
-  - 8.8 基数排序
-  - [8.9 选择排序](01_dataStructure/08_sort/selectsort1.c)
+  - [8.7 快速排序](01_dataStructure/08_sort/quicksort.c)
+  - [8.8 基数排序](01_dataStructure/08_sort/radixsort.c)
+  - [8.9 选择排序](01_dataStructure/08_sort/selectsort.c)
   - [8.10 希尔排序](01_dataStructure/08_sort/shellsort.c)
 
 - [9 数组和广义表](01_dataStructure/09_array/array.md)
@@ -146,6 +146,7 @@ Note: C语言实现使用 GBK 编码
   - [03 无重复字符的最长子串](03_leetcode/03_slides_windows/03_longest_substring_without_repeating_characters_test.go)
   - [209 长度最小的子数组](03_leetcode/03_slides_windows/209_minimum_size_subarray_sum_test.go)
   - [239 滑动窗口最大值-->单调队列](03_leetcode/03_slides_windows/239_sliding_window_maximum_test.go)
+  - [438 找到字符串中所有字母异位词](03_leetcode/03_slides_windows/438_find-all-anagrams-in-a-string_test.go)
   - [713 乘积小于 K 的子数组 ](03_leetcode/03_slides_windows/713_subarray_product_less_than_k_test.go)
   - [2730 找到最长的半重复子字符串](03_leetcode/03_slides_windows/2730_longest_semi_repetitive_substring_test.go)
   - [2779 数组的最大美丽值](03_leetcode/03_slides_windows/2779_maximum_beauty_test.go)
@@ -167,7 +168,7 @@ Note: C语言实现使用 GBK 编码
   - [103 二叉树的锯齿形层序遍历](03_leetcode/05_binary_tree/103_binary_tree_zigzag_level_order_traversal_test.go)
   - [104 二叉树的最大深度](03_leetcode/05_binary_tree/104_maximum_depth_of_binary_tree_test.go)
   - [105 从前序与中序遍历序列构造二叉树](03_leetcode/05_binary_tree/105_build_tree_by_preorder_and_inorder_test.go)
-  - [105 从中序与后序遍历序列构造二叉树](03_leetcode/05_binary_tree/106_build_tree_by_postorder_and_inorder_test.go)
+  - [106 从中序与后序遍历序列构造二叉树](03_leetcode/05_binary_tree/106_build_tree_by_postorder_and_inorder_test.go)
   - [107 二叉树的层序遍历 II](03_leetcode/05_binary_tree/107_binary_tree_level_order_traversal_II_test.go)
   - [108 将有序数组转换为二叉搜索树](03_leetcode/05_binary_tree/108_sorted_array_to_BST_test.go)
   - [110 平衡二叉树](03_leetcode/05_binary_tree/110_balanced_binary_tree_test.go)
@@ -185,10 +186,12 @@ Note: C语言实现使用 GBK 编码
   - [513 找树左下角的值](03_leetcode/05_binary_tree/513_find_bottom_left_tree_value_test.go)
   - [530 二叉搜索树的最小绝对差](03_leetcode/05_binary_tree/530_get_minimum_difference_test.go)
   - [700 二叉搜索树中的搜索](03_leetcode/05_binary_tree/700_search_in_a_binary_search_tree_test.go)
+  - [889 根据前序和后序遍历构造二叉树](03_leetcode/05_binary_tree/889_build_tree_by_preorder_and_postorder_test.go)
   - [938 二叉搜索树的范围和](03_leetcode/05_binary_tree/938_range_sum_of_BST_test.go)
   - [951 翻转等价二叉树:选择任意节点，然后交换它的左子树和右子树](03_leetcode/05_binary_tree/951_flip_equivalent_binary_trees_test.go)
   - [1123 最深叶节点的最近公共祖先](03_leetcode/05_binary_tree/1123_lowest_common_ancestor_of_deepest_leaves_test.go)
   - [1302 层数最深叶子节点的和](03_leetcode/05_binary_tree/1302_deepest_leaves_sum_test.go)
+  - [1609 奇偶树](03_leetcode/05_binary_tree/1609_even-odd-tree_test.go)
   - [2476 二叉搜索树最近节点查询](03_leetcode/05_binary_tree/2476_closest_nodes_test.go)
   - [2583 二叉树中的第 K 大层和](03_leetcode/05_binary_tree/2583_kth_largest_sum_in_a_binary_tree_test.go)
 - [backtracking 回溯](03_leetcode/06_backtracking/back_tracking.md)

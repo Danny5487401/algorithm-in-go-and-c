@@ -56,15 +56,15 @@ func minDepth2(root *TreeNode) int {
 		return 0
 	}
 	// 如果 node 没有右儿子，那么深度就是左子树的深度加一，即 dfs(node)=dfs(node.left)+1
-	if root.Left != nil {
+	if root.Right == nil {
 		return minDepth2(root.Left) + 1
 	}
 
 	// 如果 node 没有左儿子，那么深度就是右子树的深度加一，即 dfs(node)=dfs(node.right)+1
-	if root.Right != nil {
+	if root.Left == nil {
 		return minDepth2(root.Right) + 1
 	}
-	// dfs(node)=min(dfs(node.left),dfs(node.right))+1
+	// node 左右儿子都有，那么分别递归计算左子树的深 dfs(node)=min(dfs(node.left),dfs(node.right))+1
 	return min(minDepth2(root.Left), minDepth2(root.Right)) + 1
 }
 
@@ -83,6 +83,11 @@ func minDepth3(root *TreeNode) int {
 			return
 		}
 		depth++
+		// 如果递归中发现 depth≥ans，由于继续向下递归也不会让 depth 变小，直接返回。
+		if depth >= ans {
+			return // 最优性剪枝
+		}
+
 		if node.Left == nil && node.Right == nil { // 要求左右都为叶子节点
 			ans = min(depth, ans)
 			return

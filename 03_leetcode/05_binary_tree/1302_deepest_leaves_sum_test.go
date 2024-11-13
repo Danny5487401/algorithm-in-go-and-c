@@ -8,7 +8,7 @@ import (
 // 层数最深叶子节点的和 https://leetcode.cn/problems/deepest-leaves-sum/
 
 func TestDeepestLeavesSum(t *testing.T) {
-	convey.Convey("二叉搜索树最近节点查询", t, func() {
+	convey.Convey("层数最深叶子节点的和", t, func() {
 		testCase := []struct {
 			input  *TreeNode
 			target int
