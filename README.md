@@ -92,7 +92,6 @@ Note: C语言实现使用 GBK 编码
   - [188 买卖股票最多交易K次](02_algorithm/03_greedy_method/188_best_time_to_buy_and_sell_stock_IV_test.go)
   - [309 冷冻期买卖股票](02_algorithm/03_greedy_method/122_best_time_to_buy_and_sell_stock_II_test.go)
 - [4 动态规划 dynamic programming](02_algorithm/04_dynamic_programming.md)
-  - [53 最大子数组和](02_algorithm/04_dynamic_programming/53_maximum-subarray_test.go)
   - [70 爬楼梯](02_algorithm/04_dynamic_programming/70_climbing_stairs_test.go)
   - [72 编辑距离](02_algorithm/04_dynamic_programming/72_edit_distance_test.go)
   - [124 二叉树中的最大路径和](02_algorithm/04_dynamic_programming/124_max_path_sum_test.go)
@@ -214,6 +213,10 @@ Note: C语言实现使用 GBK 编码
   - [503 下一个更大元素 II: 循环数组](03_leetcode/07_stack/503_next_greater_element_ii_test.go)
   - [739 每日温度](03_leetcode/07_stack/739_daily_temperatures_test.go)
 
+- 数组
+  - [53 最大子数组和-->前缀和](03_leetcode/08_array/53_maximum-subarray_test.go)
+  - [303 区域和检索 - 数组不可变-->前缀和](03_leetcode/08_array/303_range-sum-query-immutable_test.go)
+  - [560 和为 K 的子数组-->前缀和](03_leetcode/08_array/560_subarray-sum-equals-k_test.go)
 
 ## 参考
 - [The Algorithms 组织开源的多种语言算法实现](https://github.com/TheAlgorithms)

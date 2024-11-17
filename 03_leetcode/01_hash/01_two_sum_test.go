@@ -43,5 +43,5 @@ func twoSum(nums []int, target int) []int {
 		}
 		hashTable[x] = i // 注意这在判断之后
 	}
-	return nil
+	return nil // 题目保证一定有解，代码不会执行到这里
 }

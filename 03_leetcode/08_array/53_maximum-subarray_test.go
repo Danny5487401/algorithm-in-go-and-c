@@ -1,7 +1,8 @@
-package _4_dynamic_programming
+package _8_array
 
 import (
 	"github.com/smartystreets/goconvey/convey"
+	"slices"
 	"testing"
 )
 
@@ -35,7 +36,7 @@ func TestMaxSubArray(t *testing.T) {
 }
 
 /*
-s[i+1]=s[i]+nums[i]
+方法一：前缀和 s[i+1]=s[i]+nums[i]
 
 子数组的元素和等于两个前缀和的差，所以求出 nums 的前缀和，问题就变成 121. 买卖股票的最佳时机
 
@@ -55,4 +56,17 @@ func maxSubArray(nums []int) int {
 		ans = max(ans, curSum)
 	}
 	return ans
+}
+
+/*
+方法二：动态规划
+定义 f[i] 表示以 nums[i] 结尾的最大子数组和.f[i]=f[i−1]+nums[i]
+*/
+func maxSubArrayII(nums []int) int {
+	f := make([]int, len(nums))
+	f[0] = nums[0]
+	for i := 1; i < len(nums); i++ {
+		f[i] = max(f[i-1], 0) + nums[i]
+	}
+	return slices.Max(f)
 }
