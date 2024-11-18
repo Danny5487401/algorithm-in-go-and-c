@@ -120,7 +120,7 @@ Note: C语言实现使用 GBK 编码
   - [19 删除链表的倒数第 N 个结点](03_leetcode/02_link_list/19_remove_nth_node_from_end_of_list_test.go)
   - [21 合并两个有序链表-->归并排序](03_leetcode/02_link_list/21_merge_two_lists_test.go)
   - [24 两两交换链表中的节点](03_leetcode/02_link_list/24_swap_nodes_in_pairs_test.go)
-  - [25 K 个一组翻转链表](03_leetcode/02_link_list/25_reverse_nodes_in_k-Group_test.go)
+  - [25 K个一组翻转链表](03_leetcode/02_link_list/25_reverse_nodes_in_k-Group_test.go)
   - [82 删除排序链表中的重复元素II](03_leetcode/02_link_list/82_remove_duplicates_from_sorted_list_II_test.go)
   - [83 删除排序链表中的重复元素](03_leetcode/02_link_list/83_remove_duplicates_from_sorted_list_test.go)
   - [92 反转链表II--中间部分反转](03_leetcode/02_link_list/92_reverse_linked_list_II_test.go)
@@ -147,7 +147,8 @@ Note: C语言实现使用 GBK 编码
   - [209 长度最小的子数组](03_leetcode/03_slides_windows/209_minimum_size_subarray_sum_test.go)
   - [239 滑动窗口最大值-->单调队列](03_leetcode/03_slides_windows/239_sliding_window_maximum_test.go)
   - [438 找到字符串中所有字母异位词](03_leetcode/03_slides_windows/438_find-all-anagrams-in-a-string_test.go)
-  - [713 乘积小于 K 的子数组 ](03_leetcode/03_slides_windows/713_subarray_product_less_than_k_test.go)
+  - [713 乘积小于 K 的子数组](03_leetcode/03_slides_windows/713_subarray_product_less_than_k_test.go)
+  - [1438 绝对差不超过限制的最长连续子数组](03_leetcode/03_slides_windows/1438_longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit_test.go)
   - [2730 找到最长的半重复子字符串](03_leetcode/03_slides_windows/2730_longest_semi_repetitive_substring_test.go)
   - [2779 数组的最大美丽值](03_leetcode/03_slides_windows/2779_maximum_beauty_test.go)
   - [2958 最多 K 个重复元素的最长子数组](03_leetcode/03_slides_windows/2958_length_of_longest_subarray_with_at_most_K_frequency_test.go)
@@ -215,7 +216,7 @@ Note: C语言实现使用 GBK 编码
 
 - 数组
   - [53 最大子数组和-->前缀和](03_leetcode/08_array/53_maximum-subarray_test.go)
-  - [303 区域和检索 - 数组不可变-->前缀和](03_leetcode/08_array/303_range-sum-query-immutable_test.go)
+  - [303 区域和检索-数组不可变-->前缀和](03_leetcode/08_array/303_range-sum-query-immutable_test.go)
   - [560 和为 K 的子数组-->前缀和](03_leetcode/08_array/560_subarray-sum-equals-k_test.go)
 
 ## 参考

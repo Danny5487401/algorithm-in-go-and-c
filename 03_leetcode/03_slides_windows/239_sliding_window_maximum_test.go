@@ -7,7 +7,7 @@ import (
 
 // 滑动窗口最大值 https://leetcode.cn/problems/sliding-window-maximum/description/
 func TestMaxSlidingWindow(t *testing.T) {
-	convey.Convey("滑动窗口最大值：窗口为k内的最大值 ", t, func() {
+	convey.Convey("滑动窗口最大值：窗口为k内的最大值", t, func() {
 		testCase := []struct {
 			nums     []int
 			k        int
@@ -29,10 +29,11 @@ func TestMaxSlidingWindow(t *testing.T) {
 
 }
 
+// 滑动窗口 + 单调队列
 func maxSlidingWindow(nums []int, k int) []int {
 	ans := make([]int, 0, len(nums)-k+1) // 预先分配好空间
 
-	var q []int // 记录的是索引
+	var q []int // 单调递增队列,记录的是索引
 	for i, num := range nums {
 		// 1 进入窗口
 		for len(q) > 0 && nums[q[len(q)-1]] <= num {
