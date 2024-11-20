@@ -127,6 +127,8 @@ Note: C语言实现使用 GBK 编码
   - [141 环形链表-->快慢指针](03_leetcode/02_link_list/141_linked_list_cycle_test.go)
   - [142 环形链表II-->快慢指针](03_leetcode/02_link_list/142_linked_list_cycle_II_test.go)
   - [143 重排链表](03_leetcode/02_link_list/143_reorder_list_test.go)
+  - [148 排序链表](03_leetcode/02_link_list/148_sort_list_test.go)
+  - [160 相交链表](03_leetcode/02_link_list/160_intersection-of-two-linked-lists_test.go)
   - [167 两数之和 II 输入有序数组-->相向指针](03_leetcode/02_link_list/167_two_sum_II_input_array_is_sorted_test.go)
   - [203 移除链表元素](03_leetcode/02_link_list/203_remove_linked_list_elements_test.go)
   - [206 反转链表--中间部分反转](03_leetcode/02_link_list/206_reverse_linked_list_test.go)

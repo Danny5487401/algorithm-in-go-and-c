@@ -7,7 +7,6 @@ import (
 )
 
 // 排序链表 https://leetcode.cn/problems/sort-list/description/?envType=study-plan-v2&envId=top-100-liked
-
 func TestSortList(t *testing.T) {
 	convey.Convey("排序链表：按 升序 排列并返回排序后的链表", t, func() {
 		testCase := []struct {
@@ -44,29 +43,37 @@ func sortList(head *ListNode) *ListNode {
 // 方式一: 自顶向下归并排序
 func sysSort(head, tail *ListNode) *ListNode {
 
-	// 以中点为分界，将链表拆分成两个子链表
-	if head == nil {
+	// 如果链表为空或者只有一个节点，无需排序
+	if head == nil || head.Next == nil {
 		return head
 	}
 
-	if head.Next == tail {
-		head.Next = nil
-		return head
-	}
+	mid := cutMiddleNode(head)
 
-	// 找到中间节点
-	slow, fast := head, head
-	for fast != tail {
-		slow = slow.Next
-		fast = fast.Next
-		if fast != tail {
-			fast = fast.Next
-		}
-	}
-	mid := slow
-	return mergeTwoLists(sysSort(head, mid), sysSort(mid, tail))
+	// 分治
+	head1 := sysSort(head, mid)
+	head2 := sysSort(mid, tail)
+
+	// 合并
+	return mergeTwoLists(head1, head2)
 }
 
+// 876. 链表的中间结点（快慢指针）
+func cutMiddleNode(head *ListNode) *ListNode {
+	slow, fast := head, head
+	// 先找到链表的中间结点的前一个节点
+	for fast.Next != nil && fast.Next.Next != nil {
+		slow = slow.Next
+		fast = fast.Next.Next
+	}
+	mid := slow.Next // 下一个节点就是链表的中间结点 mid
+	slow.Next = nil  // 断开 mid 的前一个节点和 mid 的连接
+	return mid
+}
+
+// 方法二：归并排序（迭代）
+
+// 废弃
 func sortList1(head *ListNode) *ListNode {
 	sliceInfo := make([]int, 0)
 	cur := head
