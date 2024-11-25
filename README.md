@@ -218,6 +218,7 @@ Note: C语言实现使用 GBK 编码
 
 - 数组
   - [53 最大子数组和-->前缀和](03_leetcode/08_array/53_maximum-subarray_test.go)
+  - [56 合并区间](03_leetcode/08_array/56_merge-intervals_test.go)
   - [303 区域和检索-数组不可变-->前缀和](03_leetcode/08_array/303_range-sum-query-immutable_test.go)
   - [560 和为 K 的子数组-->前缀和](03_leetcode/08_array/560_subarray-sum-equals-k_test.go)
 
