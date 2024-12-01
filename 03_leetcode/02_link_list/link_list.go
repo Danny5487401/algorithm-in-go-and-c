@@ -7,6 +7,12 @@ type ListNode struct {
 	Next *ListNode
 }
 
+type Node struct {
+	Val    int
+	Next   *Node
+	Random *Node
+}
+
 func getListNodeBySlice(s []int) *ListNode {
 	head := &ListNode{Val: 0}
 	tmp := head
