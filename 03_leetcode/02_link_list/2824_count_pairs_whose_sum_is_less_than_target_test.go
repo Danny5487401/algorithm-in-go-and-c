@@ -1,8 +1,43 @@
 package _2_link_list
 
-import "sort"
+import (
+	"github.com/smartystreets/goconvey/convey"
+	"sort"
+	"testing"
+)
+
+// 统计和小于目标的下标对数目 https://leetcode.cn/problems/count-pairs-whose-sum-is-less-than-target/
+func TestCountPairs(t *testing.T) {
+	convey.Convey("nums[i] + nums[j] < target 的下标对 (i, j) 的数目", t, func() {
+		testCase := []struct {
+			input1 []int
+			target int
+			output int
+		}{
+			{
+				[]int{-1, 1, 2, 3, 1},
+				2,
+				3,
+			},
+			{
+				[]int{-6, 2, 5, -2, -7, -1, 3},
+				-2,
+				10,
+			},
+		}
+
+		for _, tst := range testCase {
+			rsp := countPairs(tst.input1, tst.target)
+			convey.So(rsp, convey.ShouldEqual, tst.output)
+		}
+	})
+
+}
 
 func countPairs(nums []int, target int) int {
+	/*
+		排序+双指针
+	*/
 	sort.Ints(nums)
 
 	left := 0
