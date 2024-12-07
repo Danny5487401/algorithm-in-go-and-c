@@ -11,7 +11,7 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # algorithm-in-go-and-c
-c 和 go 实现 数据结构与算法
+c 和 go 实现数据结构与算法
 
 
 ## 第一章 数据结构与算法
@@ -229,6 +229,7 @@ Note: C语言实现使用 GBK 编码
 
 - 图
   - [200 岛屿数量](03_leetcode/09_graph/200_number-of-islands_test.go)
+  - [994 腐烂的橘子](03_leetcode/09_graph/994_rotting-oranges_test.go)
 
 ## 参考
 - [The Algorithms 组织开源的多种语言算法实现](https://github.com/TheAlgorithms)
