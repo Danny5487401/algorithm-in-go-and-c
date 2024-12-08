@@ -229,6 +229,7 @@ Note: C语言实现使用 GBK 编码
 
 - 图
   - [200 岛屿数量](03_leetcode/09_graph/200_number-of-islands_test.go)
+  - [208 实现 Trie (前缀树)](03_leetcode/09_graph/208_trie_test.go)
   - [994 腐烂的橘子](03_leetcode/09_graph/994_rotting-oranges_test.go)
 
 ## 参考
