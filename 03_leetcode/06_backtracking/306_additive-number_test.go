@@ -38,7 +38,7 @@ func isAdditiveNumber(num string) bool {
 	var ans [][]int // 列出所有组合
 	var dfs func(int, int)
 	dfs = func(i, start int) {
-		if i == n {
+		if i == n { // 最后一个一定得选
 			ans = append(ans, append([]int(nil), path...))
 			return
 		}
