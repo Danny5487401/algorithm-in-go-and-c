@@ -29,7 +29,7 @@ func TestTrap(t *testing.T) {
 
 }
 
-// 方式一：1* (min(preMax,suffixMax)-height)
+// 方式一：前后找最大值 1* (min(preMax,suffixMax)-height)
 func trap1(height []int) int {
 	ans := 0
 	length := len(height)
@@ -53,7 +53,7 @@ func trap1(height []int) int {
 
 }
 
-// 方式二：在方式一的前提下优化空间 前缀最大值比右缀最大值小，那么左边木桶容量就是前缀最大值，同理右缀最大值比前缀最大值小，向右扩展，那么右边边木桶容量就是后缀最大值，向左扩展
+// 方式二：相向双指针, 在方式一的前提下优化空间, 前缀最大值比右缀最大值小，那么左边木桶容量就是前缀最大值，同理右缀最大值比前缀最大值小，向右扩展，那么右边边木桶容量就是后缀最大值，向左扩展
 func trap2(height []int) int {
 	left := 0
 	right := len(height) - 1
@@ -63,7 +63,7 @@ func trap2(height []int) int {
 	for left <= right {
 		preMax = max(preMax, height[left])
 		suffixMax = max(suffixMax, height[right])
-		if preMax < suffixMax {
+		if preMax < suffixMax { //在「谁小移动谁」的规则下，相遇的位置一定是最高的柱子，这个柱子是无法接水的。
 			ans += preMax - height[left]
 			left++
 		} else {
@@ -74,6 +74,7 @@ func trap2(height []int) int {
 	return ans
 }
 
+// 方法三:单调栈
 func trap3(height []int) int {
 	ans := 0
 	stack := make([]int, 0)

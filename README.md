@@ -216,6 +216,7 @@ Note: C语言实现使用 GBK 编码
   - [306 累加数](03_leetcode/06_backtracking/306_additive-number_test.go)
   - [784 字母大小写全排列](03_leetcode/06_backtracking/784_letter_case_permutation_test.go)
 - [单调栈](03_leetcode/07_stack/monotone_stack.md)
+  - [20 有效的括号](03_leetcode/07_stack/20_valid-parentheses_test.go)
   - [42 接雨水](03_leetcode/07_stack/42_trapping_rain_water_test.go)
   - [496 下一个更大元素 I: nums1 是 nums2 的子集](03_leetcode/07_stack/496_next_greater_element_test.go)
   - [503 下一个更大元素 II: 循环数组](03_leetcode/07_stack/503_next_greater_element_ii_test.go)
