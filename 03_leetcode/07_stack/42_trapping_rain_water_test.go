@@ -6,9 +6,8 @@ import (
 )
 
 // 接雨水 https://leetcode.cn/problems/trapping-rain-water/description/
-
 func TestTrap(t *testing.T) {
-	convey.Convey("接雨水 ", t, func() {
+	convey.Convey("接雨水", t, func() {
 		testCase := []struct {
 			input    []int
 			expected int
@@ -29,7 +28,7 @@ func TestTrap(t *testing.T) {
 
 }
 
-// 方式一：前后找最大值 1* (min(preMax,suffixMax)-height)
+// 方式一：垂直计算, 前后找最大值 1* (min(preMax,suffixMax)-height)
 func trap1(height []int) int {
 	ans := 0
 	length := len(height)
@@ -74,19 +73,22 @@ func trap2(height []int) int {
 	return ans
 }
 
-// 方法三:单调栈
+// 方法三:单调栈,水平计算坑
 func trap3(height []int) int {
 	ans := 0
 	stack := make([]int, 0)
 	for i, curHeight := range height {
 		// 假设宽度为1，面积取左右两边最小值
 		for len(stack) > 0 && curHeight >= height[stack[len(stack)-1]] {
+			// 需要知道栈顶元素和栈顶下一个元素
+
 			j := stack[len(stack)-1]
 			stack = stack[:len(stack)-1]
 			bottomHeight := height[j] // 取出第一个高度
 			if len(stack) == 0 {
 				break
 			}
+
 			left := stack[len(stack)-1] // 需要第二个高度
 			dh := min(height[left], curHeight) - bottomHeight
 			ans += dh * (i - left - 1)

@@ -37,7 +37,7 @@ func dailyTemperatures(temperatures []int) []int {
 
 	length := len(temperatures)
 	ans := make([]int, length) // 记录索引
-	stack := make([]int, 0)    // 初始化单调栈记录索引
+	stack := make([]int, 0)    // 初始化单调栈记录索引,栈中记录下一个更大元素的「候选项」
 	for i := length - 1; i >= 0; i-- {
 		cur := temperatures[i]
 		for len(stack) > 0 && cur >= temperatures[stack[len(stack)-1]] {
@@ -61,12 +61,12 @@ func dailyTemperatures2(temperatures []int) []int {
 
 	length := len(temperatures)
 	ans := make([]int, length) // 记录索引
-	stack := make([]int, 0)    // 初始化单调栈记录索引
+	stack := make([]int, 0)    // 初始化单调栈记录索引, 栈内是还没有找到更大的数
 	for i, cur := range temperatures {
 		for len(stack) > 0 && cur > temperatures[stack[len(stack)-1]] { // 注意是循环处理
-			j := stack[len(stack)-1] // 取出栈顶元素
-			stack = stack[:len(stack)-1]
-			ans[j] = i - j // 注意 更新的是第j个数据并且是 i-j
+			j := stack[len(stack)-1]     // 取出栈顶元素
+			ans[j] = i - j               // 注意 更新的是第j个数据并且是 i-j
+			stack = stack[:len(stack)-1] // 答案算出来了,不用再保留元素
 		}
 		stack = append(stack, i) // 写入还没找到的数据
 

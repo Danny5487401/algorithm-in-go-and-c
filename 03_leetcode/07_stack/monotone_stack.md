@@ -39,14 +39,14 @@
 ## [每日温度](739_daily_temperatures_test.go)
 
 ![](.monotone_stack_images/daily_temperature.png)
-从右到左: 栈中记录下一个更大元素的「候选项」
+方式一从右到左: 栈中记录下一个更大元素的「候选项」
 - 首先记录6
 - 遍历3, 发现6比3大,记录下一个更大,栈内 6,3
 - 遍历2,发现3比2大,记录下一个更大,栈内 6,3,2
 - 遍历5,遍历站内元素,发现6比5大,去除栈内小于5的元素3,2,栈内 6,5
 - 遍历5,同理,去除栈内5, 写入新5,栈内 6,5(相同元素保留左边)
 
-从左往右：站内是还没有找到更大的数
+方式二从左往右：站内是还没有找到更大的数
 
 ![](.monotone_stack_images/daily_temperatures1.png)
 
@@ -56,7 +56,7 @@
 ![](.monotone_stack_images/Trapping Rain Water1.png)
 - 需要知道栈顶及栈顶下面一个元素
 
-方式一：
+方式一： 找上一个更大元素,在找的过程填坑
 
 ![](.monotone_stack_images/trap_water2.png)
 

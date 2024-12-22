@@ -6,7 +6,6 @@ import (
 )
 
 // 下一个更大元素 II https://leetcode.cn/problems/next-greater-element-ii/description/
-
 func TestNextGreaterElements(t *testing.T) {
 	convey.Convey("下一个更大元素 II: 循环地搜索它的下一个更大的数,nums[nums.length - 1] 的下一个元素是 nums[0] ."+
 		"可以把 nums 复制一份，拼在 nums 右边，这样就把环形数组变成一般数组了,代码实现时，无需真的把数组复制一份，而是用下标模 n 的方式取到对应的元素值 ", t, func() {
