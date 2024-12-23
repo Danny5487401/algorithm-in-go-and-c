@@ -188,6 +188,7 @@ Note: C语言实现使用 GBK 编码
   - [230 二叉搜索树中第K小的元素](03_leetcode/05_binary_tree/230_kth_smallest_test.go)
   - [235 二叉搜索树的最近公共祖先](03_leetcode/05_binary_tree/235_lowest_common_ancestor_of_a_binary_search_tree_test.go)
   - [236 二叉树的最近公共祖先](03_leetcode/05_binary_tree/236_lowest_common_ancestor_of_a_binary_tree_test.go)
+  - [437 路径总和III-->前缀和+哈希表](03_leetcode/05_binary_tree/437_path_sum_III_test.go)
   - [501 二叉搜索树中的众数](03_leetcode/05_binary_tree/501_find_mode_test.go)
   - [513 找树左下角的值](03_leetcode/05_binary_tree/513_find_bottom_left_tree_value_test.go)
   - [530 二叉搜索树的最小绝对差](03_leetcode/05_binary_tree/530_get_minimum_difference_test.go)
