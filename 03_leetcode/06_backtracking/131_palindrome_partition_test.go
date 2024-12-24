@@ -38,6 +38,7 @@ func partition(s string) (ans [][]string) {
 	path := []string{}
 
 	// start 表示当前这段回文子串的开始位置
+	// i 代表遍历时终点位置
 	var dfs func(int, int)
 	dfs = func(i, start int) {
 		if i == n {

@@ -1,4 +1,4 @@
-package _6_backtracking
+package _5_binary_tree
 
 import (
 	"github.com/smartystreets/goconvey/convey"
@@ -42,6 +42,7 @@ func TestHasPathSumII(t *testing.T) {
 }
 
 func pathSumII(root *TreeNode, targetSum int) [][]int {
+	// -1000 <= Node.val <= 1000
 	var dfs func(*TreeNode, int)
 
 	var ans [][]int
@@ -50,13 +51,10 @@ func pathSumII(root *TreeNode, targetSum int) [][]int {
 		if node == nil {
 			return
 		}
-		//if left <= 0 {
-		//	return
-		//}
 		path = append(path, node.Val)
 		left -= node.Val
-		defer func() { path = path[:len(path)-1] }() // 恢复现场
-		if node.Left == nil && node.Right == nil && left == 0 {
+		defer func() { path = path[:len(path)-1] }()            // 恢复现场
+		if node.Left == nil && node.Right == nil && left == 0 { // 符合结果
 			ans = append(ans, append([]int(nil), path...))
 			return
 		}
