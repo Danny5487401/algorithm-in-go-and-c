@@ -238,5 +238,9 @@ Note: C语言实现使用 GBK 编码
   - [208 实现 Trie (前缀树)](03_leetcode/09_graph/208_trie_test.go)
   - [994 腐烂的橘子](03_leetcode/09_graph/994_rotting-oranges_test.go)
 
+- 堆
+  - [315 数组中的第K个最大元素](03_leetcode/10_heap/315_kth-largest-element-in-an-array_test.go)
+  - [347 前 K 个高频元素](03_leetcode/10_heap/347_top-k-frequent-elements_test.go)
+
 ## 参考
 - [The Algorithms 组织开源的多种语言算法实现](https://github.com/TheAlgorithms)
