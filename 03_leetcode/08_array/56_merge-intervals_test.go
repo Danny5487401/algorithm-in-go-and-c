@@ -22,6 +22,11 @@ func TestMerge(t *testing.T) {
 
 				[][]int{{1, 4}, {4, 5}}, [][]int{{1, 5}},
 			},
+
+			{
+
+				[][]int{{1, 4}, {2, 3}}, [][]int{{1, 4}},
+			},
 		}
 
 		for _, tst := range testCase {
@@ -38,9 +43,9 @@ func merge(intervals [][]int) (ans [][]int) {
 
 	for _, p := range intervals {
 		m := len(ans)
-		if m > 0 && p[0] <= ans[m-1][1] { // 遍历左端点小于答案的右端点
+		if m > 0 && p[0] <= ans[m-1][1] { // 遍历左端点小于等于当前合并区间答案的右端点
 			// 合并更新右端点
-			ans[m-1][1] = p[1]
+			ans[m-1][1] = max(ans[m-1][1], p[1]) // 更新右端点最大值
 		} else {
 			ans = append(ans, p)
 		}

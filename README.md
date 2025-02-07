@@ -94,6 +94,7 @@ Note: C语言实现使用 GBK 编码
 - [4 动态规划 dynamic programming](02_algorithm/04_dynamic_programming.md)
   - [70 爬楼梯](02_algorithm/04_dynamic_programming/70_climbing_stairs_test.go)
   - [72 编辑距离](02_algorithm/04_dynamic_programming/72_edit_distance_test.go)
+  - [118 杨辉三角](02_algorithm/04_dynamic_programming/118_pascals-triangle_test.go)
   - [124 二叉树中的最大路径和](02_algorithm/04_dynamic_programming/124_max_path_sum_test.go)
   - [198 打家劫舍](02_algorithm/04_dynamic_programming/198_house_robber_test.go)
   - [300 最长递增子序列](02_algorithm/04_dynamic_programming/300_longest_increasing_subsequence_test.go)
