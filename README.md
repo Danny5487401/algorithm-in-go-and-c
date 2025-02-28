@@ -88,8 +88,8 @@ Note: C语言实现使用 GBK 编码
 - [3 贪心法 Greedy Method](02_algorithm/03_greedy_method.md)
   - [121 只有买和卖一次交易次数-->状态DP](02_algorithm/03_greedy_method/121_best_time_to_buy_and_sell_stock_test.go)
   - [122 不限交易次数买卖股票-->状态DP](02_algorithm/03_greedy_method/122_best_time_to_buy_and_sell_stock_II_test.go)
-  - [123 买卖股票最多交易2次-->状态DP](02_algorithm/03_greedy_method/123_best_time_to_buy_and_sell_stock_III_test.go)
-  - [188 买卖股票最多交易K次](02_algorithm/03_greedy_method/188_best_time_to_buy_and_sell_stock_IV_test.go)
+  - [123 买卖股票最多交易 2 次-->状态DP](02_algorithm/03_greedy_method/123_best_time_to_buy_and_sell_stock_III_test.go)
+  - [188 买卖股票最多交易 K 次](02_algorithm/03_greedy_method/188_best_time_to_buy_and_sell_stock_IV_test.go)
   - [309 冷冻期买卖股票](02_algorithm/03_greedy_method/122_best_time_to_buy_and_sell_stock_II_test.go)
 - [4 动态规划 dynamic programming](02_algorithm/04_dynamic_programming.md)
   - [70 爬楼梯](02_algorithm/04_dynamic_programming/70_climbing_stairs_test.go)
@@ -229,6 +229,7 @@ Note: C语言实现使用 GBK 编码
 - 数组
   - [53 最大子数组和-->前缀和](03_leetcode/08_array/53_maximum-subarray_test.go)
   - [56 合并区间](03_leetcode/08_array/56_merge-intervals_test.go)
+  - [136 只出现一次的数字-->位运算](03_leetcode/08_array/136_single-number_test.go)
   - [189 轮转数组](03_leetcode/08_array/189_rotate-array_test.go)
   - [238 除自身以外数组的乘积->前后缀](03_leetcode/08_array/238_product-of-array-except-self_test.go)
   - [303 区域和检索-数组不可变-->前缀和](03_leetcode/08_array/303_range-sum-query-immutable_test.go)

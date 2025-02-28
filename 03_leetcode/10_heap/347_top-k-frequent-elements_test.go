@@ -61,7 +61,7 @@ func topKFrequent(nums []int, k int) []int {
 	return ret
 }
 
-type IHeap [][2]int // 二元数组为 key, key出现的次数
+type IHeap [][2]int // 二元数组 [key, key出现的次数]
 
 func (h IHeap) Len() int           { return len(h) }
 func (h IHeap) Less(i, j int) bool { return h[i][1] < h[j][1] }
