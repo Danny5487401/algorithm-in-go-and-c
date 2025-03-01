@@ -230,6 +230,7 @@ Note: C语言实现使用 GBK 编码
   - [53 最大子数组和-->前缀和](03_leetcode/08_array/53_maximum-subarray_test.go)
   - [56 合并区间](03_leetcode/08_array/56_merge-intervals_test.go)
   - [136 只出现一次的数字-->位运算](03_leetcode/08_array/136_single-number_test.go)
+  - [136 多数元素-->摩尔投票法](03_leetcode/08_array/169_majority-element_test.go)
   - [189 轮转数组](03_leetcode/08_array/189_rotate-array_test.go)
   - [238 除自身以外数组的乘积->前后缀](03_leetcode/08_array/238_product-of-array-except-self_test.go)
   - [303 区域和检索-数组不可变-->前缀和](03_leetcode/08_array/303_range-sum-query-immutable_test.go)
