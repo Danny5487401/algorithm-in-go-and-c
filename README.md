@@ -229,6 +229,7 @@ Note: C语言实现使用 GBK 编码
 - 数组
   - [53 最大子数组和-->前缀和](03_leetcode/08_array/53_maximum-subarray_test.go)
   - [56 合并区间](03_leetcode/08_array/56_merge-intervals_test.go)
+  - [75 颜色分类](03_leetcode/08_array/75_sort-colors_test.go)
   - [136 只出现一次的数字-->位运算](03_leetcode/08_array/136_single-number_test.go)
   - [136 多数元素-->摩尔投票法](03_leetcode/08_array/169_majority-element_test.go)
   - [189 轮转数组](03_leetcode/08_array/189_rotate-array_test.go)
