@@ -7,13 +7,16 @@ import (
 
 // 最长连续序列 https://leetcode.cn/problems/longest-consecutive-sequence/description/?envType=study-plan-v2&envId=top-100-liked
 func TestLongestConsecutive(t *testing.T) {
-	convey.Convey("最长连续序列", t, func() {
+	convey.Convey("找出数字连续的最长序列（不要求序列元素在原数组中连续）的长度", t, func() {
 		testCase := []struct {
 			input    []int
 			expected int
 		}{
 			{
 				[]int{100, 4, 200, 1, 3, 2}, 4,
+			},
+			{
+				[]int{0, 3, 7, 2, 5, 8, 4, 6, 0, 1}, 9,
 			},
 		}
 

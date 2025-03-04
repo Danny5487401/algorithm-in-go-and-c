@@ -7,7 +7,7 @@ import (
 
 // 两数之和 https://leetcode.cn/problems/two-sum/description/?envType=study-plan-v2&envId=top-100-liked
 func TestTwoSum(t *testing.T) {
-	convey.Convey("two sums ", t, func() {
+	convey.Convey("两数之和 ", t, func() {
 		testCase := []struct {
 			input    []int
 			target   int

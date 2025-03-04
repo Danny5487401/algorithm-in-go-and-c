@@ -26,6 +26,9 @@ func TestGroupAnagrams(t *testing.T) {
 			{
 				[]string{}, [][]string{},
 			},
+			{
+				[]string{"a"}, [][]string{{"a"}},
+			},
 		}
 
 		for _, tst := range testCase {

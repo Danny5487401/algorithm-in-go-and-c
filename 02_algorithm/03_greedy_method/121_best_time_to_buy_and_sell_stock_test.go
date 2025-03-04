@@ -5,9 +5,7 @@ import (
 	"testing"
 )
 
-// 买卖股票的最佳时机 :https://leetcode.cn/problems/best-time-to-buy-and-sell-stock/description/
-// 只能买卖一次
-
+// 买卖股票的最佳时机: https://leetcode.cn/problems/best-time-to-buy-and-sell-stock/description/
 func TestMaxProfitI(t *testing.T) {
 	convey.Convey("买卖股票的最佳时机: 只有买和卖一次交易次数", t, func() {
 		testCase := []struct {
