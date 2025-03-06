@@ -42,7 +42,7 @@ func removeElements(head *ListNode, val int) *ListNode {
 	if head == nil {
 		return nil
 	}
-	var dummy = &ListNode{Next: head}
+	var dummy = &ListNode{Next: head} // 可能删除的第一个节点是头节点
 
 	var cur = dummy
 

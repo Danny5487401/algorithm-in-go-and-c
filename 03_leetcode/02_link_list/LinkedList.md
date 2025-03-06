@@ -14,6 +14,7 @@
       - [重排链表](#%E9%87%8D%E6%8E%92%E9%93%BE%E8%A1%A8)
   - [相向双指针](#%E7%9B%B8%E5%90%91%E5%8F%8C%E6%8C%87%E9%92%88)
   - [前后指针](#%E5%89%8D%E5%90%8E%E6%8C%87%E9%92%88)
+  - [参考](#%E5%8F%82%E8%80%83)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -182,3 +183,8 @@ slow 从相遇点出发，head 从头节点出发，两个都走c步，slow 到�
 ![](.LinkedList_images/remove-nth-node-from-end-of-list3.png)
 
 4. 当右指针走到倒数第一个节点，说明左指针是倒数第N+1个节点，这时开始删除操作
+
+
+## 参考
+
+- [链表、二叉树与回溯（前后指针/快慢指针/DFS/BFS/直径/LCA/一般树）](https://leetcode.cn/discuss/post/3142882/fen-xiang-gun-ti-dan-lian-biao-er-cha-sh-6srp/)
