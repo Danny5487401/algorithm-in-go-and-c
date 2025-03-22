@@ -14,6 +14,7 @@ func TestAddTwoNumbers(t *testing.T) {
 			target *ListNode
 		}{
 			{
+				// 342 + 465 = 807
 				GetListNodeBySlice([]int{2, 4, 3}),
 				GetListNodeBySlice([]int{5, 6, 4}),
 				GetListNodeBySlice([]int{7, 0, 8}),
@@ -48,7 +49,7 @@ func addTwo(l1, l2 *ListNode, carry int) *ListNode {
 	// 简化代码:
 	// 1. 这里返回 l1,
 	// 2. 如果 l2 比 l1 长, 交换
-	if l1 == nil && l2 == nil {
+	if l1 == nil && l2 == nil { // 递归边界
 		if carry != 0 {
 			return &ListNode{Val: carry} // 如果进位了，就额外创建一个节点
 		}
