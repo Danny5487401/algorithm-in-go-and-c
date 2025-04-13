@@ -42,9 +42,10 @@ func findPeakElement(nums []int) int {
 	for left+1 < right {
 		mid := left + (right-left)/2 // 溢出处理
 		if nums[mid] > nums[mid+1] {
-			// 左大 ，说明左侧为峰顶,更新右侧为蓝色
+			// 左大 ，说明M为峰顶,要么M在峰顶右侧, ,更新右侧为蓝色
 			right = mid
 		} else {
+			// 右大, 说明左侧位红色
 			left = mid
 		}
 	}

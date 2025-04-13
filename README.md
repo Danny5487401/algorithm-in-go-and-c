@@ -86,6 +86,7 @@ Note: C语言实现使用 GBK 编码
   - [51 n 皇后](02_algorithm/01_exhaustive_attack/51_N-Queens_test.go)
 - [2 分治法 Divide and Conquer](02_algorithm/02_divide_n_conquer.md)
 - [3 贪心法 Greedy Method](02_algorithm/03_greedy_method.md)
+  - [46 跳跃游戏II](02_algorithm/03_greedy_method/46_jump-game-II_test.go)
   - [55 跳跃游戏](02_algorithm/03_greedy_method/55_jump-game_test.go)
   - [121 只有买和卖一次交易次数-->状态DP](02_algorithm/03_greedy_method/121_best_time_to_buy_and_sell_stock_test.go)
   - [122 不限交易次数买卖股票-->状态DP](02_algorithm/03_greedy_method/122_best_time_to_buy_and_sell_stock_II_test.go)

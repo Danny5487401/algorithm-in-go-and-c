@@ -21,13 +21,13 @@
 
 第一种写法：开区间 左开右开
 
-![](.binary_search_images/red-blue-open.png)
+![](.binary_search_images/red-blue-open.png)   
 left: -1   
 right: length
 
 一开始整个区间都是白区
 
-![](.binary_search_images/red-blue-open2.png)
+![](.binary_search_images/red-blue-open2.png)   
 移动到指针位置
 
 ```go
@@ -50,7 +50,7 @@ func lowerBound3(nums []int, target int) int {
 
 
 第二种： 闭区间 左闭右闭
-![](.binary_search_images/red-blue-close.png)
+![](.binary_search_images/red-blue-close.png)   
 left:0  
 right: length-1
 
