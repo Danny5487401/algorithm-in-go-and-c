@@ -227,6 +227,7 @@ Note: C语言实现使用 GBK 编码
   - [216 组合总和III-->剪枝优化](03_leetcode/06_backtracking/216_combination_sum_III_test.go)
   - [257 二叉树的所有路径](03_leetcode/06_backtracking/257_binary_tree_paths_test.go)
   - [306 累加数](03_leetcode/06_backtracking/306_additive-number_test.go)
+  - [679 24 点游戏](03_leetcode/06_backtracking/679_24-dian-you-xi-by-leetcode-solution_test.go)
   - [784 字母大小写全排列](03_leetcode/06_backtracking/784_letter_case_permutation_test.go)
 - [栈](03_leetcode/07_stack/monotone_stack.md)
   - [20 有效的括号](03_leetcode/07_stack/20_valid-parentheses_test.go)
