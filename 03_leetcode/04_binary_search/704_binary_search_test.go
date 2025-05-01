@@ -7,7 +7,7 @@ import (
 
 // 二分查找 https://leetcode.cn/problems/binary-search/description/
 func TestSearch2(t *testing.T) {
-	convey.Convey("二分查找", t, func() {
+	convey.Convey("二分查找: n 个元素有序的（升序）整型数组", t, func() {
 		testCase := []struct {
 			input    []int
 			target   int

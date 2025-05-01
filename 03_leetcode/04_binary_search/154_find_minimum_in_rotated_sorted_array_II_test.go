@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-// 寻找旋转排序数组中的最小值 https://leetcode.cn/problems/find-minimum-in-rotated-sorted-array/description/
+// 寻找旋转排序数组中的最小值II https://leetcode.cn/problems/find-minimum-in-rotated-sorted-array/description/
 func TestFindMinimumInRotatedSortedAarrayII(t *testing.T) {
 	convey.Convey("寻找旋转排序数组中的最小值 II ", t, func() {
 		testCase := []struct {

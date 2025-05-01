@@ -41,6 +41,6 @@ func searchInsert(nums []int, target int) int {
 }
 
 func searchInsert2(nums []int, target int) int {
-	index := lowerBound3(nums, target)
+	index := lowerBound(nums, target)
 	return index
 }

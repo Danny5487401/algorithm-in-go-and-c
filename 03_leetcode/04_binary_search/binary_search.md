@@ -6,7 +6,7 @@
   - [二分法（红蓝染色）](#%E4%BA%8C%E5%88%86%E6%B3%95%E7%BA%A2%E8%93%9D%E6%9F%93%E8%89%B2)
   - [34 在排序数组中查找元素的第一个和最后一个位置](#34-%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E5%85%83%E7%B4%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%92%8C%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E4%BD%8D%E7%BD%AE)
   - [162 寻找峰值](#162-%E5%AF%BB%E6%89%BE%E5%B3%B0%E5%80%BC)
-  - [寻找旋转排序数组的最小值](#%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC)
+  - [153 寻找旋转排序数组的最小值](#153-%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC)
   - [参考](#%E5%8F%82%E8%80%83)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -115,9 +115,11 @@ func lowerBound2(nums []int, target int) int {
 这里代码有三种情况代码  
 ![](.binary_search_images/binary_search_category.png)
 
-- [left,right]
-- (left,right)
-- [left,right)
+
+
+* [left,right]
+* (left,right)
+* [left,right)
 处理 >=,>,<, <= 四种情况
 
 这里使用闭区间
@@ -135,10 +137,11 @@ func lowerBound2(nums []int, target int) int {
 
 
 四种情况
-* 大于等于
-* 大于
-* 小于
-* 小于等于
+* 大于等于 x
+* 大于-->大于等于x+1
+* 小于-->(大于等于x)-1
+* 小于等于-->(大于x)-1
+
 
 
 
@@ -162,7 +165,7 @@ func lowerBound2(nums []int, target int) int {
 - nums[m] < nums[m+1] m在峰顶左侧，hong色
 - nums[m] >= nums[m+1] m 为峰顶，或则m 在峰顶右侧，蓝色
 
-## [寻找旋转排序数组的最小值](153_find_minimum_in_rotated_sorted_array_test.go)
+## [153 寻找旋转排序数组的最小值](153_find_minimum_in_rotated_sorted_array_test.go)
 
 
 
@@ -206,5 +209,5 @@ func lowerBound2(nums []int, target int) int {
 
 
 ## 参考
-
+- [【算法题单】二分算法（二分答案/最小化最大值/最大化最小值/第K小）](https://leetcode.cn/discuss/post/3579164/ti-dan-er-fen-suan-fa-er-fen-da-an-zui-x-3rqn/)
 - [二分查找——红蓝染色法](https://blog.csdn.net/qq_45808700/article/details/129247507)

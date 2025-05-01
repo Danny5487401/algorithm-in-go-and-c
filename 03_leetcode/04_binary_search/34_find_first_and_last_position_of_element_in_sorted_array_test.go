@@ -8,7 +8,7 @@ import (
 
 // 在排序数组中查找元素的第一个和最后一个位置 https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/description/?envType=study-plan-v2&envId=top-100-liked
 func TestSearchRange(t *testing.T) {
-	convey.Convey("在排序数组中查找元素的第一个和最后一个位置 ", t, func() {
+	convey.Convey("在排序数组中查找元素的第一个和最后一个位置", t, func() {
 		testCase := []struct {
 			input    []int
 			target   int
@@ -46,18 +46,18 @@ func searchRange1(nums []int, target int) []int {
 
 // 方式二：自己实现 二分法
 func searchRange(nums []int, target int) []int {
-	// 求大于等于 和 小于等于
+	// 求 大于等于 和 小于等于
 	start := lowerBound(nums, target)
 	if start == len(nums) || nums[start] != target { // 边界判断 , 注意  nums[start] != target 判断，比如 [5,7,7,8,8,10] 找 6
 		return []int{-1, -1}
 	}
-	// 小于等于转换 >=
+	// 小于等于 x  --> 大于x -1 --> 大于等于(x+1)-1
 	end := lowerBound3(nums, target+1) - 1 // 注意最后一个位置查找是 target - 1
 	return []int{start, end}
 
 }
 
-// 左端点 方式一 [left,right]
+// 左端点 方式一 闭区间 [left,right]
 func lowerBound(nums []int, target int) int {
 	left, right := 0, len(nums)-1 // 闭区间 [left,right]
 	for left <= right {
@@ -71,10 +71,10 @@ func lowerBound(nums []int, target int) int {
 			right = mid - 1 // 闭区间 [left,mid-1]
 		}
 	}
-	return left // right 右边是 》=target，即 right+1 = left
+	return left // right 右边是 >=target，即 right+1 = left
 }
 
-// 左端点 方式二 [left,right)
+// 左端点 方式二 左闭右开 [left,right)
 func lowerBound2(nums []int, target int) int {
 	left, right := 0, len(nums) // 左闭右开 [left,right)
 	for left < right {
@@ -88,7 +88,7 @@ func lowerBound2(nums []int, target int) int {
 	return left
 }
 
-// 左端点 方式三 (left,right)
+// 左端点 方式三 左开右开(left,right)
 func lowerBound3(nums []int, target int) int {
 	left, right := -1, len(nums) // 左开右开 (left,right)
 	for left+1 < right {
