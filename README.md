@@ -207,6 +207,7 @@ Note: C语言实现使用 GBK 编码
   - [501 二叉搜索树中的众数](03_leetcode/05_binary_tree/501_find_mode_test.go)
   - [513 找树左下角的值](03_leetcode/05_binary_tree/513_find_bottom_left_tree_value_test.go)
   - [530 二叉搜索树的最小绝对差](03_leetcode/05_binary_tree/530_get_minimum_difference_test.go)
+  - [559 N 叉树的最大深度](03_leetcode/05_binary_tree/559_maximum-depth-of-n-ary-tree_test.go)
   - [700 二叉搜索树中的搜索](03_leetcode/05_binary_tree/700_search_in_a_binary_search_tree_test.go)
   - [889 根据前序和后序遍历构造二叉树](03_leetcode/05_binary_tree/889_build_tree_by_preorder_and_postorder_test.go)
   - [938 二叉搜索树的范围和](03_leetcode/05_binary_tree/938_range_sum_of_BST_test.go)

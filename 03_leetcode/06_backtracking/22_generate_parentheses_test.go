@@ -7,9 +7,8 @@ import (
 )
 
 // 括号生成 https://leetcode.cn/problems/generate-parentheses/
-
 func TestGenerateParenthesis(t *testing.T) {
-	convey.Convey("括号生成 ", t, func() {
+	convey.Convey("括号生成:数字 n 代表生成括号的对数 ", t, func() {
 		testCase := []struct {
 			input struct {
 				n int

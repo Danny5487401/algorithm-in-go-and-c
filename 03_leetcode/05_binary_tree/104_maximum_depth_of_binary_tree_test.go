@@ -24,7 +24,7 @@ func TestMaxDepth(t *testing.T) {
 		}
 
 		for _, tst := range testCase {
-			rsp := maxDepth2(tst.input)
+			rsp := maxDepth3(tst.input)
 			convey.So(rsp, convey.ShouldEqual, tst.target)
 		}
 	})
@@ -64,4 +64,21 @@ func maxDepth2(root *TreeNode) int {
 	dfs(root, 0)
 	return ans
 
+}
+
+func maxDepth3(root *TreeNode) int {
+	var dfs func(node *TreeNode, depth int) int
+	dfs = func(node *TreeNode, depth int) int {
+		// 递归边界
+		if node == nil {
+			return depth
+		}
+		leftMax := dfs(node.Left, depth+1)
+		rightMax := dfs(node.Right, depth+1)
+
+		// 取最大值
+		return max(leftMax, rightMax)
+
+	}
+	return dfs(root, 0)
 }
