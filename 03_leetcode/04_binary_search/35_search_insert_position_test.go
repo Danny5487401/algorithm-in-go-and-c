@@ -41,6 +41,7 @@ func searchInsert(nums []int, target int) int {
 }
 
 func searchInsert2(nums []int, target int) int {
+	// 求大于等于
 	index := lowerBound(nums, target)
 	return index
 }

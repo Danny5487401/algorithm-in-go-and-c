@@ -8,7 +8,7 @@ import (
 
 // 使结果不超过阈值的最小除数 https://leetcode.cn/problems/find-the-smallest-divisor-given-a-threshold/description/
 func TestSmallestDivisor(t *testing.T) {
-	convey.Convey("使结果不超过阈值的最小除数", t, func() {
+	convey.Convey("使结果不超过阈值的最小除数,每个数除以除数后都向上取整,比方说 7/3 = 3", t, func() {
 		testCase := []struct {
 			input    []int
 			target   int
@@ -44,10 +44,11 @@ func smallestDivisor(nums []int, threshold int) int {
 		mid := (left + right) / 2
 		var total float64
 		for _, num := range nums {
-			total += math.Ceil(float64(num) / float64(mid))
+			tmpNum := float64(num) / float64(mid)
+			total += math.Ceil(tmpNum) // 向上取整
 		}
 		if total <= float64(threshold) { // 小于threshold 才能符合答案
-			right = mid - 1
+			right = mid - 1 // 增大除数
 			ans = mid
 		} else { // 说明要增大除数
 			left = mid + 1
