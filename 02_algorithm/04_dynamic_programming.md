@@ -76,19 +76,21 @@
 ![](.dynamic_programming_images/edit_distance.png)
 
 
-s = horse
+s = horse  
+
 t = ros 
+
 ![](.04_dynamic_programming_images/edit_distance.png)
 
 dfs(i,j)= 
-  - s[i]=s[j]: dfs[i-1,j-1]
-  - s[i]!=s[j]: min(dfs(i,j-1),dfs(i-1,j),dfs(i-1,j-1))+1
+  - s[i]=s[j]: dfs[i-1,j-1]                               相同
+  - s[i]!=s[j]: min(dfs(i,j-1),dfs(i-1,j),dfs(i-1,j-1))+1  插入,删除,替换
 
 
 
 #### [2 LCS 最长公共子序列--非连续](04_dynamic_programming/1143_longest_common_subsequence_test.go)
-- 子数组/子串 subarray/substring 连续
-- 子序列 subsequence  非连续
+- 子数组/子串 subarray/substring :连续
+- 子序列 subsequence  : 非连续
 
 ![](.04_dynamic_programming_images/Longest Common Subsequence.png)
 

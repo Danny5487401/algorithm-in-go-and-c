@@ -60,8 +60,7 @@ func longestCommonSubsequence(text1 string, text2 string) int {
 		defer func() {
 			cache[i][j] = res
 		}()
-		if text1[i] == text2[j] {
-			// 相等
+		if text1[i] == text2[j] { // 相等
 			return dfs(i-1, j-1) + 1
 		}
 		return max(dfs(i-1, j), dfs(i, j-1)) // 不相等

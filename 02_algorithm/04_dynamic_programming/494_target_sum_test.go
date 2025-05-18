@@ -60,10 +60,11 @@ func findTargetSumWays(nums []int, target int) int {
 		return 0
 	}
 
+	// 计算 (s+t)/2
 	target = target / 2
 	length := len(nums)
 
-	// 缓存 不为负数， i，c 两个变量，所以是两层数组
+	// 缓存: 不为负数， i，c 两个变量，所以是两层数组
 	cache := make([][]int, length) // 外层是 i
 	for i := range cache {
 		cache[i] = make([]int, target+1) // target+0所以要加一
@@ -91,7 +92,7 @@ func findTargetSumWays(nums []int, target int) int {
 		if c < nums[i] { // 代表不能选
 			return dfs(i-1, c)
 		}
-		return dfs(i-1, c) + dfs(i-1, c-nums[i])
+		return dfs(i-1, c) + dfs(i-1, c-nums[i]) // 不选和选
 
 	}
 	return dfs(length-1, target)

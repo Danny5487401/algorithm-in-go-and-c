@@ -7,6 +7,8 @@
   - [34 在排序数组中查找元素的第一个和最后一个位置](#34-%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E5%85%83%E7%B4%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%92%8C%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E4%BD%8D%E7%BD%AE)
   - [162 寻找峰值](#162-%E5%AF%BB%E6%89%BE%E5%B3%B0%E5%80%BC)
   - [153 寻找旋转排序数组的最小值](#153-%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC)
+  - [求最小](#%E6%B1%82%E6%9C%80%E5%B0%8F)
+  - [求最大](#%E6%B1%82%E6%9C%80%E5%A4%A7)
   - [参考](#%E5%8F%82%E8%80%83)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -206,6 +208,20 @@ func lowerBound2(nums []int, target int) int {
 第三次迭代：mid = 4, nums[mid] = 0, nums[right] = 1，由于 0 <= 1，继续缩小范围，right = mid = 4。
 最终，left == right == 4，nums[left] = 0 即为最小值。
 
+
+## 求最小
+「求最小」和二分查找求「排序数组中某元素的第一个位置」是类似的，按照红蓝染色法，左边是不满足要求的（红色），右边则是满足要求的（蓝色）。
+
+
+## 求最大
+
+「求最大」的题目则与「求最小」相反 ,左边是满足要求的（蓝色），右边是不满足要求的（红色）
+
+
+以开区间二分为例：
+
+- 求最小：check(mid) == true 时更新 right = mid，反之更新 left = mid，最后返回 right。
+- 求最大：check(mid) == true 时更新 left = mid，反之更新 right = mid，最后返回 left。
 
 
 ## 参考

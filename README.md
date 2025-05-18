@@ -172,6 +172,7 @@ Note: C语言实现使用 GBK 编码
   - [153 寻找旋转排序数组中的最小值](03_leetcode/04_binary_search/153_find_minimum_in_rotated_sorted_array_test.go)
   - [154 寻找旋转排序数组中的最小值II](03_leetcode/04_binary_search/154_find_minimum_in_rotated_sorted_array_II_test.go)
   - [162 寻找峰值](03_leetcode/04_binary_search/162_find_peak_element_test.go) 
+  - [275 H 指数 II-->求最大](03_leetcode/04_binary_search/275_h-index-ii_test.go) 
   - [704 二分查找](03_leetcode/04_binary_search/704_binary_search_test.go) 
   - [744 寻找比目标字母大的最小字母](03_leetcode/04_binary_search/744_find-smallest-letter-greater-than-target_test.go) 
   - [1283 使结果不超过阈值的最小除数-->求最小](03_leetcode/04_binary_search/1283_find_the_smallest_divisor_given_a_threshold_test.go) 
