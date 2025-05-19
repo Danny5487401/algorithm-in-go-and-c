@@ -213,6 +213,8 @@ func lowerBound2(nums []int, target int) int {
 「求最小」和二分查找求「排序数组中某元素的第一个位置」是类似的，按照红蓝染色法，左边是不满足要求的（红色），右边则是满足要求的（蓝色）。
 
 
+- [完成旅途的最少时间](./2187_minimum-time-to-complete-trips_test.go)
+
 ## 求最大
 
 「求最大」的题目则与「求最小」相反 ,左边是满足要求的（蓝色），右边是不满足要求的（红色）
@@ -221,7 +223,9 @@ func lowerBound2(nums []int, target int) int {
 以开区间二分为例：
 
 - 求最小：check(mid) == true 时更新 right = mid，反之更新 left = mid，最后返回 right。
+ 
 - 求最大：check(mid) == true 时更新 left = mid，反之更新 right = mid，最后返回 left。
+
 
 
 ## 参考

@@ -31,7 +31,7 @@ func TestSearch2(t *testing.T) {
 
 func search2(nums []int, target int) int {
 	// 求大于等于
-	index := lowerBound3(nums, target)
+	index := lowerBound2(nums, target)
 	if index == len(nums) || nums[index] != target {
 		return -1
 	}

@@ -177,6 +177,7 @@ Note: C语言实现使用 GBK 编码
   - [744 寻找比目标字母大的最小字母](03_leetcode/04_binary_search/744_find-smallest-letter-greater-than-target_test.go) 
   - [1283 使结果不超过阈值的最小除数-->求最小](03_leetcode/04_binary_search/1283_find_the_smallest_divisor_given_a_threshold_test.go) 
   - [1901 寻找峰值II](03_leetcode/04_binary_search/1901_find_peak_element_II_test.go)
+  - [2187 完成旅途的最少时间->求最小](03_leetcode/04_binary_search/2187_minimum-time-to-complete-trips_test.go)
   - [2529 正整数和负整数的最大计数](03_leetcode/04_binary_search/2529_maximum_count_of_positive_integer_and_negative_integer_test.go)
 
 - binary tree 二叉树

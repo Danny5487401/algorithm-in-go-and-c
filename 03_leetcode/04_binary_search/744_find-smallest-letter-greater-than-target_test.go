@@ -7,7 +7,7 @@ import (
 
 // 寻找比目标字母大的最小字母 https://leetcode.cn/problems/find-smallest-letter-greater-than-target/description/
 func TestNextGreatestLetter(t *testing.T) {
-	convey.Convey("给你一个字符数组 letters，该数组按非递减顺序排序", t, func() {
+	convey.Convey("给你一个字符数组 letters，该数组按非递减顺序排序.如果不存在这样的字符，则返回 letters 的第一个字符。", t, func() {
 		testCase := []struct {
 			input    []byte
 			target   byte
@@ -35,7 +35,7 @@ func TestNextGreatestLetter(t *testing.T) {
 func nextGreatestLetter(letters []byte, target byte) byte {
 	// 求 >x -->  >= x+1
 	index := lowerCharBound(letters, target+1)
-	if index == len(letters) {
+	if index == len(letters) { // 如果不存在这样的字符，则返回 letters 的第一个字符。
 		return letters[0]
 	}
 	return letters[index]
