@@ -7,7 +7,7 @@ import (
 
 // 二进制链表转整数 https://leetcode.cn/problems/convert-binary-number-in-a-linked-list-to-integer/description/
 func TestGetDecimalValue(t *testing.T) {
-	convey.Convey(" 二进制链表转整数", t, func() {
+	convey.Convey("二进制链表转整数", t, func() {
 		testCase := []struct {
 			input  *ListNode
 			target int
@@ -37,6 +37,7 @@ func TestGetDecimalValue(t *testing.T) {
 	})
 
 }
+
 func getDecimalValue(head *ListNode) int {
 	if head == nil {
 		return 0
