@@ -147,6 +147,7 @@ Note: C语言实现使用 GBK 编码
   - [1669 合并两个链表](03_leetcode/02_link_list/1669_merge_In_between_linked_lists_test.go)
   - [2058 找出临界点之间的最小和最大距离](03_leetcode/02_link_list/2058_find-the-minimum-and-maximum-number-of-nodes-between-critical-points_test.go)
   - [2130 链表最大孪生和](03_leetcode/02_link_list/2130_maximum-twin-sum-of-a-linked-list_test.go)
+  - [2181 合并零之间的节点](03_leetcode/02_link_list/2181_merge-nodes-in-between-zeros_test.go)
   - [2487 从链表中移除节点](03_leetcode/02_link_list/2487_remove_nodes_from_linked_list_test.go)
   - [2807 在链表中插入最大公约数-->插入节点](03_leetcode/02_link_list/2807_insert-greatest-common-divisors-in-linked-list_test.go)
   - [2816 翻倍以链表形式表示的数字](03_leetcode/02_link_list/2816-double-a-number-represented-as-a-linked-list_test.go)
