@@ -7,7 +7,7 @@ import (
 
 // 移除链表元素  https://leetcode.cn/problems/remove-linked-list-elements/
 func TestRemoveElements(t *testing.T) {
-	convey.Convey("移除链表元素", t, func() {
+	convey.Convey("移除链表元素:删除链表中所有满足 Node.val == val 的节点", t, func() {
 		testCase := []struct {
 			input  *ListNode
 			val    int

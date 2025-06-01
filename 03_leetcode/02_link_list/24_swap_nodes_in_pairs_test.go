@@ -39,6 +39,7 @@ func swapPairs(head *ListNode) *ListNode {
 	node1 := head
 	for node1 != nil && node1.Next != nil { // 至少有两个节点
 
+		// node0 为哨兵不用交换
 		// 交换前: node0 -> node1 -> node2 -> node3 -> node4
 
 		// 记录下次开始节点 node2 node3

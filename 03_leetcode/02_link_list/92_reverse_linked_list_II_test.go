@@ -7,7 +7,7 @@ import (
 
 // 反转链表II https://leetcode.cn/problems/reverse-linked-list-ii/description/
 func TestReverseBetween(t *testing.T) {
-	convey.Convey("反转链表II :反转中间部分从位置 left 到位置 right 的链表节点", t, func() {
+	convey.Convey("反转链表II: 反转中间部分从位置 left 到位置 right 的链表节点", t, func() {
 		testCase := []struct {
 			input       *ListNode
 			left, right int

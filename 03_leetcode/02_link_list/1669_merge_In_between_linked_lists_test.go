@@ -6,7 +6,6 @@ import (
 )
 
 // 合并两个链表 https://leetcode.cn/problems/merge-in-between-linked-lists/description/
-
 func TestMergeInBetween(t *testing.T) {
 	convey.Convey("合并两个链表:将 list1 中下标从 a 到 b 的全部节点都删除，并将list2 接在被删除节点的位置", t, func() {
 		testCase := []struct {
@@ -47,12 +46,12 @@ func mergeInBetween(list1 *ListNode, a int, b int, list2 *ListNode) *ListNode {
 	}
 	left := dummy
 
-	for i := 0; i < a; i++ { //
+	for i := 0; i < a; i++ { // 到  a 的上一个节点
 		left = left.Next
 	}
 
 	right := left
-	for i := 0; i < b+1-(a-1); i++ { // a 的上一个节点, b 的下一个节点
+	for i := 0; i < b+1-(a-1); i++ { // b 的下一个节点
 		right = right.Next
 	}
 	left.Next = list2

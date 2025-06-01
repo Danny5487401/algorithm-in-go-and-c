@@ -6,9 +6,8 @@ import (
 )
 
 // K 个一组翻转链表 https://leetcode.cn/problems/reverse-nodes-in-k-group/?envType=study-plan-v2&envId=top-100-liked
-
 func TestReverseKGroup(t *testing.T) {
-	convey.Convey(" K 个一组翻转链表", t, func() {
+	convey.Convey(" K 个一组翻转链表:如果节点总数不是 k 的整数倍，那么请将最后剩余的节点保持原有顺序", t, func() {
 		testCase := []struct {
 			input  *ListNode
 			k      int

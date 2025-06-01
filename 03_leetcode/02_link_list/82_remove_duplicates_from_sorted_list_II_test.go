@@ -51,7 +51,6 @@ func deleteDuplicatesII(head *ListNode) *ListNode {
 		nextVal := cur.Next.Val
 		if nextVal == cur.Next.Next.Val { // 当前下个 == 当前下下个
 			// 可能连续2个以上相同
-
 			for cur.Next != nil && nextVal == cur.Next.Val {
 				// 再下一节点循环判断
 				cur.Next = cur.Next.Next

@@ -174,7 +174,7 @@ slow 从相遇点出发，head 从头节点出发，两个都走c步，slow 到�
 
 方式二：
 1. 右指针指向 dummy node, 先让右指针走 N 步
-
+d
 ![](.LinkedList_images/remove-nth-node-from-end-of-list1.png)
 2. 初始化左指针指向 dummy node
 ![](.LinkedList_images/remove-nth-node-from-end-of-list2.png)

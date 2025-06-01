@@ -39,10 +39,9 @@ func TestModifiedList(t *testing.T) {
 }
 
 func modifiedList(nums []int, head *ListNode) *ListNode {
-
-	if head == nil {
-		return nil
-	}
+	// 输入保证链表中至少有一个值没有在 nums 中出现过
+	// nums 中的所有元素都是唯一的
+	// 1 <= nums.length <= 105
 
 	// 由于直接判断节点值是否在 nums 中，需要遍历 nums，时间复杂度为 O(n)。
 	// 通过把 nums 中的元素加到一个哈希集合中，然后判断节点值是否在哈希集合中，这样可以做到每次判断时间复杂度为 O(1)

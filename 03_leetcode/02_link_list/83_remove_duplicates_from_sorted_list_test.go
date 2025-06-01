@@ -7,7 +7,7 @@ import (
 
 // 删除排序链表中的重复元素 https://leetcode.cn/problems/remove-duplicates-from-sorted-list/description/
 func TestDeleteDuplicates(t *testing.T) {
-	convey.Convey("删除排序链表中的重复元素:保留一个重复 ", t, func() {
+	convey.Convey("删除排序链表中的重复元素:已排序的链表的头 head ， 删除所有重复的元素，使每个元素只出现一次 。保留一个重复 ", t, func() {
 		testCase := []struct {
 			input  *ListNode
 			target *ListNode
