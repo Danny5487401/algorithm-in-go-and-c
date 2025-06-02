@@ -124,6 +124,7 @@ Note: C语言实现使用 GBK 编码
   - [21 合并两个有序链表-->归并排序](03_leetcode/02_link_list/21_merge_two_lists_test.go)
   - [24 两两交换链表中的节点](03_leetcode/02_link_list/24_swap_nodes_in_pairs_test.go)
   - [25 K个一组翻转链表](03_leetcode/02_link_list/25_reverse_nodes_in_k-Group_test.go)
+  - [61 旋转链表](03_leetcode/02_link_list/61_rotate-list_test.go)
   - [82 删除排序链表中的重复元素II](03_leetcode/02_link_list/82_remove_duplicates_from_sorted_list_II_test.go)
   - [83 删除排序链表中的重复元素](03_leetcode/02_link_list/83_remove_duplicates_from_sorted_list_test.go)
   - [92 反转链表II--中间部分反转](03_leetcode/02_link_list/92_reverse_linked_list_II_test.go)
