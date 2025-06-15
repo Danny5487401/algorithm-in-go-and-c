@@ -8,6 +8,9 @@ import (
 // 二叉树的中序遍历 https://leetcode.cn/problems/binary-tree-inorder-traversal/description/?envType=study-plan-v2&envId=top-100-liked
 func TestInorderTraversal(t *testing.T) {
 	convey.Convey("二叉树的中序遍历", t, func() {
+		/*
+			- 中序遍历: [ [左子树的前序遍历结果], 根节点,[右子树的前序遍历结果] ]
+		*/
 		testCase := []struct {
 			input  *TreeNode
 			target []int

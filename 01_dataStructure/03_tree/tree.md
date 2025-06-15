@@ -179,9 +179,10 @@
 ![](.btree_images/three_ways_of_read_binary_tree.png)
 
 1. 先序遍历：先访问根节点，然后访问左子树， 最后访问右子树
-   ![](.btree_images/left_root_right.png)
-   ![](.btree_images/left_root_right1.png)
-   ![](.btree_images/tips_of_left_root_right.png)
+
+![](.btree_images/left_root_right.png)
+![](.btree_images/left_root_right1.png)
+![](.btree_images/tips_of_left_root_right.png)
 
 2. 中序遍历：先访问左子树，然后访问根节点， 最后访问右子树。
    ![](.btree_images/left_root_right2.png)

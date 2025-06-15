@@ -5,7 +5,8 @@ import (
 	"testing"
 )
 
-// 两数相加 II https://leetcode.cn/problems/add-two-numbers-ii/
+// 两数相加 I https://leetcode.cn/problems/add-two-numbers/description/ 这是逆序
+// 两数相加 II https://leetcode.cn/problems/add-two-numbers-ii/ -->反转链表+两数相加I
 func TestAddTwoNumbersII(t *testing.T) {
 	convey.Convey("两数相加 II:将这两数相加会返回一个新的链表", t, func() {
 		testCase := []struct {

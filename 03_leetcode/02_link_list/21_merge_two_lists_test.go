@@ -7,7 +7,7 @@ import (
 
 // 合并两个有序链表 https://leetcode.cn/problems/merge-two-sorted-lists/description/?envType=study-plan-v2&envId=top-100-liked
 func TestMergeTwoLists(t *testing.T) {
-	convey.Convey("合并两个有序链表 ", t, func() {
+	convey.Convey("合并两个有序链表:并为一个新的 升序 链表并返回 ", t, func() {
 		testCase := []struct {
 			list1  *ListNode
 			list2  *ListNode

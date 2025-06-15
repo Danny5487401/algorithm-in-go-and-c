@@ -202,7 +202,7 @@ Note: C语言实现使用 GBK 编码
   - [114 二叉树展开为链表](03_leetcode/05_binary_tree/114_flatten_test.go)
   - [116 填充每个节点的下一个右侧节点指针](03_leetcode/05_binary_tree/116_populating_next_right_pointers_in_each_node_test.go)
   - [129 求根节点到叶节点数字之和](03_leetcode/05_binary_tree/129_sum_root_to_leaf_numbers_test.go)
-  - [144 二叉树的前序遍历](03_leetcode/05_binary_tree/144_binary-tree-preorder-traversal_test.go)
+  - [144 二叉树的前序遍历-->遍历二叉树](03_leetcode/05_binary_tree/144_binary-tree-preorder-traversal_test.go)
   - [199 二叉树右视图](03_leetcode/05_binary_tree/199_binary_tree_right_side_view_test.go)
   - [226 翻转二叉树](03_leetcode/05_binary_tree/226_invert_tree_test.go)
   - [230 二叉搜索树中第K小的元素](03_leetcode/05_binary_tree/230_kth_smallest_test.go)

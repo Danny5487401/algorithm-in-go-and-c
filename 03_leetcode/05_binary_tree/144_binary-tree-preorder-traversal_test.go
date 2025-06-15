@@ -31,13 +31,16 @@ func TestPreorderTraversal(t *testing.T) {
 		}
 
 		for _, tst := range testCase {
-			rsp := preorderTraversal(tst.input)
+			rsp := preorderTraversal3(tst.input)
 			convey.So(rsp, convey.ShouldEqual, tst.target)
 		}
 	})
 
 }
 
+// 递归的时候隐式地维护了一个栈，而我们在迭代的时候需要显式地将这个栈模拟出来，
+
+// 递归
 func preorderTraversal(root *TreeNode) []int {
 	/*
 		- 前序遍历: [ 根节点, [左子树的前序遍历结果], [右子树的前序遍历结果] ]
@@ -56,4 +59,38 @@ func preorderTraversal(root *TreeNode) []int {
 	dfs(root)
 	return ans
 
+}
+
+func preorderTraversal2(root *TreeNode) []int {
+	if root == nil {
+		return nil
+	}
+	ans := make([]int, 0)
+
+	ans = append(ans, root.Val)
+	ans = append(ans, preorderTraversal2(root.Left)...)
+	ans = append(ans, preorderTraversal2(root.Right)...)
+	return ans
+}
+
+// 迭代 https://leetcode.cn/problems/binary-tree-preorder-traversal/solutions/461821/er-cha-shu-de-qian-xu-bian-li-by-leetcode-solution/
+func preorderTraversal3(root *TreeNode) []int {
+	if root == nil {
+		return nil
+	}
+	var stack []*TreeNode
+	node := root
+	ans := make([]int, 0)
+	for len(stack) > 0 || node != nil {
+		for node != nil {
+			ans = append(ans, node.Val) // 先节点本身
+			stack = append(stack, node) // 一直入栈左节点
+			node = node.Left            // 左节点
+		}
+		// 出栈
+		node = stack[len(stack)-1].Right
+		stack = stack[:len(stack)-1]
+
+	}
+	return ans
 }

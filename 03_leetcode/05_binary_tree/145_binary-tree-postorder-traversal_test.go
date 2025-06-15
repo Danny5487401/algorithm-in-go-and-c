@@ -31,7 +31,7 @@ func TestPostorderTraversal(t *testing.T) {
 		}
 
 		for _, tst := range testCase {
-			rsp := postorderTraversal(tst.input)
+			rsp := postorderTraversal3(tst.input)
 			convey.So(rsp, convey.ShouldEqual, tst.target)
 		}
 	})
@@ -55,4 +55,32 @@ func postorderTraversal(root *TreeNode) []int {
 	}
 	dfs(root)
 	return ans
+}
+
+// 方式二: 迭代 https://leetcode.cn/problems/binary-tree-postorder-traversal/solutions/431066/er-cha-shu-de-hou-xu-bian-li-by-leetcode-solution/
+func postorderTraversal3(root *TreeNode) []int {
+	var stack []*TreeNode
+	var prev *TreeNode
+	var ans []int
+	node := root
+	for node != nil || len(stack) > 0 {
+		for node != nil {
+			stack = append(stack, node)
+			node = node.Left
+		}
+		node = stack[len(stack)-1]
+		stack = stack[:len(stack)-1]
+		if node.Right == nil || node.Right == prev {
+			ans = append(ans, node.Val)
+			prev = node
+			node = nil
+		} else { // 有右节点
+			stack = append(stack, node)
+			node = node.Right
+		}
+
+	}
+
+	return ans
+
 }

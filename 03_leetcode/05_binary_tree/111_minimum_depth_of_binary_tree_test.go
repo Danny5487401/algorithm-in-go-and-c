@@ -24,7 +24,7 @@ func TestMinDepth(t *testing.T) {
 		}
 
 		for _, tst := range testCase {
-			rsp := minDepth3(tst.input)
+			rsp := minDepth(tst.input)
 			convey.So(rsp, convey.ShouldEqual, tst.target)
 		}
 	})
