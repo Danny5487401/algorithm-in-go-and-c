@@ -13,9 +13,11 @@ func TestMaximumLengthSubstring(t *testing.T) {
 			expected int
 		}{
 			{
+				// bcba
 				"bcbbbcba", 4,
 			},
 			{
+				// aa
 				"aaaa", 2,
 			},
 		}
@@ -35,9 +37,8 @@ func maximumLengthSubstring(s string) int {
 	maxNum := 0
 	for right, str := range s {
 		numCount[byte(str)]++
-
-		for numCount[byte(str)] > 2 {
-			numCount[byte(s[left])]--
+		for numCount[byte(str)] > 2 { // 超过 2 次
+			numCount[(s[left])]--
 			left++
 		}
 		maxNum = max(maxNum, right-left+1)

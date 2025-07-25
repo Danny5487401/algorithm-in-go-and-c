@@ -112,11 +112,11 @@ Note: C语言实现使用 GBK 编码
 
 
 ## [第三章 LeetCode](03_leetcode/leetcode.md)
-- hash
+- 1 hash
   - [1 两数之和](03_leetcode/01_hash/01_two_sum_test.go)
   - [49 字母异位词分组](03_leetcode/01_hash/49_group_anagrams_test.go)
   - [128 最长连续序列](03_leetcode/01_hash/128_longest_consecutive_sequence_test.go)
-- [链表](03_leetcode/02_link_list/LinkedList.md)
+- [2 链表](03_leetcode/02_link_list/LinkedList.md)
   - [2 两数相加](03_leetcode/02_link_list/2_add_two_numbers_test.go)
   - [11 盛最多水的容器-->双向指针](03_leetcode/02_link_list/11_container_with_most_water_test.go)
   - [15 三数之和-->相向指针](03_leetcode/02_link_list/15_three_sum_test.go)
@@ -128,6 +128,7 @@ Note: C语言实现使用 GBK 编码
   - [82 删除排序链表中的重复元素II](03_leetcode/02_link_list/82_remove_duplicates_from_sorted_list_II_test.go)
   - [83 删除排序链表中的重复元素](03_leetcode/02_link_list/83_remove_duplicates_from_sorted_list_test.go)
   - [92 反转链表II--中间部分反转](03_leetcode/02_link_list/92_reverse_linked_list_II_test.go)
+  - [125 验证回文串](03_leetcode/02_link_list/125_valid-palindrome_test.go)
   - [138 随机链表的复制](03_leetcode/02_link_list/138_copy-list-with-random-pointer_test.go)
   - [141 环形链表-->快慢指针](03_leetcode/02_link_list/141_linked_list_cycle_test.go)
   - [142 环形链表II-->快慢指针](03_leetcode/02_link_list/142_linked_list_cycle_II_test.go)
@@ -142,6 +143,7 @@ Note: C语言实现使用 GBK 编码
   - [237 删除链表中的节点](03_leetcode/02_link_list/237_delete_node_in_a_linked_list_test.go)
   - [283 移动零](03_leetcode/02_link_list/283_move_zeroes_test.go)
   - [328 奇偶链表](03_leetcode/02_link_list/328_odd-even-linked-list_test.go)
+  - [344 反转字符串](03_leetcode/02_link_list/344_reverse-string_test.go)
   - [445 两数相加 II](03_leetcode/02_link_list/445_add_two_numbers_II_test.go)
   - [876 链表的中间节点-->快慢指针](03_leetcode/02_link_list/876_middle_of_the_linked_list_test.go)
   - [1290 二进制链表转整数-->遍历链表](03_leetcode/02_link_list/1290_convert-binary-number-in-a-linked-list-to-integer_test.go)
@@ -155,20 +157,21 @@ Note: C语言实现使用 GBK 编码
   - [2824 统计和小于目标的下标对数目-->相向双指针](03_leetcode/02_link_list/2824_count_pairs_whose_sum_is_less_than_target_test.go)
   - [3217 从链表中移除在数组中存在的节点](03_leetcode/02_link_list/3217_delete_nodes_from_linked_list_present_in_array_test.go)
 
-- [sliding windows 滑动窗口-->同向双指针](03_leetcode/03_slides_windows/slide_windows.md)
+- [3 sliding windows 滑动窗口-->同向双指针](03_leetcode/03_slides_windows/slide_windows.md)
   - [03 无重复字符的最长子串-->不定长滑动窗口](03_leetcode/03_slides_windows/03_longest_substring_without_repeating_characters_test.go)
   - [209 长度最小的子数组](03_leetcode/03_slides_windows/209_minimum_size_subarray_sum_test.go)
   - [239 滑动窗口最大值-->单调队列](03_leetcode/03_slides_windows/239_sliding_window_maximum_test.go)
   - [438 找到字符串中所有字母异位词](03_leetcode/03_slides_windows/438_find-all-anagrams-in-a-string_test.go)
   - [643 子数组最大平均数 I-->定长滑动窗口](03_leetcode/03_slides_windows/643_maximum-average-subarray-i_test.go)
   - [713 乘积小于 K 的子数组](03_leetcode/03_slides_windows/713_subarray_product_less_than_k_test.go)
+  - [1343 大小为 K 且平均值大于等于阈值的子数组数目](03_leetcode/03_slides_windows/1343_number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold_test.go)
   - [1438 绝对差不超过限制的最长连续子数组](03_leetcode/03_slides_windows/1438_longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit_test.go)
   - [1456 定长子串中元音的最大数目-->定长滑动窗口](03_leetcode/03_slides_windows/1438_longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit_test.go)
   - [2730 找到最长的半重复子字符串](03_leetcode/03_slides_windows/2730_longest_semi_repetitive_substring_test.go)
   - [2779 数组的最大美丽值](03_leetcode/03_slides_windows/2779_maximum_beauty_test.go)
   - [2958 最多 K 个重复元素的最长子数组-->不定长滑动窗口](03_leetcode/03_slides_windows/2958_length_of_longest_subarray_with_at_most_K_frequency_test.go)
   - [3090 每个字符最多出现两次的最长子字符串-->不定长滑动窗口](03_leetcode/03_slides_windows/3090_maximum-length-substring-with-two-occurrences_test.go)
-- 二分查找
+- 4 二分查找
   - [33 搜索旋转排序数组](03_leetcode/04_binary_search/33_search_in_rotated_sorted_array_test.go)
   - [34 在排序数组中查找元素的第一个和最后一个位置](03_leetcode/04_binary_search/34_find_first_and_last_position_of_element_in_sorted_array_test.go)
   - [35 搜索插入位置](03_leetcode/04_binary_search/35_search_insert_position_test.go)
@@ -183,7 +186,7 @@ Note: C语言实现使用 GBK 编码
   - [2187 完成旅途的最少时间->求最小](03_leetcode/04_binary_search/2187_minimum-time-to-complete-trips_test.go)
   - [2529 正整数和负整数的最大计数](03_leetcode/04_binary_search/2529_maximum_count_of_positive_integer_and_negative_integer_test.go)
 
-- binary tree 二叉树
+- 5 binary tree 二叉树
   - [94 In-order Traversal 中序遍历](03_leetcode/05_binary_tree/94_binary_tree_inorder_traversal_test.go)
   - [98 验证二叉搜索树-->分别前序，中序，后序遍历方案](03_leetcode/05_binary_tree/98_validate_binary_search_tree_test.go)
   - [100 相同的树](03_leetcode/05_binary_tree/100_same_tree_test.go)
@@ -222,7 +225,7 @@ Note: C语言实现使用 GBK 编码
   - [1609 奇偶树](03_leetcode/05_binary_tree/1609_even-odd-tree_test.go)
   - [2476 二叉搜索树最近节点查询](03_leetcode/05_binary_tree/2476_closest_nodes_test.go)
   - [2583 二叉树中的第 K 大层和](03_leetcode/05_binary_tree/2583_kth_largest_sum_in_a_binary_tree_test.go)
-- [backtracking 回溯](03_leetcode/06_backtracking/back_tracking.md)
+- [6 backtracking 回溯](03_leetcode/06_backtracking/back_tracking.md)
   - [17 电话号码的字母组合-->子集型回溯](03_leetcode/06_backtracking/17_letter_combinations_of_a_phone_number_test.go)
   - [22 括号生成-->组合回溯](03_leetcode/06_backtracking/22_generate_parentheses_test.go)
   - [39 组合总和](03_leetcode/06_backtracking/39_combinationSum_test.go)
@@ -237,7 +240,7 @@ Note: C语言实现使用 GBK 编码
   - [306 累加数](03_leetcode/06_backtracking/306_additive-number_test.go)
   - [679 24 点游戏](03_leetcode/06_backtracking/679_24-dian-you-xi-by-leetcode-solution_test.go)
   - [784 字母大小写全排列](03_leetcode/06_backtracking/784_letter_case_permutation_test.go)
-- [栈](03_leetcode/07_stack/monotone_stack.md)
+- [7 栈](03_leetcode/07_stack/monotone_stack.md)
   - [20 有效的括号](03_leetcode/07_stack/20_valid-parentheses_test.go)
   - [42 接雨水](03_leetcode/07_stack/42_trapping_rain_water_test.go)
   - [155 最小栈-->前缀最小值](03_leetcode/07_stack/155_min-stack_test.go)
@@ -246,7 +249,7 @@ Note: C语言实现使用 GBK 编码
   - [503 下一个更大元素 II: 循环数组](03_leetcode/07_stack/503_next_greater_element_ii_test.go)
   - [739 每日温度](03_leetcode/07_stack/739_daily_temperatures_test.go)
 
-- 数组
+- 8 数组
   - [53 最大子数组和-->前缀和](03_leetcode/08_array/53_maximum-subarray_test.go)
   - [56 合并区间](03_leetcode/08_array/56_merge-intervals_test.go)
   - [75 颜色分类](03_leetcode/08_array/75_sort-colors_test.go)
@@ -257,12 +260,12 @@ Note: C语言实现使用 GBK 编码
   - [303 区域和检索-数组不可变-->前缀和](03_leetcode/08_array/303_range-sum-query-immutable_test.go)
   - [560 和为 K 的子数组-->前缀和](03_leetcode/08_array/560_subarray-sum-equals-k_test.go)
 
-- 图
+- 9 图
   - [200 岛屿数量](03_leetcode/09_graph/200_number-of-islands_test.go)
   - [208 实现 Trie (前缀树)](03_leetcode/09_graph/208_trie_test.go)
   - [994 腐烂的橘子](03_leetcode/09_graph/994_rotting-oranges_test.go)
 
-- 堆
+- 10 堆
   - [315 数组中的第K个最大元素](03_leetcode/10_heap/315_kth-largest-element-in-an-array_test.go)
   - [347 前 K 个高频元素](03_leetcode/10_heap/347_top-k-frequent-elements_test.go)
 

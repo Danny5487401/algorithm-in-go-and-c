@@ -14,6 +14,7 @@ func TestGetMinimumDifference(t *testing.T) {
 			target int
 		}{
 			{
+				// 把数字排序后，得到 [1,2,3,4,6]。
 				Ints2TreeNode([]int{4, 2, 6, 1, 3}),
 				1,
 			},
@@ -41,6 +42,7 @@ func getMinimumDifference(root *TreeNode) int {
 		if node == nil {
 			return
 		}
+		// 中序遍历：左子树 → 根 → 右子树
 
 		cur := node.Val
 		dfs(node.Left)
