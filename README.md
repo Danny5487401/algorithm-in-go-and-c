@@ -186,7 +186,7 @@ Note: C语言实现使用 GBK 编码
   - [2187 完成旅途的最少时间->求最小](03_leetcode/04_binary_search/2187_minimum-time-to-complete-trips_test.go)
   - [2529 正整数和负整数的最大计数](03_leetcode/04_binary_search/2529_maximum_count_of_positive_integer_and_negative_integer_test.go)
 
-- 5 binary tree 二叉树
+- [5 binary tree 二叉树](03_leetcode/05_binary_tree/binary_tree.md)
   - [94 In-order Traversal 中序遍历](03_leetcode/05_binary_tree/94_binary_tree_inorder_traversal_test.go)
   - [98 验证二叉搜索树-->分别前序，中序，后序遍历方案](03_leetcode/05_binary_tree/98_validate_binary_search_tree_test.go)
   - [100 相同的树](03_leetcode/05_binary_tree/100_same_tree_test.go)
@@ -268,6 +268,10 @@ Note: C语言实现使用 GBK 编码
 - 10 堆
   - [315 数组中的第K个最大元素](03_leetcode/10_heap/315_kth-largest-element-in-an-array_test.go)
   - [347 前 K 个高频元素](03_leetcode/10_heap/347_top-k-frequent-elements_test.go)
+
+- 11 矩阵
+- 12 位运算
+  - [3370 仅含置位位的最小整数](03_leetcode/12_bits/3370_smallest-number-with-all-set-bits_test.go)
 
 ## 参考
 - [The Algorithms 组织开源的多种语言算法实现](https://github.com/TheAlgorithms)
