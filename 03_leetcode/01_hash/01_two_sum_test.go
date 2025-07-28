@@ -33,7 +33,7 @@ func TestTwoSum(t *testing.T) {
 }
 
 // 不推荐行为：两个循环暴力枚举
-// 推荐行为：hash
+// 推荐行为：对于 双变量问题，例如两数之和 ai+aj=t，可以枚举右边的 aj，转换成 单变量问题，也就是在 aj左边查找是否有 ai=t−aj，这可以用哈希表维护
 func twoSum(nums []int, target int) []int {
 	// 存储出现过的结果
 	hashTable := map[int]int{} // key为元素，value为索引

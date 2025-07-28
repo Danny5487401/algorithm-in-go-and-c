@@ -116,6 +116,8 @@ Note: C语言实现使用 GBK 编码
   - [1 两数之和](03_leetcode/01_hash/01_two_sum_test.go)
   - [49 字母异位词分组](03_leetcode/01_hash/49_group_anagrams_test.go)
   - [128 最长连续序列](03_leetcode/01_hash/128_longest_consecutive_sequence_test.go)
+  - [1512 最长连续序列](03_leetcode/01_hash/1512_number-of-good-pairs_test.go)
+  - [2441 与对应负数同时存在的最大正整数](03_leetcode/01_hash/2441_largest-positive-integer-that-exists-with-its-negative_test.go)
 - [2 链表](03_leetcode/02_link_list/LinkedList.md)
   - [2 两数相加](03_leetcode/02_link_list/2_add_two_numbers_test.go)
   - [11 盛最多水的容器-->双向指针](03_leetcode/02_link_list/11_container_with_most_water_test.go)
