@@ -33,6 +33,7 @@ func TestSearchBST(t *testing.T) {
 
 }
 
+// 中序遍历
 func searchBST(root *TreeNode, val int) *TreeNode {
 	if root == nil {
 		return nil

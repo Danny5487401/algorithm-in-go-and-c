@@ -37,7 +37,7 @@ func TestRangeSumBST(t *testing.T) {
 }
 
 func rangeSumBST(root *TreeNode, low int, high int) int {
-	if root == nil {
+	if root == nil { // root 节点为空
 		return 0
 	}
 
@@ -55,7 +55,6 @@ func rangeSumBST(root *TreeNode, low int, high int) int {
 
 	} else {
 		// 累加 x、左子树的在 [low,high] 范围内的节点值之和、右子树的在 [low,high] 范围内的节点值之和，这三部分的和作为答案
-
 		return x + rangeSumBST(root.Left, low, high) + rangeSumBST(root.Right, low, high)
 	}
 

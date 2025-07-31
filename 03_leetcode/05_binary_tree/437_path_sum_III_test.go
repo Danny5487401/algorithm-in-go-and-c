@@ -33,9 +33,13 @@ func TestPathSum(t *testing.T) {
 
 }
 
+// 如果二叉树是一条链，本题就和 560. 和为 K 的子数组 完全一样了：统计有多少个非空连续子数组的元素和恰好等于 targetSum。
 // 解题思路: 同 560 和为 K 的子数组,使用前缀和+哈希表
 func pathSum(root *TreeNode, targetSum int) (ans int) {
-	cnt := map[int]int{0: 1}
+	// 二叉树的节点个数的范围是 [0,1000]
+
+	// 这里的 0 相当于前缀和数组中的 s[0]=0。举个最简单的例子，根节点值为 1，targetSum=1。如果不把 0 加到哈希表中，按照我们的算法，没法算出这里有 1 条符合要求的路径。也可以这样理解，要想把任意路径和都表示成两个前缀和的差，必须添加一个 0，否则当路径是前缀时（从根节点开始的路径），没法减去一个数
+	cnt := map[int]int{0: 1} // 计算出现的次数
 	var dfs func(*TreeNode, int)
 	dfs = func(node *TreeNode, sum int) {
 		if node == nil {

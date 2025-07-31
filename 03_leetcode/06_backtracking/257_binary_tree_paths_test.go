@@ -9,7 +9,7 @@ import (
 
 // 二叉树的所有路径 https://leetcode.cn/problems/binary-tree-paths/
 func TestBinaryTreePaths(t *testing.T) {
-	convey.Convey("二叉树的所有路径:深度优先", t, func() {
+	convey.Convey("二叉树的所有路径:回所有从根节点到叶子节点的路径。", t, func() {
 		testCase := []struct {
 			input  *TreeNode
 			target []string

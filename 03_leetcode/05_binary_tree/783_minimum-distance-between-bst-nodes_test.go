@@ -6,8 +6,8 @@ import (
 	"testing"
 )
 
-// 二叉搜索树的最小绝对差 https://leetcode.cn/problems/minimum-absolute-difference-in-bst/description/
-func TestGetMinimumDifference(t *testing.T) {
+// 二叉搜索树节点最小距离 https://leetcode.cn/problems/minimum-distance-between-bst-nodes/description/
+func TestMinDiffInBST(t *testing.T) {
 	convey.Convey("二叉搜索树的最小绝对差:树中任意两不同节点值之间的最小差值,中序遍历 ", t, func() {
 		testCase := []struct {
 			root   *TreeNode
@@ -22,35 +22,34 @@ func TestGetMinimumDifference(t *testing.T) {
 				Ints2TreeNode([]int{1, 0, 48, NULL, NULL, 12, 49}),
 				1,
 			},
+			{
+				Ints2TreeNode([]int{99, 84, NULL, 27, NULL, 1, 53}),
+				1,
+			},
 		}
 
 		for _, tst := range testCase {
-			rsp := getMinimumDifference(tst.root)
+			rsp := minDiffInBST(tst.root)
 			convey.So(rsp, convey.ShouldEqual, tst.target)
 		}
 	})
 
 }
 
-func getMinimumDifference(root *TreeNode) int {
-	// 绝对值的最小值，答案一定为中序遍历后,相邻两个元素之差的最小值，
-
-	pre := math.MinInt / 2 // 0 <= Node.val <= 105 防止减法溢出
-	var ans = math.MaxInt
-	var dfs func(node *TreeNode)
+func minDiffInBST(root *TreeNode) int {
+	ans := math.MaxInt64
+	pre := math.MinInt64 / 2
+	var dfs func(root *TreeNode)
 	dfs = func(node *TreeNode) {
 		if node == nil {
 			return
 		}
-		// 中序遍历：左子树 → 根 → 右子树
-
 		dfs(node.Left)
 		ans = min(ans, node.Val-pre)
 		pre = node.Val
 		dfs(node.Right)
+
 	}
-
 	dfs(root)
-
 	return ans
 }
