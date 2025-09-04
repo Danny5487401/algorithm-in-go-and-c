@@ -9,7 +9,7 @@ import (
 
 // 统计二叉树中好节点的数目 https://leetcode.cn/problems/count-good-nodes-in-binary-tree/description/
 func TestGoodNodes(t *testing.T) {
-	convey.Convey("统计二叉树中好节点的数目:从根到该节点 X 所经过的节点中，没有任何节点的值大于 X 的值。返回二叉树中好节点的数目", t, func() {
+	convey.Convey("「好节点」X 定义为：从根到该节点 X 所经过的节点中，没有任何节点的值大于 X 的值", t, func() {
 		testCase := []struct {
 			input  *TreeNode
 			target int
@@ -48,9 +48,11 @@ func goodNodes(root *TreeNode) int {
 		if node == nil {
 			return 0
 		}
+		// 获取左子树的好节点个数 left
 		left := dfs(node.Left, max(mx, node.Val))
+		// 获取右子树的好节点个数 right
 		right := dfs(node.Right, max(mx, node.Val))
-		if mx <= node.Val {
+		if mx <= node.Val { // 如果当前节点是好节点
 			return left + right + 1
 		}
 		return left + right

@@ -261,6 +261,7 @@ Note: C语言实现使用 GBK 编码
   - [238 除自身以外数组的乘积->前后缀](03_leetcode/08_array/238_product-of-array-except-self_test.go)
   - [303 区域和检索-数组不可变-->前缀和](03_leetcode/08_array/303_range-sum-query-immutable_test.go)
   - [560 和为 K 的子数组-->前缀和](03_leetcode/08_array/560_subarray-sum-equals-k_test.go)
+  - [3427 变长子数组求和 -->前缀和](03_leetcode/08_array/3427_sum-of-variable-length-subarrays_test.go)
 
 - 9 图
   - [200 岛屿数量](03_leetcode/09_graph/200_number-of-islands_test.go)
@@ -272,6 +273,8 @@ Note: C语言实现使用 GBK 编码
   - [347 前 K 个高频元素](03_leetcode/10_heap/347_top-k-frequent-elements_test.go)
 
 - 11 矩阵
+  - [48 旋转图像](03_leetcode/11_matrix/48_rotate-image_test.go)
+  - [73 矩阵置零](03_leetcode/11_matrix/73_set-matrix-zeroes_test.go)
 - 12 位运算
   - [3370 仅含置位位的最小整数](03_leetcode/12_bits/3370_smallest-number-with-all-set-bits_test.go)
 

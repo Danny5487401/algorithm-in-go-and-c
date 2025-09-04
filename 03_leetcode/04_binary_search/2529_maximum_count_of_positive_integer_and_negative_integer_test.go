@@ -8,7 +8,8 @@ import (
 
 // 正整数和负整数的最大计数 https://leetcode.cn/problems/maximum-count-of-positive-integer-and-negative-integer/description/
 func TestMaximumCount(t *testing.T) {
-	convey.Convey("按 非递减顺序 排列的数组 nums,正整数和负整数的最大计数,如果 nums 中正整数的数目是 pos ，而负整数的数目是 neg ，返回 pos 和 neg二者中的最大值, 0 既不是正整数也不是负整数", t, func() {
+	convey.Convey("按 非递减顺序 排列的数组 nums,正整数和负整数的最大计数,"+
+		"如果 nums 中正整数的数目是 pos ，而负整数的数目是 neg ，返回 pos 和 neg二者中的最大值, 0 既不是正整数也不是负整数", t, func() {
 		testCase := []struct {
 			input    []int
 			expected int
@@ -41,7 +42,8 @@ func maximumCount(nums []int) int {
 	// 负数: 二分找到第一个 <0 --> ≥0-1
 	// 正数: 二分找到第一个 >0 --> >=1
 	left := lowerBound3(nums, 0) - 1
-	neg = left + 1
+
+	neg = left + 1 // index +1 代表数量
 
 	right := lowerBound3(nums, 1)
 

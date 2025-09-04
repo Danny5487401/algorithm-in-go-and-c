@@ -11,6 +11,7 @@ func Constructor(nums []int) NumArray {
 	return s
 }
 
+// 计算索引 left 和 right （包含 left 和 right）之间的 nums 元素的 和
 func (s NumArray) SumRange(left, right int) int {
 	return s[right+1] - s[left]
 }

@@ -6,7 +6,6 @@ import (
 )
 
 // 对称二叉树 https://leetcode.cn/problems/symmetric-tree/?envType=study-plan-v2&envId=top-100-liked
-
 func TestIsSymmetric(t *testing.T) {
 	convey.Convey("对称二叉树", t, func() {
 		testCase := []struct {

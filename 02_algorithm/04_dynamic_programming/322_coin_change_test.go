@@ -63,7 +63,7 @@ func coinChange(coins []int, amount int) int {
 		}
 		defer func() { *p = res }()
 
-		if c < coins[i] {
+		if c < coins[i] { // 不能选
 			return dfs(i-1, c)
 		}
 		return min(dfs(i-1, c), dfs(i, c-coins[i])+1) // 方案+1

@@ -8,7 +8,7 @@ import (
 // 盛最多水的容器 https://leetcode.cn/problems/container-with-most-water/description/?envType=study-plan-v2&envId=top-100-liked
 
 func TestMaxArea(t *testing.T) {
-	convey.Convey("Container With Most Water ", t, func() {
+	convey.Convey("找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水", t, func() {
 		testCase := []struct {
 			input    []int
 			expected int
@@ -37,8 +37,7 @@ func maxArea(height []int) int {
 	for left < right {
 		area := min(height[left], height[right]) * (right - left)
 		ans = max(ans, area)
-		if height[left] < height[right] {
-			// 哪条线短移动哪条
+		if height[left] < height[right] { // 哪条线短移动哪条
 			left++
 		} else {
 			right--

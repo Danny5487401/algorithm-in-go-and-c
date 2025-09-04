@@ -6,7 +6,6 @@ import (
 )
 
 // 分割回文串 https://leetcode.cn/problems/palindrome-partitioning/?envType=study-plan-v2&envId=top-100-liked
-
 func TestPartition(t *testing.T) {
 	convey.Convey("分割回文串：想象两个字母之间是逗号", t, func() {
 		testCase := []struct {
@@ -46,13 +45,12 @@ func partition(s string) (ans [][]string) {
 			return
 		}
 
-		// 不选 i 和 i+1 之间的逗号（i=n-1 时一定要选）
-		if i < n-1 {
+		if i < n-1 { // 不选 i 和 i+1 之间的逗号（i=n-1 时一定要选）
 			dfs(i+1, start)
 		}
 
 		// 选 i 和 i+1 之间的逗号（把 s[i] 作为子串的最后一个字符）
-		if isPalindrome(s, start, i) {
+		if isPalindrome(s, start, i) { // 回文情况下才选
 			path = append(path, s[start:i+1])
 			dfs(i+1, i+1)             // 下一个子串从 i+1 开始
 			path = path[:len(path)-1] // 恢复现场

@@ -14,6 +14,7 @@ func TestJudgePoint24(t *testing.T) {
 			target bool
 		}{
 			{
+				// (8-4) * (7-1) = 24
 				[]int{4, 1, 8, 7}, true,
 			},
 			{
@@ -31,6 +32,19 @@ func TestJudgePoint24(t *testing.T) {
 }
 
 func judgePoint24(nums []int) bool {
+
+	floatNums := make([]float64, len(nums))
+	for i := range floatNums {
+		floatNums[i] = float64(nums[i])
+	}
+	return dfs24(floatNums)
+
+}
+
+func dfs24(nums []float64) bool {
+	if len(nums) == 1 {
+		return math.Abs(nums[0]-24) < 1e-9
+	}
 	/*
 		游戏的第一步是挑出两个数，算出一个新数替代这两个数。
 
@@ -38,18 +52,6 @@ func judgePoint24(nums []int) bool {
 
 		然后，在两个数中玩 24 点…
 	*/
-	floatNums := make([]float64, len(nums))
-	for i := range floatNums {
-		floatNums[i] = float64(nums[i])
-	}
-	return dfs(floatNums)
-
-}
-
-func dfs(nums []float64) bool {
-	if len(nums) == 1 {
-		return math.Abs(nums[0]-24) < 1e-9
-	}
 	flag := false
 	for i := 0; i < len(nums); i++ {
 		for j := i + 1; j < len(nums); j++ {
@@ -62,15 +64,15 @@ func dfs(nums []float64) bool {
 			}
 			// 逐个尝试每一种运算
 			// 一旦某个递归返回真，flag 就变为真，由于||的短路特性，后面的递归不会执行。
-			flag = flag || dfs(append(newNums, n1+n2))
-			flag = flag || dfs(append(newNums, n1-n2))
-			flag = flag || dfs(append(newNums, n2-n1))
-			flag = flag || dfs(append(newNums, n1*n2))
+			flag = flag || dfs24(append(newNums, n1+n2))
+			flag = flag || dfs24(append(newNums, n1-n2))
+			flag = flag || dfs24(append(newNums, n2-n1))
+			flag = flag || dfs24(append(newNums, n1*n2))
 			if n1 != 0 {
-				flag = flag || dfs(append(newNums, n2/n1))
+				flag = flag || dfs24(append(newNums, n2/n1))
 			}
 			if n2 != 0 {
-				flag = flag || dfs(append(newNums, n1/n2))
+				flag = flag || dfs24(append(newNums, n1/n2))
 			}
 			if flag {
 				return true

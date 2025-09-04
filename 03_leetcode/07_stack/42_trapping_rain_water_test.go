@@ -28,6 +28,11 @@ func TestTrap(t *testing.T) {
 
 }
 
+// 假设每个位置都是宽度为1的桶,需要计算左边木板和右边木板的高度.
+//
+//左边木板最大高度:取决于左边的最大高度.
+//右边木板最大高度:取决于右边的最大高度.
+
 // 方式一：垂直计算, 前后找最大值 1* (min(preMax,suffixMax)-height)
 func trap1(height []int) int {
 	ans := 0

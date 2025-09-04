@@ -16,6 +16,7 @@ func TestMinSubArrayLen(t *testing.T) {
 			expected int
 		}{
 			{
+				// 子数组 [4,3]
 				[]int{2, 3, 1, 2, 4, 3}, 7, 2,
 			},
 			{
