@@ -23,7 +23,8 @@
   - [最短路径](#%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84)
     - [单源最短路径算法](#%E5%8D%95%E6%BA%90%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E7%AE%97%E6%B3%95)
     - [顶点间最短路径](#%E9%A1%B6%E7%82%B9%E9%97%B4%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84)
-  - [拓扑排序](#%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F)
+  - [拓扑排序（Topological Sorting）](#%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8Ftopological-sorting)
+    - [拓扑排序的应用](#%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F%E7%9A%84%E5%BA%94%E7%94%A8)
   - [关键路径](#%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -256,8 +257,30 @@ note:不适合权制为负数的图--场景入上下坡下车充电
 ![](.graph_images/floyd_mst.png)
 ![](.graph_images/floyd_code.png)
   
-## 拓扑排序
+## 拓扑排序（Topological Sorting）
+拓扑排序（Topological Sorting）是一个有向无环图（DAG, Directed Acyclic Graph）的所有顶点的线性序列。
+
+
+1. 每个顶点出现且只出现一次。
+2. 若存在一条从顶点 A 到顶点 B 的路径，那么在序列中顶点 A 出现在顶点 B 的前面。
+
+
 ![](.graph_images/graph_sort_aov.png)
+方法
+1. 从 DAG 图中选择一个 没有前驱（即入度为0）的顶点并输出。
+2. 从图中删除该顶点和所有以它为起点的有向边。
+3. 重复 1 和 2 直到当前的 DAG 图为空或当前图中不存在无前驱的顶点为止
+
+![TopologicalSorting.png](.graph_images/TopologicalSorting.png)
+得到拓扑排序后的结果是 { 1, 2, 4, 3, 5 }。
+
+
+### 拓扑排序的应用
+拓扑排序通常用来“排序”具有依赖关系的任务。
+
+比如，如果用一个DAG图来表示一个工程，其中每个顶点表示工程中的一个任务，用有向边表示在做任务 B 之前必须先完成任务 A。
+故在这个工程中，任意两个任务要么具有确定的先后关系，要么是没有关系，绝对不存在互相矛盾的关系（即环路）。
+
 
 ## 关键路径
 ![](.graph_images/primary_path.png)

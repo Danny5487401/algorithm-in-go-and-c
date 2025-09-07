@@ -265,7 +265,9 @@ Note: C语言实现使用 GBK 编码
 
 - 9 图
   - [200 岛屿数量](03_leetcode/09_graph/200_number-of-islands_test.go)
+  - [207 课程表-->拓扑排序](03_leetcode/09_graph/207_course-schedule_test.go)
   - [208 实现 Trie (前缀树)](03_leetcode/09_graph/208_trie_test.go)
+  - [210 课程表II-->拓扑排序](03_leetcode/09_graph/210_course-schedule-II_test.go)
   - [994 腐烂的橘子](03_leetcode/09_graph/994_rotting-oranges_test.go)
 
 - 10 堆
