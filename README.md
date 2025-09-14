@@ -278,6 +278,7 @@ Note: C语言实现使用 GBK 编码
   - [48 旋转图像](03_leetcode/11_matrix/48_rotate-image_test.go)
   - [73 矩阵置零](03_leetcode/11_matrix/73_set-matrix-zeroes_test.go)
 - 12 位运算
+  - [3226 使两个整数相等的位更改次数](03_leetcode/12_bits/3226_number-of-bit-changes-to-make-two-integers-equal_test.go)
   - [3370 仅含置位位的最小整数](03_leetcode/12_bits/3370_smallest-number-with-all-set-bits_test.go)
 
 ## 参考
