@@ -55,9 +55,19 @@
 
 
 ## [239 滑动窗口最大值](239_sliding_window_maximum_test.go)
+
 ![](.slide_windows_images/max_value_sliding_windows1.png)
 
+- 向右过程中,如果 2 1 4, 遍历到4 删除 2,1 ,所以4.
+- 遍历 2 时,有可能成为后面的最大值,所以 4,2.
+- 遍历 3 时, 2 不可能成为最大值,删除 2,所以4,3
+- 遍历 2 时, 4 不在视野中
+
+
+从左到右严格递减
 ![](.slide_windows_images/max_value_slide_windows.png) 
+
+
 
 
 

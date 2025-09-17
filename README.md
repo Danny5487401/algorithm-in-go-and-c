@@ -169,6 +169,8 @@ Note: C语言实现使用 GBK 编码
   - [1343 大小为 K 且平均值大于等于阈值的子数组数目](03_leetcode/03_slides_windows/1343_number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold_test.go)
   - [1438 绝对差不超过限制的最长连续子数组](03_leetcode/03_slides_windows/1438_longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit_test.go)
   - [1456 定长子串中元音的最大数目-->定长滑动窗口](03_leetcode/03_slides_windows/1438_longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit_test.go)
+  - [1493 删掉一个元素以后全为 1 的最长子数组](03_leetcode/03_slides_windows/1493_longest-subarray-of-1s-after-deleting-one-element_test.go)
+  - [2090 半径为 k 的子数组平均值](03_leetcode/03_slides_windows/2090_k-radius-subarray-averages_test.go)
   - [2730 找到最长的半重复子字符串](03_leetcode/03_slides_windows/2730_longest_semi_repetitive_substring_test.go)
   - [2779 数组的最大美丽值](03_leetcode/03_slides_windows/2779_maximum_beauty_test.go)
   - [2958 最多 K 个重复元素的最长子数组-->不定长滑动窗口](03_leetcode/03_slides_windows/2958_length_of_longest_subarray_with_at_most_K_frequency_test.go)

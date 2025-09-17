@@ -6,7 +6,7 @@ import (
 )
 
 // 大小为 K 且平均值大于等于阈值的子数组数目 https://leetcode.cn/problems/number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold/description/
-func TestNumOfSubarrays(t *testing.T) {
+func TestNumOfSubArrays(t *testing.T) {
 	convey.Convey("无重复字符的最长子串", t, func() {
 		testCase := []struct {
 			input     []int
@@ -15,22 +15,24 @@ func TestNumOfSubarrays(t *testing.T) {
 			expected  int
 		}{
 			{
+				// 子数组 [2,5,5],[5,5,5] 和 [5,5,8] 的平均值分别为 4，5 和 6 。
 				[]int{2, 2, 2, 2, 5, 5, 5, 8}, 3, 4, 3,
 			},
 			{
+				// 前 6 个长度为 3 的子数组平均值都大于 5 。
 				[]int{11, 13, 17, 23, 29, 31, 7, 5, 2, 3}, 3, 5, 6,
 			},
 		}
 
 		for _, tst := range testCase {
-			rsp := numOfSubarrays(tst.input, tst.k, tst.threshold)
+			rsp := numOfSubArrays(tst.input, tst.k, tst.threshold)
 			convey.So(rsp, convey.ShouldEqual, tst.expected)
 		}
 	})
 
 }
 
-func numOfSubarrays(arr []int, k int, threshold int) int {
+func numOfSubArrays(arr []int, k int, threshold int) int {
 	var ans int
 	var num int
 	for i, v := range arr {
