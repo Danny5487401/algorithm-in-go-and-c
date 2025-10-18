@@ -6,7 +6,7 @@ import (
 )
 
 // 和为 K 的子数组 https://leetcode.cn/problems/subarray-sum-equals-k/description/?envType=study-plan-v2&envId=top-100-liked
-func TestSubarraySumy(t *testing.T) {
+func TestSubarraySum(t *testing.T) {
 	convey.Convey("和为 K 的子数组:子数组是数组中元素的连续非空序列", t, func() {
 		testCase := []struct {
 			input  []int

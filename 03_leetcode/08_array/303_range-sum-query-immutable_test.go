@@ -1,19 +1,38 @@
 package _8_array
 
+import (
+	"github.com/smartystreets/goconvey/convey"
+	"testing"
+)
+
 // 区域和检索 - 数组不可变 https://leetcode.cn/problems/range-sum-query-immutable/description/
-type NumArray []int
+func TestSumRange(t *testing.T) {
+	convey.Convey("计算索引 left 和 right （包含 left 和 right）之间的 nums 元素的 和", t, func() {
+		testCase := []struct {
+			input     []int
+			sumRange1 []int
+			sumRange2 []int
+			sumRange3 []int
+			target1   int
+			target2   int
+			target3   int
+		}{
+			{
 
-func Constructor(nums []int) NumArray {
-	s := make(NumArray, len(nums)+1)
-	for i, x := range nums {
-		s[i+1] = s[i] + x
-	}
-	return s
-}
+				[]int{-2, 0, 3, -5, 2, -1}, []int{0, 2}, []int{2, 5}, []int{0, 5},
+				1, -1., -3,
+			},
+		}
 
-// 计算索引 left 和 right （包含 left 和 right）之间的 nums 元素的 和
-func (s NumArray) SumRange(left, right int) int {
-	return s[right+1] - s[left]
+		for _, tst := range testCase {
+			c := Constructor(tst.input)
+			convey.So(c.SumRange(tst.sumRange1[0], tst.sumRange1[1]), convey.ShouldResemble, tst.target1)
+			convey.So(c.SumRange(tst.sumRange2[0], tst.sumRange2[1]), convey.ShouldResemble, tst.target2)
+			convey.So(c.SumRange(tst.sumRange3[0], tst.sumRange3[1]), convey.ShouldResemble, tst.target3)
+
+		}
+	})
+
 }
 
 // 前缀和解析: https://leetcode.cn/problems/range-sum-query-immutable/solutions/2693498/qian-zhui-he-ji-qi-kuo-zhan-fu-ti-dan-py-vaar/
@@ -50,3 +69,17 @@ s[right+1]−s[left]
 为什么要定义 s[0]=0?
 如果不定义 s[0]=0，就必须特判 left=0 的情况.
 */
+
+type NumArray []int
+
+func Constructor(nums []int) NumArray {
+	s := make(NumArray, len(nums)+1)
+	for i, x := range nums {
+		s[i+1] = s[i] + x
+	}
+	return s
+}
+
+func (s NumArray) SumRange(left, right int) int {
+	return s[right+1] - s[left]
+}

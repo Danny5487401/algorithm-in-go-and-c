@@ -263,14 +263,18 @@ Note: C语言实现使用 GBK 编码
   - [238 除自身以外数组的乘积->前后缀](03_leetcode/08_array/238_product-of-array-except-self_test.go)
   - [303 区域和检索-数组不可变-->前缀和](03_leetcode/08_array/303_range-sum-query-immutable_test.go)
   - [560 和为 K 的子数组-->前缀和](03_leetcode/08_array/560_subarray-sum-equals-k_test.go)
+  - [1094 拼车-->差分数组](03_leetcode/08_array/1094_car-pooling_test.go)
+  - [2848 与车相交的点-->差分数组](03_leetcode/08_array/2848_points-that-intersect-with-cars_test.go)
   - [3427 变长子数组求和 -->前缀和](03_leetcode/08_array/3427_sum-of-variable-length-subarrays_test.go)
 
-- 9 图
+- [9 图](03_leetcode/09_graph/graph.md)
   - [200 岛屿数量](03_leetcode/09_graph/200_number-of-islands_test.go)
   - [207 课程表-->拓扑排序](03_leetcode/09_graph/207_course-schedule_test.go)
   - [208 实现 Trie (前缀树)](03_leetcode/09_graph/208_trie_test.go)
   - [210 课程表II-->拓扑排序](03_leetcode/09_graph/210_course-schedule-II_test.go)
-  - [994 腐烂的橘子](03_leetcode/09_graph/994_rotting-oranges_test.go)
+  - [695 岛屿的最大面积-->网格图 DFS](03_leetcode/09_graph/695_max-area-of-island_test.go)
+  - [994 总价值可以被 K 整除的岛屿数目](03_leetcode/09_graph/994_rotting-oranges_test.go)
+  - [3619 岛屿数量-->网格图 DFS](03_leetcode/09_graph/3619_count-islands-with-total-value-divisible-by-k_test.go)
 
 - 10 堆
   - [315 数组中的第K个最大元素](03_leetcode/10_heap/315_kth-largest-element-in-an-array_test.go)
@@ -280,6 +284,8 @@ Note: C语言实现使用 GBK 编码
   - [48 旋转图像](03_leetcode/11_matrix/48_rotate-image_test.go)
   - [73 矩阵置零](03_leetcode/11_matrix/73_set-matrix-zeroes_test.go)
 - 12 位运算
+  - [461 汉明距离](03_leetcode/12_bits/461_hamming-distance_test.go)
+  - [1356  根据数字二进制下 1 的数目排序 ](03_leetcode/12_bits/1356_sort-integers-by-the-number-of-1-bits_test.go)
   - [3226 使两个整数相等的位更改次数](03_leetcode/12_bits/3226_number-of-bit-changes-to-make-two-integers-equal_test.go)
   - [3370 仅含置位位的最小整数](03_leetcode/12_bits/3370_smallest-number-with-all-set-bits_test.go)
 
