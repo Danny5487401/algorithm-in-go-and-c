@@ -166,6 +166,7 @@ Note: C语言实现使用 GBK 编码
   - [438 找到字符串中所有字母异位词](03_leetcode/03_slides_windows/438_find-all-anagrams-in-a-string_test.go)
   - [643 子数组最大平均数 I-->定长滑动窗口](03_leetcode/03_slides_windows/643_maximum-average-subarray-i_test.go)
   - [713 乘积小于 K 的子数组](03_leetcode/03_slides_windows/713_subarray_product_less_than_k_test.go)
+  - [1004 最大连续1的个数 III](03_leetcode/03_slides_windows/1004_max-consecutive-ones-iii_test.go)
   - [1343 大小为 K 且平均值大于等于阈值的子数组数目](03_leetcode/03_slides_windows/1343_number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold_test.go)
   - [1438 绝对差不超过限制的最长连续子数组](03_leetcode/03_slides_windows/1438_longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit_test.go)
   - [1456 定长子串中元音的最大数目-->定长滑动窗口](03_leetcode/03_slides_windows/1438_longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit_test.go)

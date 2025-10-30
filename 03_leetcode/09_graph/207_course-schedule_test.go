@@ -1,13 +1,14 @@
 package _9_graph
 
 import (
-	"github.com/smartystreets/goconvey/convey"
 	"testing"
+
+	"github.com/smartystreets/goconvey/convey"
 )
 
 // 课程表 https://leetcode.cn/problems/course-schedule/description/
 func TestCanFinish(t *testing.T) {
-	convey.Convey("课程对 [0, 1] 表示：想要学习课程 0 ，你需要先完成课程 1 . 图有环代表完成不了", t, func() {
+	convey.Convey("课程对 [0, 1] 表示：1-->0, 想要学习课程 0 ，你需要先完成课程 1. 图有环代表完成不了", t, func() {
 		testCase := []struct {
 			input         int
 			prerequisites [][]int
@@ -54,15 +55,22 @@ func TestCanFinish(t *testing.T) {
 func canFinish(numCourses int, prerequisites [][]int) bool {
 	// 每个点的边
 	var edge = make([][]int, numCourses)
+
+	// 创建长为 numCourses 的访问数组
 	visited := make([]int, numCourses)
 
 	// 栈记录依赖顺序
 	result := []int{}
 
+	// 1 建图：把每个 prerequisites[i]=[a,b] 看成一条有向边 b→a，构建一个有向图 g。
+	// 记录边
+	for _, info := range prerequisites {
+		edge[info[1]] = append(edge[info[1]], info[0])
+	}
+
 	var valid bool = true // 有效,无环
 
 	var dfs func(u int)
-
 	dfs = func(u int) {
 		visited[u] = 1 // 搜索中
 		for _, v := range edge[u] {
@@ -82,13 +90,8 @@ func canFinish(numCourses int, prerequisites [][]int) bool {
 		result = append(result, u) // 默认最先入站的是无依赖, 最后是依赖
 
 	}
-	// 记录边
-	for _, info := range prerequisites {
-		edge[info[1]] = append(edge[info[1]], info[0])
-	}
 
 	// 开始修课程
-
 	for i := 0; i < numCourses && valid; i++ {
 		if visited[i] == 0 {
 			dfs(i)

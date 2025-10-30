@@ -10,9 +10,8 @@ import (
 func TestMinSubArrayLen(t *testing.T) {
 	convey.Convey("长度最小的子数组：满足其总和大于等于 target 的长度最小的子数组", t, func() {
 		testCase := []struct {
-			nums   []int
-			target int
-
+			nums     []int
+			target   int
 			expected int
 		}{
 			{

@@ -4,6 +4,7 @@
 
 - [回溯法（back tracking）](#%E5%9B%9E%E6%BA%AF%E6%B3%95back-tracking)
   - [分类](#%E5%88%86%E7%B1%BB)
+  - [参考](#%E5%8F%82%E8%80%83)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -70,4 +71,9 @@ dfs[i,open]
 ![](.back_tracking_images/Permutations.png)
 
 ![]( .back_tracking_images/permutations2.png)
+
+
+
+## 参考
+
 

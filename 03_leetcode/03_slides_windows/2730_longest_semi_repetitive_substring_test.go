@@ -6,7 +6,6 @@ import (
 )
 
 // 找到最长的半重复子字符串 https://leetcode.cn/problems/find-the-longest-semi-repetitive-substring/
-
 func TestLongestSemiRepetitiveSubstring(t *testing.T) {
 	convey.Convey("找到最长的半重复子字符串:一个字符串 t 中至多有一对相邻字符是相等的，那么称这个字符串 t 是 半重复的 ", t, func() {
 		testCase := []struct {
@@ -14,6 +13,7 @@ func TestLongestSemiRepetitiveSubstring(t *testing.T) {
 			expected int
 		}{
 			{
+				// 最长的半重复子字符串是 "5223"。
 				"52233",
 				4,
 			},
@@ -22,6 +22,7 @@ func TestLongestSemiRepetitiveSubstring(t *testing.T) {
 				4,
 			},
 			{
+				// 最长的半重复子字符串是 "11"。
 				"1111111",
 				2,
 			},
