@@ -1,6 +1,6 @@
 module github.com/Danny5487401/algorithm-in-go-and-c
 
-go 1.21
+go 1.23
 
 require (
 	github.com/google/btree v1.1.2
